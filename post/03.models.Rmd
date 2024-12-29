@@ -6,8 +6,8 @@ output:
 ---
 
 ```{r class.source = 'fold-hide', warning=FALSE, message=FALSE}
-library(brms)
-library(tidybayes)
+library(dplyr)
+library(lme4)
 library(performance)
 library(marginaleffects)
 library(kableExtra)
@@ -48,12 +48,8 @@ long %>%
 ### Unconditional means
 
 ```{r}
-unconditional.means <- brm(y ~ 1 + (1|participant) + (1|item),
-                           data=long,
-                           warmup=1000,
-                           iter=4000,
-                           chains=2,
-                           cores=4
+unconditional.means <- lmer(y ~ 1 + (1|participant) + (1|item),
+                           data=long
                            )
 summary(unconditional.means)
 ```
@@ -64,8 +60,7 @@ performance::icc(unconditional.means, by_group=TRUE)
 ### Primary model
 
 ```{r}
-#m1 <- brm(y ~ 1 + actors + context + moodstate + age + gender + diagnosis_subtype + diagnosis_age + PAD + hospitalization + education + income + trust_clinician + trust_bank + trust_carepartner + (1|participant) + (1|item), data=long, warmup=1000, iter=4000, chains=2, cores=4, file='m1')
-m1 <- brm(file='m1.rds')
+m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + diagnosis_subtype + diagnosis_age + PAD + hospitalization + education + income + trust_clinician + trust_bank + trust_carepartner + (1|participant) + (1|item), data=long)
 ```
 
 
