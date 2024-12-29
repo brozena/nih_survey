@@ -1,0 +1,29 @@
+---
+title: "NIH Finhealth Survey - Descriptive Statistics"
+output:
+  rmarkdown::github_document:
+    html_preview: false
+---
+
+```{r class.source='fold-hide', warning=FALSE, message=FALSE}
+library(tidyverse)
+library(summarytools)
+```
+
+## Load data
+
+```{r}
+load('data/NIH_survey.Rdata')
+```
+
+
+## Demographics
+
+```{r, include=FALSE}
+temp <- wide %>% select(gender, age, education, employment, marital, ethnicity, hispanic, diagnosis_subtype, hospitalization, PAD, banked, savings, trust_clinician, trust_carepartner, trust_bank)
+```
+
+
+```{r, echo=FALSE}
+dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, max.distinct.values=22, headings=FALSE)
+```
