@@ -66,5 +66,17 @@ m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + diagnosis_subty
 
 ### H1.1 Stable vs symptomatic periods
 ```{r}
+avg_predictions(m1, hypothesis= ~ sequential, by='moodstate', re.form=NA)
+```
+
+### H1.2 Comfort ratings will be highest for shared spending behaviors during mood episodes
+```{r}
+avg_predictions(m1, by=c('moodstate', 'context'), re.form=NA)
+```
+
+### H1.3 Spending restrictions during mood episodes vs. during stable periods
+
+```{r}
 
 ```
+
