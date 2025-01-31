@@ -1,5 +1,5 @@
 ---
-title: "NIH Finhealth Survey - Preprocessing"
+title: "NIH BD/Finhealth Survey - Preprocessing"
 output:
   rmarkdown::github_document:
     html_preview: false
@@ -23,7 +23,6 @@ conda_install('reticulate', 'numpy')
 
 ## Create wide frame
 
-
 ```{r}
 qualtrics_data <- read_csv(file='data/Prolific+-+NIH+Survey_March+18,+2024_12.08.csv')
 ```
@@ -36,6 +35,9 @@ wide <-
             completed_date = EndDate,
             prolific_id = ProlificID,
             duration = get('Duration (in seconds)'),
+            progress = Progress,
+            finished = Finished,
+            consent = QID1,
             age = Q2,
             gender  = Q3,
             ethnicity = Q4,
@@ -174,6 +176,14 @@ wide <-
     )
 ```
 
+## Account for survey duration
+
+```{r}
+wide$speeder <- ifelse(as.numeric(wide$duration) < 0.6*median(as.numeric(wide$duration)),
++        1,
++        0)
+```
+
 ## Merge Qualtrics with Prolific demographics, NIH GUIDs
 
 ```{python}
@@ -241,7 +251,7 @@ qual_int['bfi_neuroticism'] = ((6-qual_int['bfi_4_relaxed']) + (qual_int['bfi_9_
 qual_int['bfi_openness'] = ((6-qual_int['bfi_5_few_artistic']) + (qual_int['bfi_10_imagination']) / 2)
 ```
 
-## Create long frame
+# Create long frame
 
 ```{r}
 
@@ -287,6 +297,8 @@ write.csv(long, "data/NIH_survey_long.csv")
 
 # Data quality checks
 
+## Test demographic dependencies
+
 ```{r}
 chisq.test(table(long$age, long$y), simulate.p.value =T)
 chisq.test(table(long$gender, long$y), simulate.p.value =T)
@@ -294,4 +306,8 @@ chisq.test(table(long$marital, long$y), simulate.p.value =T)
 chisq.test(table(long$ethnicity, long$y), simulate.p.value =T)
 chisq.test(table(long$education, long$y), simulate.p.value =T)
 chisq.test(table(long$employment, long$y), simulate.p.value =T)
+```
+
+```{r}
+fisher.test(table(long$ethnicity, long$y), simulate.p.value = TRUE)
 ```
