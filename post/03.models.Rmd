@@ -10,6 +10,7 @@ library(tidyverse)
 library(lme4)
 library(ordinal)
 library(psych)
+library(ggstats)
 library(ggthemes)
 library(performance)
 library(marginaleffects)
@@ -87,7 +88,8 @@ car::Anova(m1, type=3)
 # m2 is main effects model
 
 m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
-hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2-b1=0')
+hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL))
+hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2=b1')
 ```
 
 ```{r}
@@ -122,17 +124,38 @@ plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sa
 
 # H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
 
+avg_predictions(m3, by=c('moodstate', 'context'))
 avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
-plot_predictions(m3, by=c('moodstate', 'context')) + theme_tufte(base_family='sans')
 ```
 
 ### Interaction effects with respondent characteristics
 
-## Additional analysis
+```{r}
+
+# H2.2: Evidence of advanced planning behaviors (operationalized as the prior creation of a psychiatric advanced directive) will lead to higher comfort ratings when sharing spending behaviors
+
+m4 <- lmer(y ~ actors + context * PAD + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m4, by=c('PAD', 'context'))
+avg_predictions(m4, by=c('PAD', 'context'), hypothesis='b9=b3')
+```
 
 ```{r}
-m4 <- lm(cfpb_score ~ diagnosis_subtype, data=long)
+
+# H2.3: Evidence of adverse financial events (operationalized as prior bankruptcy) will lead to higher comfort ratings of spending restrictions
+
+m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2')
 ```
+
+```{r}
+
+### TODO 
+
+# H3.2: Higher levels of trust in third parties will be associated with higher comfort ratings for those respective third parties
+```
+
+## Additional analysis
 
 ```{r}
 long$trust_bank <- ordered(long$trust_bank, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
