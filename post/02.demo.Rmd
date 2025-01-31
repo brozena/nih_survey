@@ -21,41 +21,10 @@ library(plyr)
 load('data/NIH_survey.Rdata')
 ```
 
-## Refactor ethnicity towards NIH
-
-```{r}
-wide$ethnicity <- revalue(wide$ethnicity, c(
-    "Native or Indigenous" = "American Indian/Alaska Native",
-    "Asian" = "Asian",
-    "Native Hawaiian or Pacific Islanders" = "Native Hawaiian or Other Pacific Islander",
-    "Native Hawaiian or Pacific Islanders,White" = "More than One Race",
-    "Black/African/Caribbean" = "Black or African American",
-    "White" = "White",
-    "Native or Indigenous,White" = "More than One Race",
-    "Native or Indigenous,Black/African/Caribbean,White" = "More than One Race",
-    "Native or Indigenous,Black/African/Caribbean,White,Other" = "More than One Race",
-    "Asian,White" = "More than One Race",
-    "Asian,White,Other" = "More than One Race",
-    "Black/African/Caribbean,White" = "More than One Race",
-    "Black/African/Caribbean,Native Hawaiian or Pacific Islanders" = "More than One Race",
-    "Native Hawaiian or Pacific Islanders,White,Other" = "More than One Race",
-    "White,Other" = "More than One Race",
-    "Native or Indigenous,White,Other" = "More than One Race",
-    "Native or Indigenous,Asian,Native Hawaiian or Pacific Islanders" = "More than One Race",
-    "Native or Indigenous,Black/African/Caribbean" = "More than One Race",
-    "Native or Indigenous,Native Hawaiian or Pacific Islanders" = "More than One Race",
-    "Native or Indigenous,Asian,White" = "More than One Race",
-    "Native or Indigenous,Black/African/Caribbean,Native Hawaiian or Pacific Islanders,White" = "More than One Race",
-    "Other" = "Unknown or Not Reported"
-  )
-)
-
-```
-
 ## Demographics Summary
 
 ```{r, include=FALSE}
-temp <- wide %>% select(gender, age, education, employment, income, marital, ethnicity, hispanic, diagnosis_subtype, hospitalization, PAD, banked, savings, trust_clinician, trust_carepartner, trust_bank)
+temp <- wide %>% select(gender, age, education, employment, income, main_financial_goal, marital, ethnicity, hispanic, diagnosis_subtype, hospitalization, PAD, banked, savings, trust_clinician, trust_carepartner, trust_bank)
 ```
 
 ```{r, echo=FALSE}
