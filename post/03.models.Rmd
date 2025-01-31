@@ -43,10 +43,6 @@ summarize(
 flextable(tab) %>% colformat_double(digits = 2)
 ```
 
-```{r}
-flextable(tab) %>% colformat_double(digits = 2)
-```
-
 ## Modeling
 
 ### Unconditional means
