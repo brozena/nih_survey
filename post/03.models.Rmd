@@ -9,6 +9,8 @@ output:
 library(tidyverse)
 library(lme4)
 library(ordinal)
+library(psych)
+library(ggthemes)
 library(performance)
 library(marginaleffects)
 library(kableExtra)
@@ -40,7 +42,15 @@ summarize(
           ci = list(mean_cl_normal(y, conf.int = .95)),
           obs = n_distinct(participant)
 ) %>% unnest(c(ci))
-flextable(tab) %>% colformat_double(digits = 2)
+theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
+```
+
+## Factor analysis
+
+```{r}
+
+# TODO: relevel trust_* as ordered numeric
+wide %>% select (trust_carepartner, trust_clinician, trust_bank) %>% mutate_all(scale) %>% fa(., nfactors=1, fm='pa', rotate='varimax')
 ```
 
 ## Modeling
@@ -48,9 +58,7 @@ flextable(tab) %>% colformat_double(digits = 2)
 ### Unconditional means
 
 ```{r}
-unconditional.means <- lmer(y ~ 1 + (1|participant) + (1|item),
-                           data=long
-                           )
+unconditional.means <- lmer(y ~ 1 + (1|participant) + (1|item), data=long)
 summary(unconditional.means)
 ```
 
@@ -62,10 +70,12 @@ performance::icc(unconditional.means, by_group=TRUE)
 
 ```{r}
 m1 <- lmer(y ~ 1 + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
+
+summary(m1)
 ```
 
 ```{r}
-anova(m1)
+car::Anova(m1, type=3)
 ```
 
 ### Main effects
@@ -73,32 +83,55 @@ anova(m1)
 ```{r}
 
 # H1.1: Comfort ratings will be lower during stable periods vs. symptomatic periods
+# pairwise test
+# m2 is main effects model
 
-avg_predictions(m1, hypothesis= ~ sequential, by='moodstate', re.form=NULL)
+m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
+hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2-b1=0')
 ```
 
 ```{r}
 
 # H2.1: Among intervention levels, comfort ratings will be lowest for spending restrictions
+# calculate as the difference between an estimate and the mean of all estimates
 
-avg_predictions(m1, by=c('moodstate', 'context'), re.form=NULL)
+hypotheses(avg_predictions(m2, by='context', re.form=NULL), 'meandev')
 ```
 
 ```{r}
 
 # H3.1: Comfort will be highest for care partners
+# as meandev, like above
 
-avg_predictions(m1, by='actors', re.form=NULL)
+hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm')
 ```
 
 ### Interaction effects
+
+```{r}
+
+# H1.2: Among intervention levels, comfort ratings will be highest for shared spending behaviors during mood episodes
+# m3 is interaction between intervention context and mood state
+
+m3 <- lmer(y ~ actors + context * moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='meandev', re.form=NULL)
+plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sans')
+```
+
+```{r}
+
+# H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
+
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
+plot_predictions(m3, by=c('moodstate', 'context')) + theme_tufte(base_family='sans')
+```
 
 ### Interaction effects with respondent characteristics
 
 ## Additional analysis
 
 ```{r}
-m2 <- lm(cfpb_score ~ diagnosis_subtype, data=long)
+m4 <- lm(cfpb_score ~ diagnosis_subtype, data=long)
 ```
 
 ```{r}
