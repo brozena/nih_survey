@@ -51,7 +51,9 @@ theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
 ```{r}
 
 # TODO: relevel trust_* as ordered numeric
-wide %>% select (trust_carepartner, trust_clinician, trust_bank) %>% mutate_all(scale) %>% fa(., nfactors=1, fm='pa', rotate='varimax')
+# TODO: FA
+
+#wide %>% select (trust_carepartner, trust_clinician, trust_bank) %>% mutate_all(scale) %>% fa(., nfactors=1, fm='pa', rotate='varimax')
 ```
 
 ## Modeling
@@ -70,7 +72,7 @@ performance::icc(unconditional.means, by_group=TRUE)
 ### Primary model
 
 ```{r}
-m1 <- lmer(y ~ 1 + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
+m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
 
 summary(m1)
 ```
@@ -150,9 +152,39 @@ avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2')
 
 ```{r}
 
-### TODO 
-
 # H3.2: Higher levels of trust in third parties will be associated with higher comfort ratings for those respective third parties
+
+# 3.2.1 High trust in clinicians predicts higher comfort ratings for Actor=Clinician
+m6.1 <- lmer(y ~ actors * trust_clinician + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.1, by=c('trust_clinician', 'actors'))
+avg_predictions(m6.1, by=c('trust_clinician', 'actors'), hypothesis='b6=b3')
+
+# 3.2.2 Trust in care partners predicts higher comfort ratings for Actor=Care partner
+m6.2 <- lmer(y ~ actors * trust_carepartner + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.2, by=c('trust_carepartner', 'actors'))
+avg_predictions(m6.2, by=c('trust_carepartner', 'actors'), hypothesis='b5=b2')
+
+# 3.2.3 Trust in banks predicts higher comfort ratings for actor=banks
+m6.3 <- lmer(y ~ actors * trust_bank + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.3, by=c('trust_bank', 'actors'))
+avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
+
+```
+
+```{r}
+
+# H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
+
+m7 <- lmer(y ~ actors * care_partner_help + context + moodstate + (1|participant) + (1|item), data=long)
+hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), 'meandev', multcomp='holm')
+```
+
+```{r}
+
+# H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
+
+m8 <- lmer(y ~ actors + context + moodstate + bfi_agreeableness + (1|participant) + (1|item), data=long)
+car::Anova(m8, type=3)
 ```
 
 ## Additional analysis
