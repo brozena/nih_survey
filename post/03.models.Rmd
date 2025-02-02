@@ -9,6 +9,8 @@ output:
 library(tidyverse)
 library(lme4)
 library(ordinal)
+library(mclogit)
+library(nnet)
 library(psych)
 library(ggstats)
 library(ggthemes)
@@ -26,10 +28,18 @@ load('data/NIH_survey.Rdata')
 
 ## Descriptive statistics
 
-### Summary statistics of all variables
+### Means of outcome for all vignettes
 
-```{r, warning=FALSE, message=FALSE}
-summary(wide)
+```{r}
+tab <- long %>% 
+summarize(
+          Mean = mean(y, na.rm = TRUE),
+          Median = median(y, na.rm = TRUE),
+          SD = sd(y, na.rm = TRUE),
+          ci = list(mean_cl_normal(y, conf.int = .95)),
+          obs = n_distinct(participant)
+) %>% unnest(c(ci))
+theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
 ```
 
 ### Means of outcome for each vignette
@@ -119,7 +129,7 @@ hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm
 
 m3 <- lmer(y ~ actors + context * moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='meandev', re.form=NULL)
-plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sans')
+#plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sans')
 ```
 
 ```{r}
