@@ -3,7 +3,10 @@ analysis/post/deployment1.csv
 *.Rdata
 analysis/post/data/*
 analysis/NDA/*
+analysis/pre/*
+analysis/NDA/*
 .Rproj.user
+
 # History files
 .Rhistory
 .Rapp.history
