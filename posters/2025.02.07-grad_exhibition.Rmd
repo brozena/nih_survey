@@ -40,11 +40,11 @@ main_findings:
 poster_width: "36in"
 poster_height: "48in"
 main_textsize: 135px
-title_textsize: 125px
+title_textsize: 120px
 affiliation_textsize: 35px
 author_textsize: 45px
-reference_textsize: 20px
-body_textsize: 41px
+reference_textsize: 17px
+body_textsize: 40px
 font_family: 'Noto Sans'
 main_fontfamily: 'Cutive Mono'
 primary_colour: "#041E42"
@@ -70,14 +70,9 @@ Bipolar disorder (BD) is strongly associated with financial instability [@richar
 
 $~~~~~$ However, there remains a knowledge gap regarding how idiosyncratic, context-driven, and illness-specific factors impact financial decision-making in BD. Furthermore, the lack of granular, in-situ assessment methods is a key challenge against developing just-in-time and personalized interventions focusing on financial stability for this population. Given the importance of financial stability for individuals with BD, this remains a serious knowledge gap with broad practical and societal implications.
 
-\centering
-
 ![](./nsfnimh.png){ width=900px }
 
-\raggedright
-\flushleft
-
-<p style="font-size:16px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.*</p>
+<p style="font-size:20px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.*</p>
 
 
 # Methods
@@ -96,18 +91,18 @@ We chose to include only third-party actors, opting to exclude self-management a
 
 $~~~~~$ We included a number of explanatory variables as well to explore relationships between clinical and financial topics. Clinical history variables included bipolar diagnostic subtype (i.e., BD-I, BD-II, etc.), whether the individual had ever been hospitalized, and whether they had a psychiatric advance directive in place. Financial history variables included whether the individual has considered or declared bankruptcy, whether they have asked care partners for help managing finances, their primary financial goal, and if they have used a Buy Now/Pay Later service. We also collected the Big Five Personality Inventory [@rammstedtMeasuring2007] and Consumer Financial Protection Bureau Financial Well-being Scale [@Measuring].
 
-$~~~~~$ We analyzed survey data using multilevel models [@gelmanData2007] to account for the vignette experiment's hierarchical structure (vignette items nested within respondents). This approach allowed us to explore differences in vignette ratings within and between participants and scenarios. Our main analysis incorporated random effects with the dependent variable as a continuous measure of a level of comfort on a scale of 0---10. We preregistered our survey design, hypotheses, and analysis plan with the Open Science Foundation [@brozenaIdentifying2023], where the resulting data and analysis code are available.
+$~~~~~$ We analyzed survey data using multilevel models [@gelmanData2007] to account for the vignette experiment's hierarchical structure (vignette items nested within respondents). This approach allowed us to explore differences in vignette ratings within and between participants and scenarios. Our main analysis incorporated random effects with the dependent variable as a continuous measure of a level of comfort on a scale of 0---10.
 
-\
-\
 
 # Results
 
-The majority of our respondents were female (59.9%), aged 35 - 44 (24.8%), attended at least some university (30.1%), and were employed full-time (41.4%). Respondents had primarily been diagnosed with BD-II (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority of respondents had received their BD diagnosis when aged 19 and 29 years.
+The majority of our respondents were female (59.9%), aged 35 - 44 (24.8%), attended at least some university (30.1%), and were employed full-time (41.4%). Respondents had primarily been diagnosed with BD-II (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority of respondents had received their BD diagnosis when aged 19 to 29 years.
 
 $~~~~~$ 50% of respondents reported having at least one hospitalization in their lifetime, while 8% had created a psychiatric advance directive. 61.5% of respondents had used a Buy Now/Pay Later service. 11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility. 
 
-$~~~~~$ Respondents were most comfortable when care partners were involved in financial interventions and least comfortable with 48-hour spending restrictions. The presence of a prior bankruptcy or a psychiatric advance directive were associated with higher comfort levels in 48-hour spending restrictions, especially during mood episodes.
+- Respondents were most comfortable when **care partners were involved in financial interventions**, rather than banks or clinicians
+- Respondents were least comfortable with a hypothetical **48-hour spending restriction**
+- The presence of a **prior bankruptcy or a psychiatric advance directive** were associated with higher comfort levels in 48-hour spending restrictions, especially during mood episodes
 
 $~~~~~$ The following table provides descriptive statistics for all vignette ratings.
 
@@ -119,8 +114,8 @@ tab <- long %>% group_by(actors, context, moodstate) %>%
                          "clinicians" = "Clinicians"),
          context = recode(context,
                           "planning_budgeting" = "Planning & Budgeting",
-                         "share_spending" = "Share Spending",
-                         "restrict_spending_48" = "48h Spending Restriction"),
+                          "share_spending" = "Share Spending",
+                          "restrict_spending_48" = "48h Spending Restriction"),
          moodstate = recode(moodstate,
                             "mood" = "During Episode",
                             "stable" = "Stable Mood")) %>%
@@ -141,6 +136,13 @@ ft <- flextable(tab) %>%
   padding(3)
 ft
 ```
+
+# Future Work
+
+1. Demonstrate feasibility and acceptance of collecting financial data from individuals with BD, simultaneously creating a retrospective dataset of mood state and spending (N=60)
+2. Assess whether and how such data might be viable as an objective behavioral marker of illness state using machine learning approaches
+2. Incorporate findings from this survey along with semi-structured interviews into supportive digital intervention prototypes
+
 
 # References
 
