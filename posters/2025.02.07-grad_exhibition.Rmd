@@ -1,0 +1,108 @@
+---
+title: Supportive Fintech for Bipolar Disorder
+author:
+  - name: Jeff Brozena
+    affil: 1
+  - name: Johnna Blair
+    affil: 1
+  - name: Dahlia Mukherjee
+    affil: 2
+  - name: Erika FH Saunders
+    affil: 2
+  - name: Thomas Richardson
+    affil: 3
+  - name: Mark Matthews
+    affil: 4
+  - name: Saeed Abdullah
+    affil: 1
+affiliation:
+  - num: 1
+    address: Pennsylvania State University, USA
+  - num: 2
+    address: Penn State College of Medicine, Hershey, PA, USA
+  - num: 3
+    address: University of Southhampton, United Kingdom
+  - num: 4
+    address: University College Dublin
+column_numbers: 3
+csl: "/Users/jab/Zotero/styles/transactions-on-computer-human-interaction.csl"
+bibliography: "/Users/jab/Downloads/zotero.bib"
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: true
+    css: style.css
+knit: pagedown::chrome_print
+main_findings:
+  - "**Bipolar disorder** is an illness characterized by **financial instability** and risky decision-making."
+  - "How can **open banking data** support existing contexts of caregiving in managing these risks?"
+main_width: 0.35
+main_textsize: 135px
+title_textsize: 125px
+affiliation_textsize: 35px
+author_textsize: 45px
+reference_textsize: 20px
+body_textsize: 44px
+font_family: 'Noto Sans'
+main_fontfamily: 'Cutive Mono'
+primary_colour: "#041E42"
+secondary_colour: "#2c6290"
+column_padding: 20mm
+link-citations: true
+logoleft_name: "./nsf.png"
+logoright_name: "./nimh.png"
+---
+
+```{r, echo=FALSE, results='hide', error=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(flextable)
+library(rsvg)
+load("../analysis/post/data/NIH_survey.Rdata")
+```
+
+
+# Background
+
+Bipolar disorder (BD) is strongly associated with financial instability [@richardsonFinancial2018]. Symptomatic periods in BD often manifest in poor financial decision-making. For example, 70% individuals with BD have reported impulsive spending during hypomania [@fletcherHighrisk2013]. Problematic financial behaviors during symptomatic periods can lead to serious long-term financial instability, which can severely impact the quality of life for individuals with BD and their care partners. Maintaining financial stability is a critical challenge to ensure the long-term wellbeing for individuals with BD.
+
+$~~~~~$ However, there remains a knowledge gap regarding how idiosyncratic, context-driven, and illness-specific factors impact financial decision-making in BD. Furthermore, the lack of granular, in-situ assessment methods is a key challenge against developing just-in-time and personalized interventions focusing on financial stability for this population. Given the importance of financial stability for individuals with BD, this remains a serious knowledge gap with broad practical and societal implications.
+
+
+# Methods
+
+Given the sensitivity of personal financial data, we initially sought to establish acceptance and privacy concerns regarding the use of financial data as an objective behavioral marker in BD. We conducted an online factorial vignette survey (N=500; US Prolific) to collect data from individuals with BD. 
+
+$~~~~~$ We used a factorial vignette approach to assess level of comfort with a set of hypothetical scenarios. We systematically varied three factors in our vignette experiment to explore differences in comfort across 18 total scenarios involving intervention actors, contexts, and timing.
+
+
+|**Factor**|**Levels**|
+|-------|-----------|
+|Actors|Clinicians  <br>Care partners  <br>Banks|
+|Intervention Context|Share spending details  <br>Planning & bugeting  <br>48-hour spending restriction|
+|Mood State|During a mood episode  <br>During stable mood|
+
+: Factors and levels contained in our factorial vignette experiment.
+
+We chose to include only third-party actors, opting to exclude self-management as a possibility. Our prior survey deployment [@brozenaSupportive2024] demonstrated a high level of comfort when sharing financial data for self-management.
+
+$~~~~~$ We included a number of explanatory variables as well to explore relationships between clinical and financial topics. Clinical history variables included bipolar diagnostic subtype (i.e., BD-I, BD-II, etc.), whether the individual had ever been hospitalized, and whether they had a psychiatric advance directive in place. Financial history variables included whether the individual has considered or declared bankruptcy, whether they have asked care partners for help managing finances, their primary financial goal, and if they have used a Buy Now/Pay Later service. We also collected the Big Five Personality Inventory [@rammstedtMeasuring2007] and Consumer Financial Protection Bureau Financial Well-being Scale [@Measuring].
+
+
+# Results
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+tab <- long %>% group_by(actors, context, moodstate) %>%
+  summarize(
+    Mean = mean(y, na.rm = TRUE),
+    Median = median(y, na.rm = TRUE),
+    SD = sd(y, na.rm = TRUE)
+  )
+ft <- flextable(tab) %>%
+  colformat_double(digits = 2) %>%
+  theme_vanilla() %>%
+  fontsize(size = 23, part = "all") %>%
+  padding(4)
+ft
+```
+
+# References
+
