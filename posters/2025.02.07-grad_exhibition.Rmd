@@ -25,8 +25,10 @@ affiliation:
   - num: 4
     address: University College Dublin
 column_numbers: 3
-csl: "/Users/jab/Zotero/styles/transactions-on-computer-human-interaction.csl"
+csl: "/Users/jab/Zotero/styles/association-for-computing-machinery.csl"
 bibliography: "/Users/jab/Downloads/zotero.bib"
+filters:
+  - pandoc-crossref
 output: 
   posterdown::posterdown_betterport:
     self_contained: true
@@ -42,7 +44,7 @@ title_textsize: 125px
 affiliation_textsize: 35px
 author_textsize: 45px
 reference_textsize: 20px
-body_textsize: 42px
+body_textsize: 41px
 font_family: 'Noto Sans'
 main_fontfamily: 'Cutive Mono'
 primary_colour: "#041E42"
@@ -68,7 +70,14 @@ Bipolar disorder (BD) is strongly associated with financial instability [@richar
 
 $~~~~~$ However, there remains a knowledge gap regarding how idiosyncratic, context-driven, and illness-specific factors impact financial decision-making in BD. Furthermore, the lack of granular, in-situ assessment methods is a key challenge against developing just-in-time and personalized interventions focusing on financial stability for this population. Given the importance of financial stability for individuals with BD, this remains a serious knowledge gap with broad practical and societal implications.
 
-![](./nsfnimh.png){ width=1000px }
+\centering
+
+![](./nsfnimh.png){ width=900px }
+
+\raggedright
+\flushleft
+
+<p style="font-size:16px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.*</p>
 
 
 # Methods
@@ -77,14 +86,11 @@ Given the sensitivity of personal financial data, we initially sought to establi
 
 $~~~~~$ We used a factorial vignette approach to assess level of comfort with a set of hypothetical scenarios. We systematically varied three factors in our vignette experiment to explore differences in comfort across 18 total scenarios involving intervention actors, contexts, and timing.
 
-
 |**Factor**|**Levels**|
 |-------|-----------|
 |Actors|Clinicians  <br>Care partners  <br>Banks|
 |Intervention Context|Share spending details  <br>Planning & bugeting  <br>48-hour spending restriction|
 |Mood State|During a mood episode  <br>During stable mood|
-
-: Factors and levels contained in our factorial vignette experiment.
 
 We chose to include only third-party actors, opting to exclude self-management as a possibility. Our prior survey deployment [@brozenaSupportive2024] demonstrated a high level of comfort when sharing financial data for self-management.
 
@@ -92,6 +98,8 @@ $~~~~~$ We included a number of explanatory variables as well to explore relatio
 
 $~~~~~$ We analyzed survey data using multilevel models [@gelmanData2007] to account for the vignette experiment's hierarchical structure (vignette items nested within respondents). This approach allowed us to explore differences in vignette ratings within and between participants and scenarios. Our main analysis incorporated random effects with the dependent variable as a continuous measure of a level of comfort on a scale of 0---10. We preregistered our survey design, hypotheses, and analysis plan with the Open Science Foundation [@brozenaIdentifying2023], where the resulting data and analysis code are available.
 
+\
+\
 
 # Results
 
@@ -99,7 +107,9 @@ The majority of our respondents were female (59.9%), aged 35 - 44 (24.8%), atten
 
 $~~~~~$ 50% of respondents reported having at least one hospitalization in their lifetime, while 8% had created a psychiatric advance directive. 61.5% of respondents had used a Buy Now/Pay Later service. 11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility. 
 
-$~~~~~$ Respondents were most comfortable when care partners were involved in financial interventions, while they were least comfortable with 48-hour spending restrictions. The presence of a prior bankruptcy or a psychiatric advance directive were associated with higher comfort levels in 48-hour spending restrictions, especially during mood episodes. Descriptive statistics for each vignette scenario are listed below.
+$~~~~~$ Respondents were most comfortable when care partners were involved in financial interventions and least comfortable with 48-hour spending restrictions. The presence of a prior bankruptcy or a psychiatric advance directive were associated with higher comfort levels in 48-hour spending restrictions, especially during mood episodes.
+
+$~~~~~$ The following table provides descriptive statistics for all vignette ratings.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 tab <- long %>% group_by(actors, context, moodstate) %>%
@@ -131,8 +141,6 @@ ft <- flextable(tab) %>%
   padding(3)
 ft
 ```
-
-
 
 # References
 
