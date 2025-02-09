@@ -1,0 +1,206 @@
+---
+title: "NIH BD/Finhealth Survey - Models"
+output:
+  rmarkdown::github_document:
+    html_preview: false
+---
+
+```{r class.source = 'fold-hide', warning=FALSE, message=FALSE}
+library(tidyverse)
+library(lme4)
+library(ordinal)
+library(mclogit)
+library(nnet)
+library(psych)
+library(ggstats)
+library(ggthemes)
+library(performance)
+library(marginaleffects)
+library(kableExtra)
+library(flextable)
+```
+
+## Load data
+
+```{r}
+load('data/NIH_survey.Rdata')
+```
+
+## Descriptive statistics
+
+### Means of outcome for all vignettes
+
+```{r}
+tab <- long %>% 
+summarize(
+          Mean = mean(y, na.rm = TRUE),
+          Median = median(y, na.rm = TRUE),
+          SD = sd(y, na.rm = TRUE),
+          ci = list(mean_cl_normal(y, conf.int = .95)),
+          obs = n_distinct(participant)
+) %>% unnest(c(ci))
+theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
+```
+
+### Means of outcome for each vignette
+
+```{r, warning=FALSE, message=FALSE}
+tab <- long %>% group_by(actors, context, moodstate) %>%
+summarize(
+          Mean = mean(y, na.rm = TRUE),
+          Median = median(y, na.rm = TRUE),
+          SD = sd(y, na.rm = TRUE),
+          ci = list(mean_cl_normal(y, conf.int = .95)),
+          obs = n_distinct(participant)
+) %>% unnest(c(ci))
+theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
+```
+
+## Factor analysis
+
+```{r}
+
+# TODO: relevel trust_* as ordered numeric
+# TODO: FA
+
+#wide %>% select (trust_carepartner, trust_clinician, trust_bank) %>% mutate_all(scale) %>% fa(., nfactors=1, fm='pa', rotate='varimax')
+```
+
+## Modeling
+
+### Unconditional means
+
+```{r}
+unconditional.means <- lmer(y ~ 1 + (1|participant) + (1|item), data=long)
+summary(unconditional.means)
+```
+
+```{r}
+performance::icc(unconditional.means, by_group=TRUE)
+```
+
+### Primary model
+
+```{r}
+m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
+
+summary(m1)
+```
+
+```{r}
+car::Anova(m1, type=3)
+```
+
+### Main effects
+
+```{r}
+
+# H1.1: Comfort ratings will be lower during stable periods vs. symptomatic periods
+# pairwise test
+# m2 is main effects model
+
+m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
+hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL))
+hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2=b1')
+```
+
+```{r}
+
+# H2.1: Among intervention levels, comfort ratings will be lowest for spending restrictions
+# calculate as the difference between an estimate and the mean of all estimates
+
+hypotheses(avg_predictions(m2, by='context', re.form=NULL), 'meandev')
+```
+
+```{r}
+
+# H3.1: Comfort will be highest for care partners
+# as meandev, like above
+
+hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm')
+```
+
+### Interaction effects
+
+```{r}
+
+# H1.2: Among intervention levels, comfort ratings will be highest for shared spending behaviors during mood episodes
+# m3 is interaction between intervention context and mood state
+
+m3 <- lmer(y ~ actors + context * moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='meandev', re.form=NULL)
+#plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sans')
+```
+
+```{r}
+
+# H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
+
+avg_predictions(m3, by=c('moodstate', 'context'))
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
+```
+
+### Interaction effects with respondent characteristics
+
+```{r}
+
+# H2.2: Evidence of advanced planning behaviors (operationalized as the prior creation of a psychiatric advanced directive) will lead to higher comfort ratings when sharing spending behaviors
+
+m4 <- lmer(y ~ actors + context * PAD + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m4, by=c('PAD', 'context'))
+avg_predictions(m4, by=c('PAD', 'context'), hypothesis='b9=b3')
+```
+
+```{r}
+
+# H2.3: Evidence of adverse financial events (operationalized as prior bankruptcy) will lead to higher comfort ratings of spending restrictions
+
+m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2')
+```
+
+```{r}
+
+# H3.2: Higher levels of trust in third parties will be associated with higher comfort ratings for those respective third parties
+
+# 3.2.1 High trust in clinicians predicts higher comfort ratings for Actor=Clinician
+m6.1 <- lmer(y ~ actors * trust_clinician + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.1, by=c('trust_clinician', 'actors'))
+avg_predictions(m6.1, by=c('trust_clinician', 'actors'), hypothesis='b6=b3')
+
+# 3.2.2 Trust in care partners predicts higher comfort ratings for Actor=Care partner
+m6.2 <- lmer(y ~ actors * trust_carepartner + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.2, by=c('trust_carepartner', 'actors'))
+avg_predictions(m6.2, by=c('trust_carepartner', 'actors'), hypothesis='b5=b2')
+
+# 3.2.3 Trust in banks predicts higher comfort ratings for actor=banks
+m6.3 <- lmer(y ~ actors * trust_bank + context + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m6.3, by=c('trust_bank', 'actors'))
+avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
+
+```
+
+```{r}
+
+# H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
+
+m7 <- lmer(y ~ actors * care_partner_help + context + moodstate + (1|participant) + (1|item), data=long)
+hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), 'meandev', multcomp='holm')
+```
+
+```{r}
+
+# H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
+
+m8 <- lmer(y ~ actors + context + moodstate + bfi_agreeableness + (1|participant) + (1|item), data=long)
+car::Anova(m8, type=3)
+```
+
+## Additional analysis
+
+```{r}
+long$trust_bank <- ordered(long$trust_bank, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
+long$trust_carepartner <- ordered(long$trust_carepartner, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
+long$trust_clinician <- ordered(long$trust_clinician, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
+```

@@ -1,0 +1,32 @@
+---
+title: "NIH BD/Finhealth Survey - Descriptive Statistics"
+output:
+  rmarkdown::github_document:
+    html_preview: false
+---
+
+```{r class.source='fold-hide', warning=FALSE, message=FALSE}
+library(tidyverse)
+library(summarytools)
+library(dplyr)
+library(tidyr)
+library(codified)
+library(forcats)
+library(plyr)
+```
+
+## Load data
+
+```{r}
+load('data/NIH_survey.Rdata')
+```
+
+## Demographics Summary
+
+```{r, include=FALSE}
+temp <- wide %>% select(gender, age, education, employment, income, main_financial_goal, pay_later_service, marital, ethnicity, hispanic, diagnosis_subtype, diagnosis_age, hospitalization, PAD, banked, savings, bankruptcy_declared, bankruptcy_considered, care_partner_help, trust_clinician, trust_carepartner, trust_bank)
+```
+
+```{r, echo=FALSE}
+dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE)
+```
