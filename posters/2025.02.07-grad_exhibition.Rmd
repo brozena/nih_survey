@@ -72,7 +72,7 @@ $~~~~~$ However, there remains a knowledge gap regarding how idiosyncratic, cont
 
 ![](./nsfnimh.png){ width=900px }
 
-<p style="font-size:20px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.*</p>
+<p style="font-size:20px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. Approved by Pennsylvania State University IRB, STUDY00019759.*</p>
 
 
 # Methods
