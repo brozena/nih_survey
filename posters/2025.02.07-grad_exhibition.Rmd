@@ -1,5 +1,5 @@
 ---
-title: Supportive Fintech for Bipolar Disorder
+title: Identifying and addressing privacy concerns regarding the use of financial data from individuals with BD
 author:
   - name: Jeff Brozena
     affil: 1
@@ -35,21 +35,23 @@ knit: pagedown::chrome_print
 main_findings:
   - "**Bipolar disorder** is an illness characterized by **financial instability** and risky decision-making."
   - "How can **open banking data** support existing contexts of caregiving in managing these risks?"
-main_width: 0.35
+poster_width: "36in"
+poster_height: "48in"
 main_textsize: 135px
 title_textsize: 125px
 affiliation_textsize: 35px
 author_textsize: 45px
 reference_textsize: 20px
-body_textsize: 44px
+body_textsize: 42px
 font_family: 'Noto Sans'
 main_fontfamily: 'Cutive Mono'
 primary_colour: "#041E42"
 secondary_colour: "#2c6290"
 column_padding: 20mm
 link-citations: true
-logoleft_name: "./nsf.png"
-logoright_name: "./nimh.png"
+logoright_name: "./materials_large_color.png"
+logoleft_name: "./preregistered_large_color.png"
+logocenter_name: "./qr.png"
 ---
 
 ```{r, echo=FALSE, results='hide', error=FALSE, warning=FALSE, message=FALSE}
@@ -65,6 +67,8 @@ load("../analysis/post/data/NIH_survey.Rdata")
 Bipolar disorder (BD) is strongly associated with financial instability [@richardsonFinancial2018]. Symptomatic periods in BD often manifest in poor financial decision-making. For example, 70% individuals with BD have reported impulsive spending during hypomania [@fletcherHighrisk2013]. Problematic financial behaviors during symptomatic periods can lead to serious long-term financial instability, which can severely impact the quality of life for individuals with BD and their care partners. Maintaining financial stability is a critical challenge to ensure the long-term wellbeing for individuals with BD.
 
 $~~~~~$ However, there remains a knowledge gap regarding how idiosyncratic, context-driven, and illness-specific factors impact financial decision-making in BD. Furthermore, the lack of granular, in-situ assessment methods is a key challenge against developing just-in-time and personalized interventions focusing on financial stability for this population. Given the importance of financial stability for individuals with BD, this remains a serious knowledge gap with broad practical and societal implications.
+
+![](./nsfnimh.png){ width=1000px }
 
 
 # Methods
@@ -86,8 +90,16 @@ We chose to include only third-party actors, opting to exclude self-management a
 
 $~~~~~$ We included a number of explanatory variables as well to explore relationships between clinical and financial topics. Clinical history variables included bipolar diagnostic subtype (i.e., BD-I, BD-II, etc.), whether the individual had ever been hospitalized, and whether they had a psychiatric advance directive in place. Financial history variables included whether the individual has considered or declared bankruptcy, whether they have asked care partners for help managing finances, their primary financial goal, and if they have used a Buy Now/Pay Later service. We also collected the Big Five Personality Inventory [@rammstedtMeasuring2007] and Consumer Financial Protection Bureau Financial Well-being Scale [@Measuring].
 
+$~~~~~$ We analyzed survey data using multilevel models [@gelmanData2007] to account for the vignette experiment's hierarchical structure (vignette items nested within respondents). This approach allowed us to explore differences in vignette ratings within and between participants and scenarios. Our main analysis incorporated random effects with the dependent variable as a continuous measure of a level of comfort on a scale of 0---10. We preregistered our survey design, hypotheses, and analysis plan with the Open Science Foundation [@brozenaIdentifying2023], where the resulting data and analysis code are available.
+
 
 # Results
+
+The majority of our respondents were female (59.9%), aged 35 - 44 (24.8%), attended at least some university (30.1%), and were employed full-time (41.4%). Respondents had primarily been diagnosed with BD-II (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority of respondents had received their BD diagnosis when aged 19 and 29 years.
+
+$~~~~~$ 50% of respondents reported having at least one hospitalization in their lifetime, while 8% had created a psychiatric advance directive. 61.5% of respondents had used a Buy Now/Pay Later service. 11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility. 
+
+$~~~~~$ Respondents were most comfortable when care partners were involved in financial interventions, while they were least comfortable with 48-hour spending restrictions. The presence of a prior bankruptcy or a psychiatric advance directive were associated with higher comfort levels in 48-hour spending restrictions, especially during mood episodes. Descriptive statistics for each vignette scenario are listed below.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 tab <- long %>% group_by(actors, context, moodstate) %>%
@@ -119,6 +131,8 @@ ft <- flextable(tab) %>%
   padding(3)
 ft
 ```
+
+
 
 # References
 
