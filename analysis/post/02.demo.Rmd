@@ -25,8 +25,34 @@ load('data/NIH_survey.Rdata')
 
 ```{r, include=FALSE}
 temp <- wide %>% select(gender, age, education, employment, income, main_financial_goal, pay_later_service, marital, ethnicity, hispanic, diagnosis_subtype, diagnosis_age, hospitalization, PAD, banked, savings, bankruptcy_declared, bankruptcy_considered, care_partner_help, trust_clinician, trust_carepartner, trust_bank)
+
+temp <- temp %>% 
+  dplyr::rename(
+    Gender = gender,
+    Age = age,
+    Education = education,
+    `Employment Status` = employment,    # Use backticks for names with spaces
+    `Income Level` = income,
+    `Main Financial Goal` = main_financial_goal,
+    `Has used Pay Later Services` = pay_later_service,
+    `Marital Status` = marital,
+    Ethnicity = ethnicity,
+    Hispanic = hispanic,
+    `Bipolar Subtype` = diagnosis_subtype,
+    `Prior Hospitalization` = hospitalization,
+    `Is Banked` = banked,
+    `Has Savings Account` = savings,
+    `Bankruptcy Declared` = bankruptcy_declared,
+    `Bankruptcy Considered` = bankruptcy_considered,
+    `Requested Financial Help from Care Partner` = care_partner_help,
+    `Age at Diagnosis` = diagnosis_age,
+    `Has Psychiatric Advance Directive` = PAD,
+    `Ease in Trusting Clinicians` = trust_clinician,
+    `Ease in Trusting Care Partner` = trust_carepartner,
+    `Ease in Trusting Banks` = trust_bank
+  )
 ```
 
 ```{r, echo=FALSE}
-dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE)
+view(dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE, style='grid', plain.ascii=TRUE))
 ```
