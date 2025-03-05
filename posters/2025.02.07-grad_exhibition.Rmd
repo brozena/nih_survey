@@ -43,7 +43,7 @@ main_textsize: 135px
 title_textsize: 120px
 affiliation_textsize: 35px
 author_textsize: 45px
-reference_textsize: 20px
+reference_textsize: 30px
 body_textsize: 46px
 font_family: 'Source Sans Pro'
 main_fontfamily: 'Cutive Mono'
