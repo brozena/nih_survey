@@ -26,7 +26,7 @@ affiliation:
     address: University College Dublin
 column_numbers: 3
 csl: "/Users/jab/Zotero/styles/association-for-computing-machinery.csl"
-bibliography: "/Users/jab/Downloads/zotero.bib"
+bibliography: "/Users/jab/Downloads/library.bib"
 filters:
   - pandoc-crossref
 output: 
@@ -56,6 +56,34 @@ logoleft_name: "./preregistered_large_color.png"
 logocenter_name: "./qr.png"
 ---
 
+```{css, echo = FALSE}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: left;
+  text-align: left;
+$if(csl-entry-spacing)$
+  margin-bottom: $csl-entry-spacing$;
+$endif$
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+  text-align: left;
+}
+div.csl-indent {
+  margin-left: 1em;
+}
+```
+
+
 ```{r, echo=FALSE, results='hide', error=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(plyr)
@@ -69,7 +97,7 @@ load("../analysis/post/data/NIH_survey.Rdata")
 
 # Background
 
-$~~~~$ Bipolar disorder (BD) is strongly associated with financial instability [@richardsonFinancial2018]. Symptomatic periods in BD often manifest in poor financial decision-making. <span style="color:red">**70% individuals with BD have reported impulsive spending during hypomania**</span> [@fletcherHighrisk2013].
+$~~~~$ Bipolar disorder (BD) is strongly associated with financial instability [@richardsonFinancial2018]. Symptomatic periods in BD often manifest in poor financial decision-making. <span style="color:#2c6290">**70% individuals with BD have reported impulsive spending during hypomania**</span> [@fletcherHighrisk2013].
 
 $~~~~$ Problematic financial behaviors during symptomatic periods can lead to serious long-term financial instability, which can severely impact the quality of life for individuals with BD and their care partners.
 
@@ -85,7 +113,7 @@ $~~~~$ Little is known about how illness-specific factors impact financial decis
 
 $~~~~$ We conducted an online conjoint survey (N=500; US Prolific) to understand whether and how individuals with BD are comfortable sharing financial data for illness management.
 
-$~~~~$ We used a factorial vignette approach to assess level of comfort with 18 hypothetical scenarios involving intervention actors, contexts, and timing. We chose to include only third-party actors, opting to exclude self-management as a possibility. <span style="color:red">**Our prior survey findings signal a high level of comfort when sharing financial data for self-management**</span> [@brozenaSupportive2024]. Participants rated level of comfort on a scale of 0---10.
+$~~~~$ We used a factorial vignette approach to assess level of comfort with 18 hypothetical scenarios involving intervention actors, contexts, and timing. We chose to include only third-party actors, opting to exclude self-management as a possibility. <span style="color:#2c6290">**Our prior survey findings signal a high level of comfort when sharing financial data for self-management**</span> [@brozenaSupportive2024]. Participants rated level of comfort on a scale of 0---10.
 
 |**Factor**|**Levels**|
 |-------|-----------|
@@ -97,21 +125,21 @@ $~~~~$ We used a factorial vignette approach to assess level of comfort with 18 
 
 # Results
 
-```{r echo=FALSE, fig.align="center", fig.width=5, fig.height=3, dpi=215}
+```{r echo=FALSE, fig.align="center", fig.width=4.75, fig.height=3, dpi=215}
 long$context <- revalue(long$context, c("planning_budgeting" = "Planning & Budgeting Help", "restrict_spending_48" = "48-hour Spending Restriction", "share_spending" = "Sharing Spending Details"))
 long$actors <- revalue(long$actors, c("banks" = "Banks", "carepartner" = "Care Partners", "clinicians" = "Clinicians"))
 m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
 plot_predictions(m2, by=c("actors", "context")) +
   labs(
-    title = "Comfort Levels with Third-Party Financial Data Sharing",
+    title = "Marginal Predictions of Comfort Levels \nAveraged Across Factors",
     x = "Financial Data Recipient",
     y = "Rating",
     color = "Intervention"
-  ) + theme_minimal() + theme(text=element_text(family="Source Sans Pro"))
+  ) + theme_minimal() + theme(plot.title.position='plot', plot.title=element_text(hjust=0.5), text=element_text(family="Source Sans Pro"))
 ```
 \
 
-$~~~~$ Our respondents were mostly female (59.9%), aged 35 - 44 (24.8%), university-educated (30.1%), and employed full-time (41.4%). BD-II was the most common diagnosis (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority received their BD diagnosis when aged 19 to 29 years. <span style="color:red">**11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility**</span>.
+$~~~~$ Our respondents were mostly female (59.9%), aged 35 - 44 (24.8%), university-educated (30.1%), and employed full-time (41.4%). BD-II was the most common diagnosis (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority received their BD diagnosis when aged 19 to 29 years. <span style="color:#2c6290">**11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility**</span>.
 
 
 $~~~~$ Evidence of high trust in care partners, prior advanced care planning, or prior adverse financial difficulties were associated with statistically significant increases to third-party data sharing comfort.
