@@ -83,8 +83,6 @@ performance::icc(unconditional.means, by_group=TRUE)
 
 ```{r}
 m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
-
-summary(m1)
 ```
 
 ```{r}
@@ -99,7 +97,9 @@ car::Anova(m1, type=3)
 # pairwise test
 # m2 is main effects model
 
-m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
+m2 <- lmer(y ~ 1 + actors + context + moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
+saveRDS(m2, file='models/m2.rds')
+
 hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL))
 hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2=b1')
 ```
@@ -109,7 +109,7 @@ hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2=b1')
 # H2.1: Among intervention levels, comfort ratings will be lowest for spending restrictions
 # calculate as the difference between an estimate and the mean of all estimates
 
-hypotheses(avg_predictions(m2, by='context', re.form=NULL), 'meandev')
+avg_predictions(m2, by='context', re.form=NULL, hypothesis = difference~meandev)
 ```
 
 ```{r}
@@ -127,8 +127,9 @@ hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm
 # H1.2: Among intervention levels, comfort ratings will be highest for shared spending behaviors during mood episodes
 # m3 is interaction between intervention context and mood state
 
-m3 <- lmer(y ~ actors + context * moodstate + (1|participant) + (1|item), data=long)
-avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='meandev', re.form=NULL)
+m3 <- lmer(y ~ actors + context * moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
+saveRDS(m3, file='models/m3.rds')
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis=difference~meandev, re.form=NULL)
 #plot_predictions(m3, by=c('context', 'moodstate')) + theme_tufte(base_family='sans')
 ```
 
@@ -157,7 +158,7 @@ avg_predictions(m4, by=c('PAD', 'context'), hypothesis='b9=b3')
 
 m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
-avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2')
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2') 
 ```
 
 ```{r}
@@ -186,14 +187,14 @@ avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
 # H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
 
 m7 <- lmer(y ~ actors * care_partner_help + context + moodstate + (1|participant) + (1|item), data=long)
-hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), 'meandev', multcomp='holm')
+hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), ~meandev, multcomp='holm')
 ```
 
 ```{r}
 
 # H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
 
-m8 <- lmer(y ~ actors + context + moodstate + bfi_agreeableness + (1|participant) + (1|item), data=long)
+m8 <- lmer(y ~ actors + context + moodstate + + diagnosis_subtype + bfi_agreeableness + (1|participant) + (1|item), data=long)
 car::Anova(m8, type=3)
 ```
 
