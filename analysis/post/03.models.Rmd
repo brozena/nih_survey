@@ -201,6 +201,36 @@ car::Anova(m8, type=3)
 ## Additional analysis
 
 ```{r}
+env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
+```
+
+```{r}
+
+# Are people okay sharing things between stability vs illness?
+
+m10 <- lmer(y ~ actors + (1|participant) + (1|item), data=env.2$long)
+avg_predictions(m10, by='actors')
+```
+
+```{r}
+
+# Model BFI10 with main effects
+
+m9bfi <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_extraversion + bfi_agreeableness + bfi_conscientiousness + bfi_neuroticism + bfi_openness + (1|participant) + (1|item), data=long)
+
+car::Anova(m9bfi, type=3)
+plot_predictions(m9bfi, condition=c('bfi_agreeableness', 'diagnosis_subtype'))
+```
+
+```{r}
+
+# Model neuroticism between moodstate (as neuroticism has stepwise effect in prior work)
+
+avg_predictions(m9bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
+plot_predictions(m9bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+```
+
+```{r}
 long$trust_bank <- ordered(long$trust_bank, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
 long$trust_carepartner <- ordered(long$trust_carepartner, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
 long$trust_clinician <- ordered(long$trust_clinician, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
