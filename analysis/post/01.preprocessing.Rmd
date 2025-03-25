@@ -317,7 +317,11 @@ long <- py$qual_int %>%
     ) %>%
     mutate(
         across(c(item, block, actors, context, moodstate), factor),
-        y = as.numeric(y)
+        y = as.numeric(y),
+        actors = recode(actors, "carepartner" = "Care Partner", "banks" = "Banks", "clinicians" = "Clinicians"),
+        context = recode(
+          context, "share_spending" = "Share Spending Details", "planning_budgeting" = "Help with Planning & Budgeting", "restrict_spending_48" = "48-hour Spending Restriction"),
+        moodstate = recode(moodstate, "mood" = "Symptomatic", "stable" = "Euthymic")
     )
 ```
 
