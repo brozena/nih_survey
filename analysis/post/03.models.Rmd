@@ -18,6 +18,7 @@ library(performance)
 library(marginaleffects)
 library(kableExtra)
 library(flextable)
+library(xtable)
 library(scales)
 ```
 
@@ -46,7 +47,7 @@ theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
 ### Means of outcome for each vignette
 
 ```{r, warning=FALSE, message=FALSE}
-tab <- long %>% group_by(actors, context, moodstate) %>%
+tab_vig <- long %>% group_by(actors, context, moodstate) %>%
 summarize(
           Mean = mean(y, na.rm = TRUE),
           Median = median(y, na.rm = TRUE),
@@ -54,17 +55,8 @@ summarize(
           ci = list(mean_cl_normal(y, conf.int = .95)),
           obs = n_distinct(participant)
 ) %>% unnest(c(ci))
-theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
-```
-
-## Factor analysis
-
-```{r}
-
-# TODO: relevel trust_* as ordered numeric
-# TODO: FA
-
-#wide %>% select (trust_carepartner, trust_clinician, trust_bank) %>% mutate_all(scale) %>% fa(., nfactors=1, fm='pa', rotate='varimax')
+print(xtable(tab_vig, type='latex', tabular.environment='longtable'), file='tables/tbl-vignette-descriptives.tex')
+theme_vanilla(flextable(tab_vig)) %>% colformat_double(digits = 2)
 ```
 
 ## Modeling
@@ -173,12 +165,12 @@ avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NU
 
 ggsave('plots/H1.3.png', width=9, height=7, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Mood State') +
-  scale_x_discrete(labels = label_wrap(10)) +
+  scale_color_discrete(label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
-### Interaction effects with respondent characteristics
+###  Interaction effects with respondent characteristics
 
 ```{r}
 
@@ -187,10 +179,11 @@ ggsave('plots/H1.3.png', width=9, height=7, units='in', dpi=600, plot_prediction
 m4 <- lmer(y ~ actors + context * PAD + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m4, by=c('PAD', 'context'))
 avg_predictions(m4, by=c('PAD', 'context'), hypothesis='b9=b3')
+
+# Figure caption: Respondents with psychiatric advance directives were more comfortable with all hypothetical interventions.
 ggsave('plots/H2.2.png', width=9, height=7, units='in', dpi=600, plot_predictions(m4, by=c('context', 'PAD')) +
-  labs(x='Intervention Context', y='Rating', color='Do you have a Psychiatric Advance Directive?') +
+  labs(x='Intervention Context', y='Rating', color='Psychiatric Advance\nDirective?') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_fill_discrete(name='Do you have a Psychiatric Advance Directive?') +
   theme_light(base_family='Lato')
 )
 ```
@@ -202,6 +195,26 @@ ggsave('plots/H2.2.png', width=9, height=7, units='in', dpi=600, plot_prediction
 m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2') 
+
+# Figure caption:
+ggsave('plots/H2.3.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5, by=c('context', 'bankruptcy_declared')) +
+  labs(x='Intervention Context', y='Rating', color='Bankruptcy Declared?') +
+  scale_x_discrete(labels = label_wrap(10)) +
+  theme_light(base_family='Lato')
+)
+
+# Exploratory Considering bankruptcy will lead to higher comfort ratings of spending restrictions
+
+m5.1 <- lmer(y ~ actors + context * bankruptcy_considered + moodstate + (1|participant) + (1|item), data=long)
+avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'))
+#avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'), hypothesis='b8=b2') 
+
+# Figure caption:
+ggsave('plots/H2.3.1.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered')) +
+  labs(x='Intervention Context', y='Rating', color='Bankruptcy Considered?') +
+  scale_x_discrete(labels = label_wrap(10)) +
+  theme_light(base_family='Lato')
+)
 ```
 
 ```{r}
