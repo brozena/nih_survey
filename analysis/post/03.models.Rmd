@@ -16,7 +16,6 @@ library(ggstats)
 library(ggthemes)
 library(performance)
 library(marginaleffects)
-library(sjPlot)
 library(kableExtra)
 library(flextable)
 library(xtable)
@@ -207,10 +206,9 @@ ggsave('plots/H2.3_interaction_context_bankruptcydeclared.png', width=9, height=
 
 m5.1 <- lmer(y ~ actors + context * bankruptcy_considered + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'))
-#avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'), hypothesis='b8=b2') 
 
 # Figure caption:
-ggsave('plots/H2.3.1_interaction_context_bankruptcyconsidered.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered')) +
+ggsave('plots/exp_interaction_context_bankruptcyconsidered.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Considered?') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
@@ -256,15 +254,120 @@ car::Anova(m8, type=3)
 
 ## Additional analysis
 
+### Requests for care partner help
+
+```{r}
+m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
+car::Anova(m9, type=3)
+ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600, plot_predictions(m9, by=c('actors', 'care_partner_help')) + 
+  labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+  theme_light(base_family='Lato') +
+  scale_x_discrete(labels = label_wrap(30))
+)
+```
+
+```{r}
+m9.1 <- lmer(y ~ actors * care_partner_help + context + moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
+ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.png', width=12, height=6, dpi=600, plot_predictions(m9.1, by=c('actors', 'care_partner_help', 'moodstate')) + 
+  labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+  theme_light(base_family='Lato') +
+  scale_x_discrete(labels = label_wrap(30)) +
+  facet_wrap(~moodstate, scales='free_x')
+)
+```
+
+```{r}
+m9.2 <- lmer(y ~ actors + context * care_partner_help + moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
+ggsave('plots/expl_interaction_carepartnerhelp_context.png', width=10, height=6, dpi=600, plot_predictions(m9.2, by=c('context',  'care_partner_help', 'moodstate')) + 
+  labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+  theme_light(base_family='Lato') +
+  scale_x_discrete(labels = label_wrap(20)) +
+  facet_wrap(~moodstate, scales='free_x')
+)
+```
+
+```{r}
+m9.3 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + diagnosis_age * care_partner_help + (1|participant) + (1|item), data=long)
+ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.png', width=12, height=6, dpi=600, plot_predictions(m9.3, by=c('context',  'care_partner_help', 'diagnosis_age')) + 
+  labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+  theme_light(base_family='Lato') +
+  scale_x_discrete(labels = label_wrap(20)) +
+  facet_wrap(~diagnosis_age, scales='free_x')
+)
+```
+m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
+
+### Financial goals
+
 ```{r}
 
 # Main financial goal and vignettes
 
-m9 <- lmer(y ~ actors + context  + moodstate + main_financial_goal + diagnosis_subtype + (1|participant) + (1|item), data=long)
-car::Anova(m9, type=3)
-avg_predictions(m9, by='main_financial_goal')
-plot_predictions(m9, by=c('main_financial_goal', 'context'), dpi=300) + facet_wrap(~ context) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_x_discrete(labels = label_wrap(40))
+m10 <- lmer(y ~ actors + context  + moodstate + main_financial_goal + diagnosis_subtype + (1|participant) + (1|item), data=long)
+car::Anova(m10, type=3)
+
+ggsave('plots/expl_main_financialgoal_context.png', width=8, height=6, dpi=600, plot_predictions(m10, by=c('main_financial_goal', 'context')) + 
+  labs(x='Main Financial Goal', y='Rating', color='Intervention Context') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
+  scale_x_discrete(labels = label_wrap(30))
+)
+
+# Main financial goals with interactions
+
+m10.1 <- lmer(y ~ actors + context + moodstate + main_financial_goal * diagnosis_subtype + (1|participant) +(1|item), data=long)
+ggsave('plots/expl_interaction_financialgoal_context_diagnosis.png', width=14, height=8, dpi=600, plot_predictions(m10.1, by=c('main_financial_goal', 'diagnosis_subtype', 'context')) + 
+  labs(x='Main Financial Goal', y='Rating', color='Diagnosis Subtype') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
+  scale_x_discrete(labels = label_wrap(30)) +
+  facet_wrap(~ context, scales='free_x')
+)
+
+m10.2 <- lmer(y ~ actors + context + moodstate + main_financial_goal * bankruptcy_declared + diagnosis_subtype + (1|participant) +(1|item), data=long)
+ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.png', width=14, height=8, dpi=600, plot_predictions(m10.2, by=c('main_financial_goal', 'actors', 'bankruptcy_declared')) + 
+  labs(x='Main Financial Goal', y='Rating', color='Actors') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
+  scale_x_discrete(labels = label_wrap(30)) +
+  facet_wrap(~bankruptcy_declared, scales='free_x')
+)
 ```
+
+```{r}
+
+# Main financial goal * bankruptcy declared and vignettes
+m11 <- lmer(y ~ actors + context  + moodstate + main_financial_goal * bankruptcy_declared + diagnosis_subtype + (1|participant) + (1|item), data=long)
+car::Anova(m11, type=3)
+
+avg_predictions(m11, by=c('main_financial_goal', 'bankruptcy_declared'))
+
+ggsave('plots/expl_interaction_financialgoal_context_bankruptcy.png', width=12, height=6 , dpi=600, plot_predictions(m11, by=c('main_financial_goal', 'context', 'bankruptcy_declared')) + 
+  labs(title='Bankruptcy Declared?', x='Main Financial Goal', y='Rating', color='Intervention Context') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=7, angle = 45, hjust = 1)) + 
+  scale_x_discrete(labels = label_wrap(35)) +
+  facet_wrap(~bankruptcy_declared, scales='free_x')
+)
+```
+
+### BFI10 and vignettes
+
+```{r}
+
+# Model BFI10 with main effects
+
+m12bfi <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_extraversion + bfi_agreeableness + bfi_conscientiousness + bfi_neuroticism + bfi_openness + (1|participant) + (1|item), data=long)
+
+car::Anova(m12bfi, type=3)
+plot_predictions(m12bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
+plot_predictions(m12bfi, condition=c('bfi_agreeableness', 'diagnosis_subtype'))
+plot_predictions(m12bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
+plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
+```
+
+### Actors (SSRI and NIH survey)
 
 ```{r}
 env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
@@ -272,32 +375,18 @@ env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
 
 ```{r}
 
-# Model BFI10 with main effects
-
-m10bfi <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_extraversion + bfi_agreeableness + bfi_conscientiousness + bfi_neuroticism + bfi_openness + (1|participant) + (1|item), data=long)
-
-car::Anova(m10bfi, type=3)
-plot_predictions(m10bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
-plot_predictions(m10bfi, condition=c('bfi_agreeableness', 'diagnosis_subtype'))
-plot_predictions(m10bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
-plot_predictions(m10bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
-plot_predictions(m10bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
-```
-
-```{r}
-
 # Are people okay sharing things between stability vs illness?
 
-m11 <- lmer(y ~ actors + (1|participant) + (1|item), data=env.2$long)
-avg_predictions(m11, by='actors')
+m13 <- lmer(y ~ actors + (1|participant) + (1|item), data=env.2$long)
+avg_predictions(m13, by='actors')
 ```
 
 ```{r}
 
 # Model neuroticism between moodstate (as neuroticism has stepwise effect in prior work)
 
-avg_predictions(m10bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
-plot_predictions(m10bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+avg_predictions(m12bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
+plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
 ```
 
 ```{r}
