@@ -16,6 +16,7 @@ library(ggstats)
 library(ggthemes)
 library(performance)
 library(marginaleffects)
+library(sjPlot)
 library(kableExtra)
 library(flextable)
 library(xtable)
@@ -84,9 +85,10 @@ car::Anova(m1, type=3)
 
 ### Main effects
 
+#### ❌ H1.1: Comfort ratings will be lower during stable periods vs. symptomatic periods
+
 ```{r}
 
-# ❌ H1.1: Comfort ratings will be lower during stable periods vs. symptomatic periods
 # pairwise test
 # m2 is main effects model
 
@@ -100,37 +102,39 @@ hypotheses(avg_predictions(m2, by='moodstate', re.form=NULL), 'b2=b1')
 avg_predictions(m2, by='diagnosis_subtype', re.form=NULL)
 
 # Figure caption: Overall comfort ratings were lower during euthymic periods when compared to symptomatic periods.
-ggsave('plots/H1.1.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=c('diagnosis_subtype', 'moodstate')) +
+ggsave('plots/H1.1_main_moodstate.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=c('diagnosis_subtype', 'moodstate')) +
   labs(x='Diagnosis Subtype', y='Rating', color='Mood State') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
+#### ✅ H2.1: Among intervention levels, comfort ratings will be lowest for spending restrictions
+
 ```{r}
 
-# ✅ H2.1: Among intervention levels, comfort ratings will be lowest for spending restrictions
 # calculate as the difference between an estimate and the mean of all estimates
 
 avg_predictions(m2, by='context', re.form=NULL, hypothesis = difference~meandev)
 
 # Figure caption: Respondents were least comfortable overall with a hypothetical 48-hour spending restriction intervention.
-ggsave('plots/H2.1.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=c('context')) +
+ggsave('plots/H2.1_main_context.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=c('context')) +
     labs(x='Intervention Context', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
+#### ✅ H3.1: Comfort will be highest for care partners
+
 ```{r}
 
-# ✅ H3.1: Comfort will be highest for care partners
 # as meandev, like above
 
 hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm')
 
 # Figure caption Respondents were most comfortable sharing financial data with care partners.
-ggsave('plots/H3.1.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by='actors') +
+ggsave('plots/H3.1_main_actors.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by='actors') +
   labs(x='Actors', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
@@ -139,9 +143,10 @@ ggsave('plots/H3.1.png', width=9, height=7, units='in', dpi=600, plot_prediction
 
 ### Interaction effects
 
+#### ❌ H1.2: Among intervention levels, comfort ratings will be highest for shared spending behaviors during mood episodes
+
 ```{r}
 
-# ❌ H1.2: Among intervention levels, comfort ratings will be highest for shared spending behaviors during mood episodes
 # m3 is interaction between intervention context and mood state
 
 m3 <- lmer(y ~ actors + context * moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
@@ -149,57 +154,50 @@ saveRDS(m3, file='models/m3.rds')
 avg_predictions(m3, by=c('moodstate', 'context'), hypothesis=difference~meandev, re.form=NULL)
 
 # Figure caption: Respondents were most comfortable seeking help with planning and budgeting, regardless of the presence of a mood episode.
-ggsave('plots/H1.2.png', width=9, height=7, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
+ggsave('plots/H1.2_interaction_context_moodstate.png', width=9, height=7, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Mood State') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
-```{r}
+#### ✅ H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
 
-# ✅ H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
+```{r}
 
 avg_predictions(m3, by=c('moodstate', 'context'))
 avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
 
-# Figure caption: 
-
-ggsave('plots/H1.3.png', width=9, height=7, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
-  labs(x='Intervention Context', y='Rating', color='Mood State') +
-  scale_color_discrete(label_wrap(10)) +
-  theme_light(base_family='Lato')
-)
 ```
 
 ###  Interaction effects with respondent characteristics
 
-```{r}
+#### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors
 
-# ✅ H2.2: Evidence of advanced planning behaviors (operationalized as the prior creation of a psychiatric advanced directive) will lead to higher comfort ratings when sharing spending behaviors
+```{r}
 
 m4 <- lmer(y ~ actors + context * PAD + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m4, by=c('PAD', 'context'))
 avg_predictions(m4, by=c('PAD', 'context'), hypothesis='b9=b3')
 
 # Figure caption: Respondents with psychiatric advance directives were more comfortable with all hypothetical interventions.
-ggsave('plots/H2.2.png', width=9, height=7, units='in', dpi=600, plot_predictions(m4, by=c('context', 'PAD')) +
+ggsave('plots/H2.2_interaction_context_PAD.png', width=9, height=7, units='in', dpi=600, plot_predictions(m4, by=c('context', 'PAD')) +
   labs(x='Intervention Context', y='Rating', color='Psychiatric Advance\nDirective?') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
-```{r}
+#### ✅ H2.3: Evidence of adverse financial events (e.g., prior bankruptcy) will lead to higher comfort ratings of spending restrictions
 
-# ✅ H2.3: Evidence of adverse financial events (operationalized as prior bankruptcy) will lead to higher comfort ratings of spending restrictions
+```{r}
 
 m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2') 
 
 # Figure caption:
-ggsave('plots/H2.3.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5, by=c('context', 'bankruptcy_declared')) +
+ggsave('plots/H2.3_interaction_context_bankruptcydeclared.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5, by=c('context', 'bankruptcy_declared')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Declared?') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
@@ -212,16 +210,16 @@ avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'))
 #avg_predictions(m5.1, by=c('bankruptcy_considered', 'context'), hypothesis='b8=b2') 
 
 # Figure caption:
-ggsave('plots/H2.3.1.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered')) +
+ggsave('plots/H2.3.1_interaction_context_bankruptcyconsidered.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Considered?') +
   scale_x_discrete(labels = label_wrap(10)) +
   theme_light(base_family='Lato')
 )
 ```
 
-```{r}
+#### ✅ H3.2: Higher levels of trust in third parties will be associated with higher comfort ratings for those respective third parties
 
-# ✅ H3.2: Higher levels of trust in third parties will be associated with higher comfort ratings for those respective third parties
+```{r}
 
 # ✅ H3.2.1 High trust in clinicians predicts higher comfort ratings for Actor=Clinician
 m6.1 <- lmer(y ~ actors * trust_clinician + context + moodstate + (1|participant) + (1|item), data=long)
@@ -240,23 +238,23 @@ avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
 
 ```
 
-```{r}
+#### ❌ H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
 
-# ❌ H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
+```{r}
 
 m7 <- lmer(y ~ actors * care_partner_help + context + moodstate + (1|participant) + (1|item), data=long)
 hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), ~meandev, multcomp='holm')
 ```
 
-```{r}
+#### ✅ H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
 
-# ✅ H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
+```{r}
 
 m8 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_agreeableness + (1|participant) + (1|item), data=long)
 car::Anova(m8, type=3)
 ```
 
-## Additional analysis;
+## Additional analysis
 
 ```{r}
 
@@ -278,15 +276,13 @@ env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
 
 m10bfi <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_extraversion + bfi_agreeableness + bfi_conscientiousness + bfi_neuroticism + bfi_openness + (1|participant) + (1|item), data=long)
 
-car::Anova(m9bfi, type=3)
+car::Anova(m10bfi, type=3)
 plot_predictions(m10bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
 plot_predictions(m10bfi, condition=c('bfi_agreeableness', 'diagnosis_subtype'))
 plot_predictions(m10bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
 plot_predictions(m10bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
 plot_predictions(m10bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
 ```
-
-\
 
 ```{r}
 
@@ -300,8 +296,8 @@ avg_predictions(m11, by='actors')
 
 # Model neuroticism between moodstate (as neuroticism has stepwise effect in prior work)
 
-avg_predictions(m9bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
-plot_predictions(m9bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+avg_predictions(m10bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
+plot_predictions(m10bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
 ```
 
 ```{r}

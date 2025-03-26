@@ -4,8 +4,10 @@ analysis/post/deployment1.csv
 analysis/pre/**
 analysis/post/data/**
 manuscripts/**
+analysis/post/03.models_files/**
 NDA/**
 .Rproj.user
+
 
 # History files
 .Rhistory
