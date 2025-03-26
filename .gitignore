@@ -1,10 +1,10 @@
 analysis/post/deployment1.csv
 *.code-workspace
 *.Rdata
-analysis/post/data/*
-analysis/NDA/*
-analysis/pre/*
-analysis/NDA/*
+analysis/pre/**
+analysis/post/data/**
+manuscripts/**
+NDA/**
 .Rproj.user
 
 # History files

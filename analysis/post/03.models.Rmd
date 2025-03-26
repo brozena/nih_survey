@@ -163,6 +163,8 @@ ggsave('plots/H1.2.png', width=9, height=7, units='in', dpi=600, plot_prediction
 avg_predictions(m3, by=c('moodstate', 'context'))
 avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
 
+# Figure caption: 
+
 ggsave('plots/H1.3.png', width=9, height=7, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Mood State') +
   scale_color_discrete(label_wrap(10)) +
@@ -254,7 +256,7 @@ m8 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_agreeablen
 car::Anova(m8, type=3)
 ```
 
-## Additional analysis
+## Additional analysis;
 
 ```{r}
 
