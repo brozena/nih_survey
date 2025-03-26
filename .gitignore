@@ -28,6 +28,7 @@ NDA/**
 /*.Rcheck/
 
 # RStudio files
+NIH.Rproj
 .Rproj.user/
 
 # produced vignettes
