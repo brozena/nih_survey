@@ -389,6 +389,13 @@ avg_predictions(m12bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=
 plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
 ```
 
+### Diagnosis and bankruptcy rates
+
+```{r}
+chisq.test(x = wide$diagnosis_subtype, y = wide$bankruptcy_declared, simulate.p.value=TRUE)
+fisher.test(table(wide$diagnosis_subtype, wide$bankruptcy_declared))
+```
+
 ```{r}
 long$trust_bank <- ordered(long$trust_bank, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
 long$trust_carepartner <- ordered(long$trust_carepartner, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
