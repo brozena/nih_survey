@@ -160,18 +160,18 @@ ggsave('plots/H1.2_interaction_context_moodstate.png', width=9, height=7, units=
 )
 ```
 
-#### ✅ H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b2=b5')
+#### ✅ H1.3: Among intervention levels, comfort ratings for spending restrictions will be higher during mood episodes vs. during stable periods (H0: 'b1=b4')
 
 ```{r}
 
 avg_predictions(m3, by=c('moodstate', 'context'))
-avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b2=b5', re.form=NULL)
+avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b1=b4', re.form=NULL)
 
 ```
 
 ###  Interaction effects with respondent characteristics
 
-#### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors
+#### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors (H0: 'b3=b9')
 
 ```{r}
 
@@ -193,9 +193,9 @@ ggsave('plots/H2.2_interaction_context_PAD.png', width=9, height=7, units='in', 
 
 m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
-avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b8=b2') 
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b7=b1') 
 
-# Figure caption:
+# Figure caption: Respondents who had declared bankruptcy were significantly more comfortable with 48-hour spending restrictions.
 ggsave('plots/H2.3_interaction_context_bankruptcydeclared.png', width=9, height=7, units='in', dpi=600, plot_predictions(m5, by=c('context', 'bankruptcy_declared')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Declared?') +
   scale_x_discrete(labels = label_wrap(10)) +

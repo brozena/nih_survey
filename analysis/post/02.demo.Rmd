@@ -54,5 +54,5 @@ temp <- temp %>%
 ```
 
 ```{r, echo=FALSE}
-dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE, style='grid', plain.ascii=TRUE)
+dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE, valid.col=FALSE, style='grid', plain.ascii=FALSE)
 ```
