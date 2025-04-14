@@ -6,20 +6,9 @@ output:
 ---
 
 ```{r class.source = 'fold-hide', warning=FALSE, message=FALSE}
-library(tidyverse)
-library(lme4)
-library(ordinal)
-library(mclogit)
-library(nnet)
-library(psych)
-library(ggstats)
-library(ggthemes)
-library(performance)
-library(marginaleffects)
-library(kableExtra)
-library(flextable)
-library(xtable)
-library(scales)
+install.packages('pacman')
+pacman::p_load("tidyverse", "lme4", "ordinal", "mclogit", "nnet", "psych", "ggstats", "ggthemes", "performance", "marginaleffects", "kableExtra", "flextable", "xtable", "scales")
+
 ```
 
 ## Load data
@@ -258,7 +247,7 @@ car::Anova(m8, type=3)
 
 ```{r}
 m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
-car::Anova(m9, type=3)
+car::Anova(m9, type=3)≥≥
 ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600, plot_predictions(m9, by=c('actors', 'care_partner_help')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
@@ -332,6 +321,15 @@ ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.png', wid
   scale_x_discrete(labels = label_wrap(30)) +
   facet_wrap(~bankruptcy_declared, scales='free_x')
 )
+
+m10.3 <- lmer(y ~ actors + context * main_financial_goal + moodstate + bankruptcy_declared + diagnosis_subtype + (1|participant) +(1|item), data=long)
+ggsave('plots/expl_interaction_financialgoal_context_moodstate.png', width=14, height=8, dpi=600, plot_predictions(m10.3, by=c('main_financial_goal', 'context', 'moodstate')) + 
+  labs(x='Main Financial Goal', y='Rating', color='Context') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
+  scale_x_discrete(labels = label_wrap(30)) +
+  facet_wrap(~moodstate, scales='free_x')
+)
 ```
 
 ```{r}
@@ -370,13 +368,28 @@ plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
 ### Actors (SSRI and NIH survey)
 
 ```{r}
+
+# Create combined frame
 env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
+long.sample1 <- env.2$long
+long.sample1$sample <- 1
+long.sample1$participant <- as.numeric(paste0("1", long.sample$participant))
+long.sample1 <- long.sample1 %>% mutate(actors = recode(actors, "clinician" = "Clinicians", "family" = "Family", "you" = "Self"))
+long.sample2 <- long
+long.sample2$sample <- 2
+long.sample2$duration <- as.numeric(long.sample2$duration)
+combined.samples <- bind_rows(long.sample1, long.sample2)
+
+# Create combined model
+combined.model <- lmer(y ~ actors + (1|participant) + (1|item) + (1|sample), data=combined.samples)
+
+# Marginal predictions
+avg_predictions(combined.model, by="actors")
 ```
 
 ```{r}
 
 # Are people okay sharing things between stability vs illness?
-
 m13 <- lmer(y ~ actors + (1|participant) + (1|item), data=env.2$long)
 avg_predictions(m13, by='actors')
 ```
