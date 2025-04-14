@@ -385,6 +385,12 @@ combined.model <- lmer(y ~ actors + (1|participant) + (1|item) + (1|sample), dat
 
 # Marginal predictions
 avg_predictions(combined.model, by="actors")
+ggsave('plots/expl_combined_actors.png', width=8, height=6, dpi=600, plot_predictions(combined.model, by=c('actors', 'sample')) + 
+  labs(title='Comfort ratings across samples', x='Actor', y='Rating', color='Sample') +
+  theme_light(base_family='Lato') + 
+  theme(axis.text.x = element_text(size=7)) + 
+  scale_x_discrete(labels = label_wrap(35))
+)
 ```
 
 ```{r}
