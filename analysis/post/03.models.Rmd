@@ -391,7 +391,7 @@ env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
 long.sample1 <- env.2$long
 long.sample1$sample <- 1
 long.sample1$participant <- as.numeric(paste0("1", long.sample1$participant))
-#long.sample1$actors <- long.sample1 %>% mutate(actors = recode(actors, "clinician" = "Clinicians", "family" = "Family", "you" = "Self"))
+long.sample1 <- long.sample1 %>% mutate(actors = dplyr::recode(actors, "clinician" = "Clinicians", "family" = "Family", "you" = "Self"))
 long.sample2 <- long
 long.sample2$sample <- 2
 long.sample2$duration <- as.numeric(long.sample2$duration)
