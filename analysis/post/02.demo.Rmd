@@ -6,13 +6,9 @@ output:
 ---
 
 ```{r class.source='fold-hide', warning=FALSE, message=FALSE}
-library(tidyverse)
-library(summarytools)
-library(dplyr)
-library(tidyr)
-library(codified)
-library(forcats)
-library(plyr)
+install.packages("pacman", repos = "https://cloud.r-project.org")
+pacman::p_load("tidyverse", "summarytools", "dplyr", "tidyr", "codified", "forcats", "plyr")
+install.packages('altair', repos = "https://cloud.r-project.org")
 ```
 
 ## Load data
@@ -55,4 +51,25 @@ temp <- temp %>%
 
 ```{r, echo=FALSE}
 dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=FALSE, valid.col=FALSE, style='grid', plain.ascii=FALSE)
+```
+
+## Create descriptive plots
+
+```{r}
+
+library('altair')
+
+bar <- alt$Chart(wide)$
+transform_filter(datum$main_financial_goal != 'null')$
+transform_joinaggregate(TotalCount='count(main_financial_goal)')$
+transform_calculate(PercentTotal="datum\\.count(main_financial_goal) / datum\\.TotalCount")$
+mark_bar()$
+encode(
+    x=alt$X('PercentTotal:Q'), axis=alt$axis(format='.0%'),
+    y='main_financial_goal:N'
+)
+
+bar
+
+#bar$save('plots/desc_main_financial_goal.png', ppi=600)
 ```

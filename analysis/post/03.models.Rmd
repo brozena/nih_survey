@@ -6,9 +6,26 @@ output:
 ---
 
 ```{r class.source = 'fold-hide', warning=FALSE, message=FALSE}
-install.packages('pacman')
-pacman::p_load("tidyverse", "lme4", "ordinal", "mclogit", "nnet", "psych", "ggstats", "ggthemes", "performance", "marginaleffects", "kableExtra", "flextable", "xtable", "scales")
-
+install.packages('pacman', repos = "https://cloud.r-project.org")
+pacman::p_load(
+  "tidyverse",
+  "lme4", 
+  "ordinal", 
+  "multcomp", 
+  "mclogit", 
+  "nnet", 
+  "psych", 
+  "car", 
+  "ggstats", 
+  "ggthemes", 
+  "performance", 
+  "marginaleffects", 
+  "kableExtra", 
+  "flextable", 
+  "xtable", 
+  "scales", 
+  "pander"
+)
 ```
 
 ## Load data
@@ -64,7 +81,7 @@ performance::icc(unconditional.means, by_group=TRUE)
 ### Primary model
 
 ```{r}
-m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
+m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + income + ethnicity + hispanic + diagnosis_subtype + hospitalization + banked + savings + trust_clinician + trust_carepartner + trust_bank + cfpb_score + care_partner_help + bfi_agreeableness + (1|participant) + (1|item), data=long)
 ```
 
 ```{r}
@@ -247,7 +264,7 @@ car::Anova(m8, type=3)
 
 ```{r}
 m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
-car::Anova(m9, type=3)≥≥
+car::Anova(m9, type=3)
 ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600, plot_predictions(m9, by=c('actors', 'care_partner_help')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
@@ -373,8 +390,8 @@ plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
 env.2 <- loadEnvironment('../../../SSRI/data/finhealth_data.Rdata')
 long.sample1 <- env.2$long
 long.sample1$sample <- 1
-long.sample1$participant <- as.numeric(paste0("1", long.sample$participant))
-long.sample1 <- long.sample1 %>% mutate(actors = recode(actors, "clinician" = "Clinicians", "family" = "Family", "you" = "Self"))
+long.sample1$participant <- as.numeric(paste0("1", long.sample1$participant))
+#long.sample1$actors <- long.sample1 %>% mutate(actors = recode(actors, "clinician" = "Clinicians", "family" = "Family", "you" = "Self"))
 long.sample2 <- long
 long.sample2$sample <- 2
 long.sample2$duration <- as.numeric(long.sample2$duration)
@@ -384,9 +401,9 @@ combined.samples <- bind_rows(long.sample1, long.sample2)
 combined.model <- lmer(y ~ actors + (1|participant) + (1|item) + (1|sample), data=combined.samples)
 
 # Marginal predictions
-avg_predictions(combined.model, by="actors")
+pandoc.table(avg_predictions(combined.model, by=c("actors", "sample"), hypothesis=~meandev | sample), style='rmarkdown', split.table=Inf, digits=2)
 ggsave('plots/expl_combined_actors.png', width=8, height=6, dpi=600, plot_predictions(combined.model, by=c('actors', 'sample')) + 
-  labs(title='Comfort ratings across samples', x='Actor', y='Rating', color='Sample') +
+  labs(x='Actor', y='Rating', color='Sample') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=7)) + 
   scale_x_discrete(labels = label_wrap(35))
