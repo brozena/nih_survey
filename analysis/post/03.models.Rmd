@@ -175,7 +175,7 @@ avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b1=b4', re.form=NU
 
 ```
 
-###  Interaction effects with respondent characteristics
+### Interaction effects with respondent characteristics
 
 #### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors (H0: 'b3=b9')
 
@@ -243,12 +243,13 @@ avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
 
 ```
 
-#### ❌ H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
+#### ✅ H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
 
 ```{r}
 
 m7 <- lmer(y ~ actors * care_partner_help + context + moodstate + (1|participant) + (1|item), data=long)
-hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), ~meandev, multcomp='holm')
+#hypotheses(avg_predictions(m7, by=c('actors', 'care_partner_help')), ~meandev, multcomp='holm')
+hypotheses(avg_predictions(m7, newdata=datagrid(actors=c("Banks", "Care Partner", "Clinicians"), care_partner_help=c("Yes", "No")), by=c('care_partner_help')), "b2=b1")
 ```
 
 #### ✅ H4.1: Agreeableness will have a significant (non-directional) effect on level of comfort
@@ -302,7 +303,8 @@ ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.png', width=12, heig
   facet_wrap(~diagnosis_age, scales='free_x')
 )
 ```
-m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
+
+m9 \<- lmer(y \~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1\|participant) + (1\|item), data=long)
 
 ### Financial goals
 
@@ -444,7 +446,7 @@ long$trust_clinician <- ordered(long$trust_clinician, levels=c('Extremely diffic
 ```{r}
 #long$context <- revalue(long$context, c("planning_budgeting" = "Planning & Budgeting Help", "restrict_spending_48" = "48-hour Spending Restriction", "share_spending" = "Sharing Spending Details"))
 #long$actors <- revalue(long$actors, c("banks" = "Banks", "carepartner" = "Care Partners", "clinicians" = "Clinicians"))
-ggsave('plots/expl_main_actors_context_moodstate.png', width=10, height=6, dpi=600, plot_predictions(m2, by=c("actors", "context", "moodstate")) +
+ggsave('plots/expl_main_actors_context_moodstate.png', width=8, height=4, dpi=600, plot_predictions(m2, by=c("actors", "context", "moodstate")) +
   labs(
     #title = "Marginal Predictions of Comfort Levels \nAveraged Across Factors",
     x = "Intervention Actor",
