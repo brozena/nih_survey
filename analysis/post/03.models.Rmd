@@ -47,7 +47,9 @@ summarize(
           ci = list(mean_cl_normal(y, conf.int = .95)),
           obs = n_distinct(participant)
 ) %>% unnest(c(ci))
-theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2)
+
+save_as_image(theme_vanilla(autofit(theme_vanilla(flextable(tab)) %>% colformat_double(digits = 2))), 'tables/tbl-all-descriptives.png', res=600)
+
 ```
 
 ### Means of outcome for each vignette
@@ -58,11 +60,13 @@ summarize(
           Mean = mean(y, na.rm = TRUE),
           Median = median(y, na.rm = TRUE),
           SD = sd(y, na.rm = TRUE),
-          ci = list(mean_cl_normal(y, conf.int = .95)),
-          obs = n_distinct(participant)
-) %>% unnest(c(ci))
+          ci = list(mean_cl_normal(y, conf.int = .95) %>%
+                      rename(Mean2 = y, Lower = ymin, Upper = ymax)),
+          Obs = n_distinct(participant)
+) %>% unnest %>% 
+  dplyr::select(-Mean2)
 print(xtable(tab_vig, type='latex', tabular.environment='longtable'), file='tables/tbl-vignette-descriptives.tex')
-theme_vanilla(flextable(tab_vig)) %>% colformat_double(digits = 2)
+save_as_image(theme_vanilla(autofit(flextable(tab_vig)) %>% colformat_double(digits = 2)), 'tables/tbl-vignette-descriptives.png', res=600)
 ```
 
 ## Modeling
@@ -439,6 +443,10 @@ fisher.test(table(wide$diagnosis_subtype, wide$bankruptcy_declared))
 ```
 
 ```{r}
+avg_predictions
+```
+
+```{r}
 long$trust_bank <- ordered(long$trust_bank, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
 long$trust_carepartner <- ordered(long$trust_carepartner, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
 long$trust_clinician <- ordered(long$trust_clinician, levels=c('Extremely difficult', 'Somewhat difficult', 'Neither easy nor difficult', 'Somewhat easy', 'Extremely easy'))
@@ -473,7 +481,8 @@ ggsave('plots/expl_main_actors_context_moodstate.png', width=9, height=5, dpi=60
 m14 <- lmer(y ~ actors + context  + moodstate + hospitalization + diagnosis_subtype + (1|participant) + (1|item), data=long)
 car::Anova(m11, type=3)
 
-avg_predictions(m14, newdata=datagrid(hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization'))
+avg_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization'))
+avg_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization'))
 
 ggsave('plots/expl_main_context_hospitalization_moodstate.png', width=9, height=6 , dpi=600, plot_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization', 'moodstate')) + 
   labs(x='Intervention Context', y='Rating', color='Prior Hospitalization?') +

@@ -25,7 +25,7 @@ affiliation:
   - num: 4
     address: University College Dublin
 column_numbers: 3
-csl: "/Users/jab/Zotero/styles/association-for-computing-machinery.csl"
+csl: "/Users/jab/Zotero/styles/association-for-computing-machinery-unsorted.csl"
 bibliography: "/Users/jab/Downloads/library.bib"
 filters:
   - pandoc-crossref
@@ -125,7 +125,7 @@ $~~~~$ We used a factorial vignette approach to assess level of comfort with 18 
 
 # Results
 
-```{r echo=FALSE, fig.align="center", fig.width=4.75, fig.height=3, dpi=215}
+```{r echo=FALSE, error=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=4.75, fig.height=3, dpi=215}
 long$context <- revalue(long$context, c("planning_budgeting" = "Planning & Budgeting Help", "restrict_spending_48" = "48-hour Spending Restriction", "share_spending" = "Sharing Spending Details"))
 long$actors <- revalue(long$actors, c("banks" = "Banks", "carepartner" = "Care Partners", "clinicians" = "Clinicians"))
 m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
@@ -142,7 +142,7 @@ plot_predictions(m2, by=c("actors", "context")) +
 $~~~~$ Our respondents were mostly female (59.9%), aged 35 - 44 (24.8%), university-educated (30.1%), and employed full-time (41.4%). BD-II was the most common diagnosis (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority received their BD diagnosis when aged 19 to 29 years. <span style="color:#2c6290">**11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility**</span>.
 
 
-$~~~~$ Evidence of high trust in care partners, prior advanced care planning, or prior adverse financial difficulties were associated with statistically significant increases to third-party data sharing comfort.
+$~~~~$ High trust in care partners, prior advanced care planning, and prior adverse financial difficulties were associated with statistically significant increases in comfort with third-party data sharing.
 
 
 # Conclusion
