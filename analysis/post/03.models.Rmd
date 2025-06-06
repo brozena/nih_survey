@@ -115,7 +115,7 @@ hypotheses(avg_predictions(m2, by='diagnosis_subtype', re.form=NULL), ~meandev)
 ggsave('plots/H1.1_main_moodstate.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=('moodstate')) +
   labs(x='Mood State', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 ```
@@ -132,7 +132,7 @@ avg_predictions(m2, by='context', re.form=NULL, hypothesis = difference~meandev)
 ggsave('plots/H2.1_main_context.png', width=8, height=6, units='in', dpi=600, plot_predictions(m2, by=c('context')) +
   labs(x='Intervention Context', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 ```
@@ -149,7 +149,7 @@ hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm
 ggsave('plots/H3.1_main_actors.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by='actors') +
   labs(x='Actors', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 ```
@@ -181,7 +181,7 @@ avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b1=b4', re.form=NU
 ggsave('plots/H1.3_interaction_context_moodstate.png', width=8, height=6, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Mood State') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 ```
@@ -200,7 +200,7 @@ avg_predictions(m4, newdata=datagrid(PAD=c('Yes', 'No'), context=c("48-hour Spen
 ggsave('plots/H2.2_interaction_context_PAD.png', width=9, height=7, units='in', dpi=600, plot_predictions(m4, newdata=datagrid(PAD=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'PAD')) +
   labs(x='Intervention Context', y='Rating', color='Psychiatric Advance\nDirective?') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 ```
@@ -217,7 +217,7 @@ avg_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No')), by=c('
 ggsave('plots/H2.3_interaction_context_bankruptcydeclared.png', width=9, height=6, units='in', dpi=600, plot_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'bankruptcy_declared')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Declared?') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato')
 )
 
@@ -230,7 +230,7 @@ avg_predictions(m5.1, by=c('bankruptcy_considered', 'context', 'moodstate'))
 ggsave('plots/expl_interaction_context_bankruptcyconsidered.png', width=9, height=6, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Considered?') +
   scale_x_discrete(labels = label_wrap(10)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   theme_light(base_family='Lato') +
   facet_wrap(~moodstate, scales='free_x')
 )
@@ -285,7 +285,7 @@ ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600,
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(30)) +
-  scale_y_continuous(limits=c(0,7))
+  scale_y_continuous(limits=c(1,7))
 )
 ```
 
@@ -294,7 +294,7 @@ m9.1 <- lmer(y ~ actors * care_partner_help + context + moodstate + diagnosis_su
 ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.png', width=9, height=6, dpi=600, plot_predictions(m9.1, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks"), moodstate=c('Euthymic', 'Symptomatic')), by=c('actors', 'care_partner_help', 'moodstate')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   scale_x_discrete(labels = label_wrap(30)) +
   facet_wrap(~moodstate, scales='free_x')
 )
@@ -306,7 +306,7 @@ ggsave('plots/expl_interaction_carepartnerhelp_context.png', width=9, height=6, 
   labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(20)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~moodstate, scales='free_x')
 )
 ```
@@ -317,7 +317,7 @@ ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.png', width=12, heig
   labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(20)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~diagnosis_age, scales='free_x')
 )
 ```
@@ -348,7 +348,7 @@ ggsave('plots/expl_interaction_financialgoal_context_diagnosis.png', width=14, h
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
   scale_x_discrete(labels = label_wrap(30)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~ context, scales='free_x')
 )
 
@@ -358,7 +358,7 @@ ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.png', wid
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
   scale_x_discrete(labels = label_wrap(30)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~bankruptcy_declared, scales='free_x')
 )
 
@@ -368,7 +368,7 @@ ggsave('plots/expl_interaction_financialgoal_context_moodstate.png', width=14, h
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
   scale_x_discrete(labels = label_wrap(30)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~moodstate, scales='free_x')
 )
 ```
@@ -386,7 +386,7 @@ ggsave('plots/expl_interaction_financialgoal_context_bankruptcy.png', width=12, 
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=7, angle = 45, hjust = 1)) + 
   scale_x_discrete(labels = label_wrap(35)) +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~bankruptcy_declared, scales='free_x')
 )
 ```
@@ -480,7 +480,7 @@ ggsave('plots/expl_main_actors_context_moodstate.png', width=9, height=5, dpi=60
     color = "Intervention Context"
   ) + 
   theme_light(base_family='Lato') +
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   facet_wrap(~moodstate, scales='free_x')
   #theme(
   #  plot.title.position='plot', 
@@ -504,7 +504,7 @@ ggsave('plots/expl_main_context_hospitalization_moodstate.png', width=9, height=
   labs(x='Intervention Context', y='Rating', color='Prior Hospitalization?') +
   theme_light(base_family='Lato') + 
   #theme(axis.text.x = element_text(size=9, angle = 45, hjust = 1)) + 
-  scale_y_continuous(limits=c(0,7)) +
+  scale_y_continuous(limits=c(1,7)) +
   scale_x_discrete(labels = label_wrap(20)) +
   facet_wrap(~moodstate, scales='free_x')
 )
