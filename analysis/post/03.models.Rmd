@@ -112,7 +112,7 @@ avg_predictions(m2, by='diagnosis_subtype', re.form=NULL)
 hypotheses(avg_predictions(m2, by='diagnosis_subtype', re.form=NULL), ~meandev)
 
 # Figure caption: Overall comfort ratings were lower during euthymic periods when compared to symptomatic periods.
-ggsave('plots/H1.1_main_moodstate.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by=('moodstate')) +
+ggsave('plots/H1.1_main_moodstate.eps', width=9, height=7, units='in', device='eps', plot_predictions(m2, by=('moodstate')) +
   labs(x='Mood State', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -129,7 +129,7 @@ ggsave('plots/H1.1_main_moodstate.png', width=9, height=7, units='in', dpi=600, 
 avg_predictions(m2, by='context', re.form=NULL, hypothesis = difference~meandev)
 
 # Figure caption: Respondents were least comfortable overall with a hypothetical 48-hour spending restriction intervention.
-ggsave('plots/H2.1_main_context.png', width=8, height=6, units='in', dpi=600, plot_predictions(m2, by=c('context')) +
+ggsave('plots/H2.1_main_context.eps', width=8, height=6, units='in', device='eps', plot_predictions(m2, by=c('context')) +
   labs(x='Intervention Context', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -146,7 +146,7 @@ ggsave('plots/H2.1_main_context.png', width=8, height=6, units='in', dpi=600, pl
 hypotheses(avg_predictions(m2, variables='actors', re.form=NULL), multcomp='holm')
 
 # Figure caption Respondents were most comfortable sharing financial data with care partners.
-ggsave('plots/H3.1_main_actors.png', width=9, height=7, units='in', dpi=600, plot_predictions(m2, by='actors') +
+ggsave('plots/H3.1_main_actors.eps', width=9, height=7, units='in', device='eps', plot_predictions(m2, by='actors') +
   labs(x='Actors', y='Rating') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -178,7 +178,7 @@ avg_predictions(m3, by=c('moodstate', 'context'), hypothesis='b1=b4', re.form=NU
 
 # Figure caption: Respondents were significantly more comfortable with spending restrictions during symptomatic periods. 
 
-ggsave('plots/H1.3_interaction_context_moodstate.png', width=8, height=6, units='in', dpi=600, plot_predictions(m3, by=c('context', 'moodstate')) +
+ggsave('plots/H1.3_interaction_context_moodstate.eps', width=8, height=6, units='in', device='eps', plot_predictions(m3, by=c('context', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Mood State') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -197,7 +197,7 @@ avg_predictions(m4, by=c('PAD', 'context'))
 avg_predictions(m4, newdata=datagrid(PAD=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('PAD', 'context'), hypothesis='b6=b3')
 
 # Figure caption: Respondents with psychiatric advance directives were more comfortable with all hypothetical interventions.
-ggsave('plots/H2.2_interaction_context_PAD.png', width=9, height=7, units='in', dpi=600, plot_predictions(m4, newdata=datagrid(PAD=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'PAD')) +
+ggsave('plots/H2.2_interaction_context_PAD.eps', width=9, height=7, units='in', device='eps', plot_predictions(m4, newdata=datagrid(PAD=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'PAD')) +
   labs(x='Intervention Context', y='Rating', color='Psychiatric Advance\nDirective?') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -214,7 +214,7 @@ avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
 avg_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No')), by=c('bankruptcy_declared', 'context')) 
 
 # Figure caption: Respondents who had declared bankruptcy were significantly more comfortable with 48-hour spending restrictions.
-ggsave('plots/H2.3_interaction_context_bankruptcydeclared.png', width=9, height=6, units='in', dpi=600, plot_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'bankruptcy_declared')) +
+ggsave('plots/H2.3_interaction_context_bankruptcydeclared.eps', width=9, height=6, units='in', device='eps', plot_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'bankruptcy_declared')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Declared?') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -227,7 +227,7 @@ m5.1 <- lmer(y ~ actors + context * bankruptcy_considered + moodstate + (1|parti
 avg_predictions(m5.1, by=c('bankruptcy_considered', 'context', 'moodstate'))
 
 # Figure caption:
-ggsave('plots/expl_interaction_context_bankruptcyconsidered.png', width=9, height=6, units='in', dpi=600, plot_predictions(m5.1, by=c('context', 'bankruptcy_considered', 'moodstate')) +
+ggsave('plots/expl_interaction_context_bankruptcyconsidered.eps', width=9, height=6, units='in', device='eps', plot_predictions(m5.1, by=c('context', 'bankruptcy_considered', 'moodstate')) +
   labs(x='Intervention Context', y='Rating', color='Bankruptcy Considered?') +
   scale_x_discrete(labels = label_wrap(10)) +
   scale_y_continuous(limits=c(1,7)) +
@@ -281,7 +281,7 @@ car::Anova(m8, type=3)
 ```{r}
 m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
 car::Anova(m9, type=3)
-ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600, plot_predictions(m9, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks")), by=c('actors', 'care_partner_help')) + 
+ggsave('plots/expl_main_carepartnerhelp_actors.eps', width=8, height=6, device='eps', plot_predictions(m9, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks")), by=c('actors', 'care_partner_help')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(30)) +
@@ -291,7 +291,7 @@ ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=600,
 
 ```{r}
 m9.1 <- lmer(y ~ actors * care_partner_help + context + moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
-ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.png', width=9, height=6, dpi=600, plot_predictions(m9.1, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks"), moodstate=c('Euthymic', 'Symptomatic')), by=c('actors', 'care_partner_help', 'moodstate')) + 
+ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.eps', width=9, height=6, device='eps', plot_predictions(m9.1, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks"), moodstate=c('Euthymic', 'Symptomatic')), by=c('actors', 'care_partner_help', 'moodstate')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_y_continuous(limits=c(1,7)) +
@@ -302,7 +302,7 @@ ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.png', width=9, h
 
 ```{r}
 m9.2 <- lmer(y ~ actors + context * care_partner_help + moodstate + diagnosis_subtype + (1|participant) + (1|item), data=long)
-ggsave('plots/expl_interaction_carepartnerhelp_context.png', width=9, height=6, dpi=600, plot_predictions(m9.2, newdata=datagrid(care_partner_help=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details"), moodstate=c('Euthymic', 'Symptomatic')), by=c('context',  'care_partner_help', 'moodstate')) + 
+ggsave('plots/expl_interaction_carepartnerhelp_context.eps', width=9, height=6, device='eps', plot_predictions(m9.2, newdata=datagrid(care_partner_help=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details"), moodstate=c('Euthymic', 'Symptomatic')), by=c('context',  'care_partner_help', 'moodstate')) + 
   labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(20)) +
@@ -313,7 +313,7 @@ ggsave('plots/expl_interaction_carepartnerhelp_context.png', width=9, height=6, 
 
 ```{r}
 m9.3 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + diagnosis_age * care_partner_help + (1|participant) + (1|item), data=long)
-ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.png', width=12, height=6, dpi=600, plot_predictions(m9.3, by=c('context',  'care_partner_help', 'diagnosis_age')) + 
+ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.eps', width=12, height=6, device='eps', plot_predictions(m9.3, by=c('context',  'care_partner_help', 'diagnosis_age')) + 
   labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(20)) +
@@ -333,7 +333,7 @@ m9 \<- lmer(y \~ actors + context + moodstate + diagnosis_subtype + care_partner
 m10 <- lmer(y ~ actors + context  + moodstate + main_financial_goal + diagnosis_subtype + (1|participant) + (1|item), data=long)
 car::Anova(m10, type=3)
 
-ggsave('plots/expl_main_financialgoal_context.png', width=8, height=6, dpi=600, plot_predictions(m10, by=c('main_financial_goal', 'context')) + 
+ggsave('plots/expl_main_financialgoal_context.eps', width=8, height=6, device='eps', plot_predictions(m10, by=c('main_financial_goal', 'context')) + 
   labs(x='Main Financial Goal', y='Rating', color='Intervention Context') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
@@ -343,7 +343,7 @@ ggsave('plots/expl_main_financialgoal_context.png', width=8, height=6, dpi=600, 
 # Main financial goals with interactions
 
 m10.1 <- lmer(y ~ actors + context + moodstate + main_financial_goal * diagnosis_subtype + (1|participant) +(1|item), data=long)
-ggsave('plots/expl_interaction_financialgoal_context_diagnosis.png', width=14, height=8, dpi=600, plot_predictions(m10.1, by=c('main_financial_goal', 'diagnosis_subtype', 'context')) + 
+ggsave('plots/expl_interaction_financialgoal_context_diagnosis.eps', width=14, height=8, device='eps', plot_predictions(m10.1, by=c('main_financial_goal', 'diagnosis_subtype', 'context')) + 
   labs(x='Main Financial Goal', y='Rating', color='Diagnosis Subtype') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
@@ -353,7 +353,7 @@ ggsave('plots/expl_interaction_financialgoal_context_diagnosis.png', width=14, h
 )
 
 m10.2 <- lmer(y ~ actors + context + moodstate + main_financial_goal * bankruptcy_declared + diagnosis_subtype + (1|participant) +(1|item), data=long)
-ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.png', width=14, height=8, dpi=600, plot_predictions(m10.2, by=c('main_financial_goal', 'actors', 'bankruptcy_declared')) + 
+ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.eps', width=14, height=8, device='eps', plot_predictions(m10.2, by=c('main_financial_goal', 'actors', 'bankruptcy_declared')) + 
   labs(x='Main Financial Goal', y='Rating', color='Actors') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
@@ -363,7 +363,7 @@ ggsave('plots/expl_interaction_financialgoal_actors_bankruptcydeclared.png', wid
 )
 
 m10.3 <- lmer(y ~ actors + context * main_financial_goal + moodstate + bankruptcy_declared + diagnosis_subtype + (1|participant) +(1|item), data=long)
-ggsave('plots/expl_interaction_financialgoal_context_moodstate.png', width=14, height=8, dpi=600, plot_predictions(m10.3, by=c('main_financial_goal', 'context', 'moodstate')) + 
+ggsave('plots/expl_interaction_financialgoal_context_moodstate.eps', width=14, height=8, device='eps', plot_predictions(m10.3, by=c('main_financial_goal', 'context', 'moodstate')) + 
   labs(x='Main Financial Goal', y='Rating', color='Context') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
@@ -381,7 +381,7 @@ car::Anova(m11, type=3)
 
 avg_predictions(m11, by=c('main_financial_goal', 'bankruptcy_declared'))
 
-ggsave('plots/expl_interaction_financialgoal_context_bankruptcy.png', width=12, height=6 , dpi=600, plot_predictions(m11, by=c('main_financial_goal', 'context', 'bankruptcy_declared')) + 
+ggsave('plots/expl_interaction_financialgoal_context_bankruptcy.eps', width=12, height=6 , device='eps', plot_predictions(m11, by=c('main_financial_goal', 'context', 'bankruptcy_declared')) + 
   labs(title='Bankruptcy Declared?', x='Main Financial Goal', y='Rating', color='Intervention Context') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=7, angle = 45, hjust = 1)) + 
@@ -427,7 +427,7 @@ combined.model <- lmer(y ~ actors + (1|participant) + (1|item) + (1|sample), dat
 
 # Marginal predictions
 pandoc.table(avg_predictions(combined.model, by=c("actors", "sample"), hypothesis=~meandev | sample), style='rmarkdown', split.table=Inf, digits=2)
-ggsave('plots/expl_combined_actors.png', width=8, height=6, dpi=600, plot_predictions(combined.model, by=c('actors', 'sample')) + 
+ggsave('plots/expl_combined_actors.eps', width=8, height=6, device='eps', plot_predictions(combined.model, by=c('actors', 'sample')) + 
   labs(x='Actor', y='Rating', color='Sample') +
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=7)) + 
@@ -472,7 +472,7 @@ long$trust_clinician <- ordered(long$trust_clinician, levels=c('Extremely diffic
 ```{r}
 #long$context <- revalue(long$context, c("planning_budgeting" = "Planning & Budgeting Help", "restrict_spending_48" = "48-hour Spending Restriction", "share_spending" = "Sharing Spending Details"))
 #long$actors <- revalue(long$actors, c("banks" = "Banks", "carepartner" = "Care Partners", "clinicians" = "Clinicians"))
-ggsave('plots/expl_main_actors_context_moodstate.png', width=9, height=5, dpi=600, plot_predictions(m2, by=c("actors", "context", "moodstate")) +
+ggsave('plots/expl_main_actors_context_moodstate.eps', width=9, height=5, device='eps', plot_predictions(m2, by=c("actors", "context", "moodstate")) +
   labs(
     #title = "Marginal Predictions of Comfort Levels \nAveraged Across Factors",
     x = "Intervention Actor",
@@ -500,7 +500,7 @@ car::Anova(m11, type=3)
 avg_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization'))
 avg_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization'))
 
-ggsave('plots/expl_main_context_hospitalization_moodstate.png', width=9, height=6 , dpi=600, plot_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization', 'moodstate')) + 
+ggsave('plots/expl_main_context_hospitalization_moodstate.eps', width=9, height=6 , device='eps', plot_predictions(m14, newdata=datagrid(moodstate=c('Euthymic', 'Symptomatic'), hospitalization=c('Yes', 'No'), context=c("48-hour Spending Restriction", "Help with Planning & Budgeting", "Share Spending Details")), by=c('context', 'hospitalization', 'moodstate')) + 
   labs(x='Intervention Context', y='Rating', color='Prior Hospitalization?') +
   theme_light(base_family='Lato') + 
   #theme(axis.text.x = element_text(size=9, angle = 45, hjust = 1)) + 
