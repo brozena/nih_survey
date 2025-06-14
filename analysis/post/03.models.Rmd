@@ -19,12 +19,18 @@ pacman::p_load(
   "ggstats", 
   "ggthemes", 
   "performance", 
-  "marginaleffects", 
+  "marginaleffects",
+  "effects",
+  "broom.mixed",
+  "broom.helpers",
+  "gtsummary",
+  "dplyr",
   "kableExtra", 
   "flextable", 
   "xtable", 
   "scales", 
-  "pander"
+  "pander",
+  "patchwork"
 )
 ```
 
@@ -90,6 +96,35 @@ m1 <- lmer(y ~ 1 + actors + context + moodstate + age + gender + education + inc
 
 ```{r}
 car::Anova(m1, type=3)
+```
+
+```{r}
+m1 |>
+  tbl_regression(
+    tidy_fun = tidy_marginal_predictions,
+    label = list(
+      actors = "Actors",
+      context = "Intervention Context",
+      moodstate = "Mood State",
+      age = "Age Range",
+      gender = "Gender",
+      education = "Education",
+      income = "Income",
+      ethnicity = "Ethnicity",
+      hispanic = "Hispanic",
+      diagnosis_subtype = "Diagnosis Subtype",
+      hospitalization = "Prior Hospitalzation",
+      banked = "Banked",
+      savings = "Savings",
+      trust_clinician = "Ease in Trusting Clinician",
+      trust_carepartner = "Ease in Trusting Care Partner",
+      trust_bank = "Ease in Trusting Banks",
+      cfpb_score = "CFPB Financial Wellbeing Score",
+      care_partner_help = "Asked for Help with Impulsive Spending",
+      bfi_agreeableness = "Agreeableness (BFI10)"
+    )
+  ) |>
+  bold_labels()
 ```
 
 ### Main effects
@@ -188,7 +223,7 @@ ggsave('plots/H1.3_interaction_context_moodstate.eps', width=8, height=6, units=
 
 ### Interaction effects with respondent characteristics
 
-#### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors (H0: 'b3=b9')
+#### ✅ H2.2: Evidence of advanced planning behaviors (e.g., psych. advance directive) will lead to higher comfort ratings when sharing spending behaviors (H0: 'b6=b3')
 
 ```{r}
 
@@ -254,7 +289,6 @@ avg_predictions(m6.2, by=c('trust_carepartner', 'actors'), hypothesis='b5=b2')
 m6.3 <- lmer(y ~ actors * trust_bank + context + moodstate + (1|participant) + (1|item), data=long)
 avg_predictions(m6.3, by=c('trust_bank', 'actors'))
 avg_predictions(m6.3, by=c('trust_bank', 'actors'), hypothesis='b4=b1')
-
 ```
 
 #### ✅ H3.3 Prior requests for third-party aid in managing impulsive spending behaviors will be associated with higher comfort ratings across all third-party actors (versus those who have not requested help)
@@ -274,15 +308,50 @@ m8 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_agreeablen
 car::Anova(m8, type=3)
 ```
 
-## Additional analysis
+## Model Comparisons
+
+```{r}
+me <- list(
+  "Main Effects" = m2,
+  "Context * Mood" = m3,
+  "PAD" = m4,
+  "Bankruptcy" = m5
+  )
+
+tidy_forest <-
+  m1 |>
+  tidy_and_attach(conf.int = TRUE) |>
+  tidy_add_reference_rows() |>
+  tidy_add_estimate_to_reference_rows() |>
+  tidy_add_term_labels() |>
+  tidy_remove_intercept()
+
+tidy_forest |>
+  mutate(
+    plot_label = paste(var_label, label, sep = ":") |>
+      forcats::fct_inorder() |>
+      forcats::fct_rev()
+  ) |>
+  ggplot(aes(x = plot_label, y = estimate, ymin = conf.low, ymax = conf.high, color = variable)) +
+  geom_pointrange() +
+  coord_flip() + 
+  theme(legend.position = "none") +
+  labs(
+    y = "Estimate",
+    x = " ",
+    title = "Forest Plot"
+  )
+```
+
+## Exploratory analysis
 
 ### Requests for care partner help
 
 ```{r}
 m9 <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1|participant) + (1|item), data=long)
 car::Anova(m9, type=3)
-ggsave('plots/expl_main_carepartnerhelp_actors.eps', width=8, height=6, device='eps', plot_predictions(m9, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks")), by=c('actors', 'care_partner_help')) + 
-  labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+ggsave('plots/expl_main_carepartnerhelp_actors.png', width=8, height=6, dpi=300, plot_predictions(m9, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks")), by=c('actors', 'care_partner_help')) + 
+  labs(x='Intervention Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
   scale_x_discrete(labels = label_wrap(30)) +
   scale_y_continuous(limits=c(1,7))
@@ -294,7 +363,7 @@ m9.1 <- lmer(y ~ actors * care_partner_help + context + moodstate + diagnosis_su
 ggsave('plots/expl_interaction_carepartnerhelp_actors_moodstate.eps', width=9, height=6, device='eps', plot_predictions(m9.1, newdata=datagrid(care_partner_help=c('Yes', 'No'), actors=c("Care Partner", "Clinicians", "Banks"), moodstate=c('Euthymic', 'Symptomatic')), by=c('actors', 'care_partner_help', 'moodstate')) + 
   labs(x='Actor', y='Rating', color='Asked for Help with\nImpulsive Spending') +
   theme_light(base_family='Lato') +
-  scale_y_continuous(limits=c(1,7)) +
+  scale_y_continuous(limits=c(1,7.5)) +
   scale_x_discrete(labels = label_wrap(30)) +
   facet_wrap(~moodstate, scales='free_x')
 )
@@ -322,7 +391,19 @@ ggsave('plots/expl_interaction_carepartnerhelp_diagnosisage.eps', width=12, heig
 )
 ```
 
-m9 \<- lmer(y \~ actors + context + moodstate + diagnosis_subtype + care_partner_help + (1\|participant) + (1\|item), data=long)
+```{r}
+m9.4 <- lmer(y ~ actors + context + moodstate + trust_carepartner + care_partner_help + (1|participant) + (1|item), data=long)
+
+avg_predictions(m9.4, newdata=datagrid(care_partner_help=c('Yes', 'No'), trust_carepartner=c('Extremely difficult', 'Extremely easy')), by=c('trust_carepartner', 'care_partner_help'))
+
+ggsave('plots/expl_interaction_carepartnerhelp_trustcarepartner.png', width=12, height=6, dpi=300, plot_predictions(m9.4, newdata=datagrid(care_partner_help=c('Yes', 'No'), trust_carepartner=c('Extremely difficult', 'Extremely easy')), by=c('context',  'care_partner_help', 'trust_carepartner')) + 
+  labs(x='Intervention Context', y='Rating', color='Asked for Help with\nImpulsive Spending') +
+  theme_light(base_family='Lato') +
+  scale_x_discrete(labels = label_wrap(20)) +
+  scale_y_continuous(limits=c(1,8)) +
+  facet_wrap(~trust_carepartner, scales='free_x')
+)
+```
 
 ### Financial goals
 
@@ -400,11 +481,72 @@ ggsave('plots/expl_interaction_financialgoal_context_bankruptcy.eps', width=12, 
 m12bfi <- lmer(y ~ actors + context + moodstate + diagnosis_subtype + bfi_extraversion + bfi_agreeableness + bfi_conscientiousness + bfi_neuroticism + bfi_openness + (1|participant) + (1|item), data=long)
 
 car::Anova(m12bfi, type=3)
-plot_predictions(m12bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
-plot_predictions(m12bfi, condition=c('bfi_agreeableness', 'diagnosis_subtype'))
-plot_predictions(m12bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
-plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
-plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
+
+m12bfi %>%
+  tbl_regression(
+    tidy_fun = tidy_all_effects,
+    label = list(
+      bfi_agreeableness = "Agreeableness",
+      bfi_extraversion = "Extraversion",
+      bfi_conscientiousness = "Conscientiousness",
+      bfi_neuroticism = "Neuroticism",
+      bfi_openness = "Openness"
+    ),
+  ) %>%
+  bold_labels()
+
+# plot_predictions(m12bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
+# plot_predictions(m12bfi, vcov=TRUE, condition=c('bfi_agreeableness', 'diagnosis_subtype'))  + labs(x='Agreeableness', y='Rating', fill="Diagnosis Subtype", color='Diagnosis Subtype') + theme_light(base_family='Lato')
+# plot_predictions(m12bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
+# plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+# plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
+
+
+variables <- c("bfi_agreeableness", "bfi_extraversion", "bfi_openness", "bfi_conscientiousness", "bfi_neuroticism")
+
+var_labels <- c(
+  bfi_agreeableness = "Agreeableness",
+  bfi_extraversion = "Extraversion",
+  bfi_conscientiousness = "Conscientiousness",
+  bfi_neuroticism = "Neuroticism",
+  bfi_openness = "Openness"
+)
+
+# Optional: define shared y-axis limits
+y_limits <- c(3, 7)  # adjust to fit your scale
+
+plots <- map(variables, function(var) {
+  plot_predictions(
+    m12bfi,
+    by = var,
+    group = "diagnosis_subtype"
+  ) +
+    labs(x = var_labels[[var]], y = "Rating", color = "Diagnosis Subtype") +
+    coord_cartesian(ylim = y_limits) +  # ⬅️ fixes shared y-axis visually
+    theme_minimal()
+})
+
+# Combine with patchwork (shared guide and layout)
+bfi_plot <- wrap_plots(plots, ncol = 2, guides = "collect") +
+  plot_annotation(
+    title = "Comfort Ratings by BFI-10\nAverage Marginal Predictions",
+    theme = theme(plot.title = element_text(hjust = 0.5))
+  ) &
+  theme(
+    axis.title.y = element_text(),
+    axis.text.y = element_text()
+  )
+
+bfi_plot
+
+ggsave(
+  filename = "plots/expl_bfi10_marginal_predictions.eps",
+  plot = bfi_plot,
+  device = "eps",
+  width = 10,
+  height = 6,
+  units = "in"
+)
 ```
 
 ### Actors (SSRI and NIH survey)
@@ -437,17 +579,15 @@ ggsave('plots/expl_combined_actors.eps', width=8, height=6, device='eps', plot_p
 
 ```{r}
 
-# Are people okay sharing things between stability vs illness?
-m13 <- lmer(y ~ actors + (1|participant) + (1|item), data=env.2$long)
-avg_predictions(m13, by='actors')
-```
-
-```{r}
-
 # Model neuroticism between moodstate (as neuroticism has stepwise effect in prior work)
 
 avg_predictions(m12bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
-plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
+```
+
+### Trust and Help-seeking Behavior
+
+```{r}
+
 ```
 
 ### Diagnosis and bankruptcy rates
