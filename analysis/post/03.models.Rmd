@@ -495,58 +495,22 @@ m12bfi %>%
   ) %>%
   bold_labels()
 
-# plot_predictions(m12bfi, condition=c('bfi_extraversion', 'diagnosis_subtype'))
-# plot_predictions(m12bfi, vcov=TRUE, condition=c('bfi_agreeableness', 'diagnosis_subtype'))  + labs(x='Agreeableness', y='Rating', fill="Diagnosis Subtype", color='Diagnosis Subtype') + theme_light(base_family='Lato')
-# plot_predictions(m12bfi, condition=c('bfi_conscientiousness', 'diagnosis_subtype'))
-# plot_predictions(m12bfi, condition=c('bfi_neuroticism', 'diagnosis_subtype'))
-# plot_predictions(m12bfi, condition=c('bfi_openness', 'diagnosis_subtype'))
-
-
-variables <- c("bfi_agreeableness", "bfi_extraversion", "bfi_openness", "bfi_conscientiousness", "bfi_neuroticism")
-
-var_labels <- c(
-  bfi_agreeableness = "Agreeableness",
-  bfi_extraversion = "Extraversion",
-  bfi_conscientiousness = "Conscientiousness",
-  bfi_neuroticism = "Neuroticism",
-  bfi_openness = "Openness"
-)
-
-# Optional: define shared y-axis limits
-y_limits <- c(3, 7)  # adjust to fit your scale
-
-plots <- map(variables, function(var) {
-  plot_predictions(
-    m12bfi,
-    by = var,
-    group = "diagnosis_subtype"
-  ) +
-    labs(x = var_labels[[var]], y = "Rating", color = "Diagnosis Subtype") +
-    coord_cartesian(ylim = y_limits) +  # ⬅️ fixes shared y-axis visually
-    theme_minimal()
-})
-
-# Combine with patchwork (shared guide and layout)
-bfi_plot <- wrap_plots(plots, ncol = 2, guides = "collect") +
-  plot_annotation(
-    title = "Comfort Ratings by BFI-10\nAverage Marginal Predictions",
-    theme = theme(plot.title = element_text(hjust = 0.5))
-  ) &
-  theme(
-    axis.title.y = element_text(),
-    axis.text.y = element_text()
-  )
-
-bfi_plot
+p1 = plot_predictions(m12bfi, condition = 'bfi_agreeableness') + labs(x='Agreeableness', y='Rating')
+p2 = plot_predictions(m12bfi, condition = 'bfi_openness') + labs(x='Openness', y='Rating')
+p3 = plot_predictions(m12bfi, condition = 'bfi_extraversion') + labs(x='Extraversion', y='Rating')
+p4 = plot_predictions(m12bfi, condition = 'bfi_neuroticism') + labs(x='Neuroticism', y="Rating'")
+p5 = plot_predictions(m12bfi, condition = 'bfi_conscientiousness') + labs(x='Conscientiousness', y='Rating')
+p_all <- (p1 + p2 + p3 + p4 + p5)
 
 ggsave(
-  filename = "plots/expl_bfi10_marginal_predictions.eps",
-  plot = bfi_plot,
-  device = "eps",
-  width = 10,
-  height = 6,
-  units = "in"
+ filename = "plots/expl_bfi10_marginal_predictions.eps",
+ plot = p_all,
+ device = "eps",
+ width = 10,
+ height = 6,
+ units = "in"
 )
+
 ```
 
 ### Actors (SSRI and NIH survey)
@@ -582,12 +546,6 @@ ggsave('plots/expl_combined_actors.eps', width=8, height=6, device='eps', plot_p
 # Model neuroticism between moodstate (as neuroticism has stepwise effect in prior work)
 
 avg_predictions(m12bfi, variables='bfi_neuroticism', by='moodstate', hypothesis=difference~reference)
-```
-
-### Trust and Help-seeking Behavior
-
-```{r}
-
 ```
 
 ### Diagnosis and bankruptcy rates
