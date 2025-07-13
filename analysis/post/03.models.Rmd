@@ -419,7 +419,7 @@ ggsave('plots/expl_main_financialgoal_context.eps', width=8, height=6, device='e
   theme_light(base_family='Lato') + 
   theme(axis.text.x = element_text(size=8, angle = 45, hjust = 1)) + 
   scale_x_discrete(labels = label_wrap(30))
-)
+)Ú
 
 # Main financial goals with interactions
 
