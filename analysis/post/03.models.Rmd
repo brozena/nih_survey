@@ -245,7 +245,7 @@ ggsave('plots/H2.2_interaction_context_PAD.eps', width=9, height=7, units='in', 
 ```{r}
 
 m5 <- lmer(y ~ actors + context * bankruptcy_declared + moodstate + (1|participant) + (1|item), data=long)
-avg_predictions(m5, by=c('bankruptcy_declared', 'context'))
+avg_predictions(m5, by=c('bankruptcy_declared', 'context'), hypothesis='b7=b1')
 avg_predictions(m5, newdata=datagrid(bankruptcy_declared=c('Yes', 'No')), by=c('bankruptcy_declared', 'context')) 
 
 # Figure caption: Respondents who had declared bankruptcy were significantly more comfortable with 48-hour spending restrictions.
