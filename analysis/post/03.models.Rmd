@@ -409,6 +409,15 @@ ggsave('plots/expl_interaction_carepartnerhelp_trustcarepartner.png', width=12, 
 
 ```{r}
 
+# Descriptives
+
+tab_mfg <- data.frame(round(prop.table(sort(table(wide$main_financial_goal), decreasing=TRUE)) * 100, digits=2)) %>%
+  dplyr::rename("Main Financial Goal" = Var1, "% of Respondents" = "Freq")
+
+print(xtable(tab_mfg, type='latex', tabular.environment='longtable'), file='tables/tbl-mfg-descriptives.tex')
+save_as_image(theme_vanilla(autofit(flextable(tab_mfg))) %>% colformat_double(digits = 2), 'tables/tbl-mfg-descriptives.png', res=600)
+
+
 # Main financial goal and vignettes
 
 m10 <- lmer(y ~ actors + context  + moodstate + main_financial_goal + diagnosis_subtype + (1|participant) + (1|item), data=long)

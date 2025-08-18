@@ -7,8 +7,7 @@ output:
 
 ```{r class.source='fold-hide', warning=FALSE, message=FALSE}
 install.packages("pacman", repos = "https://cloud.r-project.org")
-pacman::p_load("tidyverse", "summarytools", "dplyr", "tidyr", "codified", "forcats", "plyr")
-install.packages('altair', repos = "https://cloud.r-project.org")
+pacman::p_load("tidyverse", "summarytools", "dplyr", "tidyr", "codified", "forcats", "plyr", "janitor")
 ```
 
 ## Load data
@@ -57,19 +56,19 @@ view(dfSummary(temp, varnumbers=FALSE, na.col=FALSE, graph.col=FALSE, headings=F
 
 ```{r}
 
-library('altair')
+library(ggplot2)
+library(scales)
 
-bar <- alt$Chart(wide)$
-transform_filter(datum$main_financial_goal != 'null')$
-transform_joinaggregate(TotalCount='count(main_financial_goal)')$
-transform_calculate(PercentTotal="datum\\.count(main_financial_goal) / datum\\.TotalCount")$
-mark_bar()$
-encode(
-    x=alt$X('PercentTotal:Q'), axis=alt$axis(format='.0%'),
-    y='main_financial_goal:N'
-)
+wide %>% 
+  drop_na(main_financial_goal) %>%
+  ggplot(aes(x = after_stat(prop), group=1, y = forcats::fct_infreq(main_financial_goal))) +
+  geom_bar(stat = "count", width=.65) +
+  scale_x_continuous(labels = scales::percent) +
+  scale_y_discrete(labels = label_wrap(width=38), limits = rev(levels(forcats::fct_infreq(wide$main_financial_goal)))) + 
+  labs(y = "Main Financial Goal",
+       x = "Percentage of Respondents") +
+  theme_light(base_family='Lato', base_size=16) 
 
-bar
-
-#bar$save('plots/desc_main_financial_goal.png', ppi=600)
+ggsave('plots/desc_main_financial_goal.png', width=9, height=6, dpi=600)
+ggsave('plots/desc_main_financial_goal.eps', device='eps', width=9, height=6, dpi=600)
 ```
