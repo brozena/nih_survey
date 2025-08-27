@@ -1,0 +1,164 @@
+---
+title: Assessing acceptance and privacy preferences of third-party financial data sharing in bipolar disorder
+author:
+  - name: Jeff Brozena
+    affil: 1
+  - name: Johnna Blair
+    affil: 1
+  - name: Dahlia Mukherjee
+    affil: 2
+  - name: Erika FH Saunders*
+    affil: 2
+  - name: Thomas Richardson
+    affil: 3
+  - name: Mark Matthews
+    affil: 4
+  - name: Saeed Abdullah
+    affil: 1
+affiliation:
+  - num: 1
+    address: Pennsylvania State University, USA
+  - num: 2
+    address: Penn State College of Medicine, Hershey, PA, USA
+  - num: 3
+    address: University of Southhampton, United Kingdom
+  - num: 4
+    address: University College Dublin
+column_numbers: 3
+csl: "/Users/jab/Zotero/styles/association-for-computing-machinery-unsorted.csl"
+bibliography: "/Users/jab/Downloads/library.bib"
+filters:
+  - pandoc-crossref
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: true
+    css: style.css
+knit: pagedown::chrome_print
+main_findings:
+  - "**Bipolar disorder** is an illness characterized by **financial instability** and risky decision-making."
+  - "Open banking data can inform **supportive financial tools** that situate into existing networks of care."
+poster_width: "36in"
+poster_height: "48in"
+main_textsize: 135px
+title_textsize: 120px
+affiliation_textsize: 35px
+author_textsize: 45px
+reference_textsize: 30px
+body_textsize: 46px
+font_family: 'Source Sans Pro'
+main_fontfamily: 'Cutive Mono'
+primary_colour: "#041E42"
+secondary_colour: "#2c6290"
+column_padding: 20mm
+link-citations: true
+logoright_name: "./materials_large_color.png"
+logoleft_name: "./preregistered_large_color.png"
+logocenter_name: "./PSU_HOR_RGB_REV_2C.png"
+---
+
+```{css, echo = FALSE}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: left;
+  text-align: left;
+$if(csl-entry-spacing)$
+  margin-bottom: $csl-entry-spacing$;
+$endif$
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+  text-align: left;
+}
+div.csl-indent {
+  margin-left: 1em;
+}
+```
+
+
+```{r, echo=FALSE, results='hide', error=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(plyr)
+library(lme4)
+library(marginaleffects)
+load("../analysis/post/data/NIH_survey.Rdata")
+```
+
+\
+
+
+# Background
+
+$~~~~$ Bipolar disorder (BD) is strongly associated with financial instability [@richardsonFinancial2018]. Symptomatic periods in BD often manifest in poor financial decision-making. <span style="color:#2c6290">**70% individuals with BD have reported impulsive spending during hypomania**</span> [@fletcherHighrisk2013].
+
+$~~~~$ Problematic financial behaviors during symptomatic periods can lead to serious long-term financial instability, which can severely impact the quality of life for individuals with BD and their care partners.
+
+$~~~~$ Little is known about how illness-specific factors impact financial decision-making in BD. The lack of granular assessment methods is a key challenge against developing just-in-time and personalized interventions focusing on financial stability for this population.
+
+![](./nsfnimh.png){ width=900px }
+
+<p style="font-size:20px">*This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE1255832 and by the National Institutes of Health’s National Institute of Mental Health under award number R21MH131924. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. Approved by Pennsylvania State University IRB, STUDY00019759.*</p>
+
+\
+
+# Methods
+
+$~~~~$ We conducted an online conjoint survey (N=500; US Prolific) to understand whether and how individuals with BD are comfortable sharing financial data for illness management.
+
+$~~~~$ We used a factorial vignette approach to assess level of comfort with 18 hypothetical scenarios involving intervention actors, contexts, and timing. We chose to include only third-party actors, opting to exclude self-management as a possibility. <span style="color:#2c6290">**Our prior survey findings signal a high level of comfort when sharing financial data for self-management**</span> [@brozenaSupportive2024]. Participants rated level of comfort on a scale of 0---10.
+
+|**Factor**|**Levels**|
+|-------|-----------|
+|Actors|Clinicians  <br>Care partners  <br>Banks|
+|Intervention Context|Share spending details  <br>Planning & bugeting  <br>48-hour spending restriction|
+|Mood State|During a mood episode  <br>During stable mood|
+
+\
+
+# Results
+
+```{r echo=FALSE, error=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=4.75, fig.height=3, dpi=215}
+long$context <- revalue(long$context, c("planning_budgeting" = "Planning & Budgeting Help", "restrict_spending_48" = "48-hour Spending Restriction", "share_spending" = "Sharing Spending Details"))
+long$actors <- revalue(long$actors, c("banks" = "Banks", "carepartner" = "Care Partners", "clinicians" = "Clinicians"))
+m2 <- lmer(y ~ 1 + actors + context + moodstate + (1|participant) + (1|item), data=long)
+plot_predictions(m2, by=c("actors", "context")) +
+  labs(
+    title = "Marginal Predictions of Comfort Levels \nAveraged Across Factors",
+    x = "Financial Data Recipient",
+    y = "Rating",
+    color = "Intervention"
+  ) + theme_minimal() + theme(plot.title.position='plot', plot.title=element_text(hjust=0.5), text=element_text(family="Source Sans Pro"))
+```
+\
+
+$~~~~$ Our respondents were mostly female (59.9%), aged 35 - 44 (24.8%), university-educated (30.1%), and employed full-time (41.4%). BD-II was the most common diagnosis (43.3%), with 23% reporting a BD-1 diagnosis and 23.8% reporting BD Not Otherwise Specified. The majority received their BD diagnosis when aged 19 to 29 years. <span style="color:#2c6290">**11.4% of respondents had declared bankruptcy and 31.7% had considered it as a possibility**</span>.
+
+
+$~~~~$ <span style="color:#2c6290">**High trust in care partners, prior advanced care planning, and prior adverse financial difficulties**</span> were associated with statistically significant increases in comfort with third-party data sharing.
+
+
+# Conclusion
+
+1. Individuals in our sample were, on average, most comfortable sharing financial data for help with planning and budgeting versus sharing spending details or spending restrictions.
+2. When compared with our prior work on financial data sharing comfort for illness *self-management*, comfort ratings were lower in the case of third-party data sharing.
+3. Individuals in trusting care partner relationships appear to be significantly more comfortable with third-party financial interventions, although more research is needed to better understand how digital tools might situate into these relationships.
+
+\
+
+# Future Work
+
+1. Demonstrate feasibility and acceptance of collecting financial data from individuals with BD, simultaneously creating a retrospective dataset of mood state and spending (N=60)
+2. Assess whether and how such data might be viable as an objective behavioral marker of illness state using statistical and machine learning approaches
+2. Incorporate findings from this survey along with semi-structured interviews into supportive digital intervention prototypes
+
+\
+
+# References

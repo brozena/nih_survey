@@ -30,7 +30,8 @@ pacman::p_load(
   "xtable", 
   "scales", 
   "pander",
-  "patchwork"
+  "patchwork",
+  "Cairo"
 )
 ```
 
@@ -504,17 +505,17 @@ m12bfi %>%
   ) %>%
   bold_labels()
 
-p1 = plot_predictions(m12bfi, condition = 'bfi_agreeableness') + labs(x='Agreeableness', y='Rating')
-p2 = plot_predictions(m12bfi, condition = 'bfi_openness') + labs(x='Openness', y='Rating')
-p3 = plot_predictions(m12bfi, condition = 'bfi_extraversion') + labs(x='Extraversion', y='Rating')
-p4 = plot_predictions(m12bfi, condition = 'bfi_neuroticism') + labs(x='Neuroticism', y="Rating'")
-p5 = plot_predictions(m12bfi, condition = 'bfi_conscientiousness') + labs(x='Conscientiousness', y='Rating')
+p1 = plot_predictions(m12bfi, condition = 'bfi_agreeableness', conf_level=.95) + labs(x='Agreeableness', y='Rating')
+p2 = plot_predictions(m12bfi, condition = 'bfi_openness', conf_level=.95) + labs(x='Openness', y='Rating')
+p3 = plot_predictions(m12bfi, condition = 'bfi_extraversion', conf_level=.95) + labs(x='Extraversion', y='Rating')
+p4 = plot_predictions(m12bfi, condition = 'bfi_neuroticism', conf_level=.95) + labs(x='Neuroticism', y="Rating'")
+p5 = plot_predictions(m12bfi, condition = 'bfi_conscientiousness', conf_level=.95) + labs(x='Conscientiousness', y='Rating')
 p_all <- (p1 + p2 + p3 + p4 + p5)
 
 ggsave(
- filename = "plots/expl_bfi10_marginal_predictions.eps",
+ filename = "plots/expl_bfi10_marginal_predictions.pdf",
  plot = p_all,
- device = "eps",
+ device = "pdf",
  width = 10,
  height = 6,
  units = "in"
