@@ -8,6 +8,7 @@ output:
 ```{r}
 library(tidyverse)
 library(plyr)
+library(psych)
 ```
 
 # Preprocessing
@@ -16,10 +17,11 @@ library(plyr)
 
 ```{r}
 library(reticulate)
-conda_create('reticulate') 
-use_condaenv('reticulate') 
-conda_install('reticulate', 'pandas')
-conda_install('reticulate', 'numpy')
+#conda_create('reticulate') 
+use_condaenv('reticulate', required=TRUE) 
+#conda_install('reticulate', 'pandas')
+#conda_install('reticulate', 'numpy')
+#conda_install('reticulate', 'pingouin')
 ```
 
 ## Create wide frame
@@ -216,7 +218,7 @@ wide$speeder <- ifelse(as.numeric(wide$duration) < 0.6*median(as.numeric(wide$du
 +        0)
 ```
 
-## Merge Qualtrics with Prolific demographics, NIH GUIDs
+## Merge Qualtrics with Prolific demographics, NIH GUIDs, CFPB, BFI-10
 
 ```{python}
 import pandas as pd
@@ -237,11 +239,7 @@ qual_int['participant'] = qual_int['participant'].astype('int')
 
 # add NIMH NDA pseudoGUIDs
 qual_int.insert(loc=0, column='pguid', value=pguids)
-```
 
-## Score CFPB with CFPB_5 reverse-coded
-
-```{python}
 # score CFPB with CFPB_5 reverse-coded
 qual_int[['cfpb_1', 'cfpb_2', 'cfpb_3', 'cfpb_4', 'cfpb_5']] = qual_int[['cfpb_1', 'cfpb_2', 'cfpb_3', 'cfpb_4', 'cfpb_5']].fillna(0).astype('int')
 qual_int['cfpb_5'] = 5 - qual_int['cfpb_5']
@@ -258,13 +256,11 @@ cfpb_scores_1 = qual_int.loc[qual_int['cfpb_age_group'] == 1][['cfpb_1', 'cfpb_2
 cfpb_scores_0 = qual_int.loc[qual_int['cfpb_age_group'] == 0][['cfpb_1', 'cfpb_2', 'cfpb_3', 'cfpb_4', 'cfpb_5']].sum(axis=1).replace(cfpb_scoring_age62)
 
 qual_int['cfpb_score'] = pd.concat([cfpb_scores_1, cfpb_scores_0]).sort_index()
-```
 
-### Score BFI10
-
-```{python}
+# BFI-10 with Cronbach's alpha
 
 import statistics as stat
+import pingouin as pg
 
 # convert BFI datatype to int
 qual_int[['bfi_1_reserved' ,'bfi_2_trusting', 'bfi_3_lazy','bfi_4_relaxed', 'bfi_5_few_artistic', 'bfi_6_outgoing', 'bfi_7_fault', 'bfi_8_thorough', 'bfi_9_nervous', 'bfi_10_imagination']] = qual_int[['bfi_1_reserved' ,'bfi_2_trusting', 'bfi_3_lazy','bfi_4_relaxed', 'bfi_5_few_artistic', 'bfi_6_outgoing', 'bfi_7_fault', 'bfi_8_thorough', 'bfi_9_nervous', 'bfi_10_imagination']].fillna(0).astype('int')
@@ -281,6 +277,14 @@ qual_int['bfi_agreeableness'] = ((qual_int['bfi_2_trusting']) + (6-qual_int['bfi
 qual_int['bfi_conscientiousness'] = ((6-qual_int['bfi_3_lazy'] + qual_int['bfi_8_thorough']) / 2)
 qual_int['bfi_neuroticism'] = ((6-qual_int['bfi_4_relaxed']) + (qual_int['bfi_9_nervous']) / 2)
 qual_int['bfi_openness'] = ((6-qual_int['bfi_5_few_artistic']) + (qual_int['bfi_10_imagination']) / 2)
+
+cronbach = pd.DataFrame()
+cronbach['alpha_extraversion'] = pg.cronbach_alpha(data=qual_int[['bfi_1_reserved', 'bfi_5_few_artistic']])
+cronbach['alpha_agreeableness'] = pg.cronbach_alpha(data=qual_int[['bfi_2_trusting', 'bfi_7_fault']])
+cronbach['alpha_conscientiousness'] = pg.cronbach_alpha(data=qual_int[['bfi_3_lazy', 'bfi_8_thorough']])
+cronbach['alpha_neuroticism'] = pg.cronbach_alpha(data=qual_int[['bfi_4_relaxed', 'bfi_9_nervous']])
+cronbach['alpha_openness'] = pg.cronbach_alpha(data=qual_int[['bfi_5_few_artistic', 'bfi_10_imagination']])
+cronbach.to_csv('/Users/jab/Downloads/cronbach.csv')
 ```
 
 # Create long frame
