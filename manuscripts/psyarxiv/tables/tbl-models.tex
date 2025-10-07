@@ -1,0 +1,184 @@
+\begin{TableNotes}[flushleft] %
+\item[] \textbf{Model Formula Specification} \\
+\item[] \textbf{Primary}: rating \textasciitilde{}  1 + actors + context + moodstate + age + gender + education + income + ethnicity + hispanic + diagnosis\_subtype + hospitalization + banked + savings + trust\_clinician + trust\_carepartner + trust\_bank + cfpb\_score + care\_partner\_help + bfi\_agreeableness + (1 | participant) + (1 | item)
+\item[] \textbf{Main Effects}: rating \textasciitilde{} 1 + actors + context + moodstate + diagnosis\_subtype + (1 | participant) + (1 | item)
+\item[] \textbf{Context * Mood}: rating \textasciitilde{} actors + context * moodstate + diagnosis\_subtype + (1 | participant) + (1 | item)
+\item[] \textbf{Context * PAD}: rating \textasciitilde{} actors + context * PAD + moodstate + (1 | participant) + (1 | item)
+\item[] \textbf{Context * Bankruptcy}: rating \textasciitilde{} actors + context * bankruptcy\_declared + moodstate + (1 | participant) + (1 | item)
+\item[] \textbf{Actors * Help-seeking}: rating \textasciitilde{} actors * care\_partner\_help + context + moodstate + (1 | participant) + (1 | item)
+\item[] \textbf{Agreeableness}: rating \textasciitilde{} actors + context + moodstate + diagnosis\_subtype + bfi\_agreeableness + (1 | participant) + (1 | item)
+\end{TableNotes}
+
+\begin{tiny}
+\begin{xltabular}{\textwidth}{lccccccc}
+\toprule
+  & \textbf{Primary} & \textbf{Main Effects} & \textbf{Context * Mood} & \textbf{Context * PAD} & \textbf{Context * Bankruptcy} & \textbf{Actors * Help-seeking} & \textbf{Agreeableness} \\ 
+\midrule\addlinespace[2.5pt]
+(Intercept) & 2.219 & 1.717 & 1.314 & 1.700 & 1.713 & 1.600 & 0.905 \\ 
+ & [-2.709, 7.147] & [1.089, 2.345] & [0.779, 1.849] & [1.162, 2.237] & [1.176, 2.250] & [1.049, 2.151] & [0.079, 1.730] \\ 
+actorsCare Partner & 1.875 & 1.878 & 1.878 & 1.878 & 1.878 & 1.463 & 1.878 \\ 
+ & [1.375, 2.375] & [1.378, 2.377] & [1.553, 2.203] & [1.378, 2.377] & [1.378, 2.377] & [0.953, 1.972] & [1.378, 2.377] \\ 
+actorsClinicians & 1.321 & 1.334 & 1.334 & 1.334 & 1.334 & 1.162 & 1.334 \\ 
+ & [0.821, 1.821] & [0.834, 1.834] & [1.009, 1.659] & [0.834, 1.834] & [0.834, 1.834] & [0.653, 1.671] & [0.834, 1.834] \\ 
+contextHelp with Planning \& Budgeting & 2.017 & 2.036 & 2.707 & 2.077 & 2.123 & 2.040 & 2.036 \\ 
+ & [1.517, 2.517] & [1.536, 2.536] & [2.248, 3.167] & [1.575, 2.579] & [1.622, 2.625] & [1.537, 2.542] & [1.536, 2.536] \\ 
+contextShare Spending Details & 1.296 & 1.290 & 1.826 & 1.305 & 1.363 & 1.297 & 1.290 \\ 
+ & [0.796, 1.796] & [0.790, 1.790] & [1.367, 2.286] & [0.803, 1.806] & [0.861, 1.864] & [0.795, 1.800] & [0.790, 1.789] \\ 
+moodstateSymptomatic & 0.428 & 0.424 & 1.229 & 0.424 & 0.424 & 0.425 & 0.424 \\ 
+ & [0.020, 0.837] & [0.016, 0.832] & [0.769, 1.689] & [0.016, 0.832] & [0.016, 0.832] & [0.015, 0.836] & [0.016, 0.832] \\ 
+age25 to 34 & 0.143 &  &  &  &  &  &  \\ 
+ & [-0.431, 0.716] &  &  &  &  &  &  \\ 
+age35 to 44 & -0.017 &  &  &  &  &  &  \\ 
+ & [-0.643, 0.610] &  &  &  &  &  &  \\ 
+age45 to 54 & -0.166 &  &  &  &  &  &  \\ 
+ & [-0.875, 0.543] &  &  &  &  &  &  \\ 
+age55 to 64 & -0.347 &  &  &  &  &  &  \\ 
+ & [-1.203, 0.509] &  &  &  &  &  &  \\ 
+age65 to 74 & 0.110 &  &  &  &  &  &  \\ 
+ & [-1.031, 1.250] &  &  &  &  &  &  \\ 
+age75 or older & -0.435 &  &  &  &  &  &  \\ 
+ & [-2.802, 1.932] &  &  &  &  &  &  \\ 
+genderNon-binary & 0.531 &  &  &  &  &  &  \\ 
+ & [-0.265, 1.327] &  &  &  &  &  &  \\ 
+genderPrefer not to disclose & 0.241 &  &  &  &  &  &  \\ 
+ & [-1.991, 2.472] &  &  &  &  &  &  \\ 
+genderPrefer to self-describe & -0.439 &  &  &  &  &  &  \\ 
+ & [-2.213, 1.334] &  &  &  &  &  &  \\ 
+genderWoman & -0.365 &  &  &  &  &  &  \\ 
+ & [-0.759, 0.028] &  &  &  &  &  &  \\ 
+educationother & -0.706 &  &  &  &  &  &  \\ 
+ & [-2.761, 1.348] &  &  &  &  &  &  \\ 
+educationprimary school & -0.822 &  &  &  &  &  &  \\ 
+ & [-2.619, 0.975] &  &  &  &  &  &  \\ 
+educationprofessional or doctorate degree (MD, PhD, JD, etc.) & -0.867 &  &  &  &  &  &  \\ 
+ & [-2.594, 0.860] &  &  &  &  &  &  \\ 
+educationsecondary/high school (or equivalent) & -0.402 &  &  &  &  &  &  \\ 
+ & [-1.240, 0.436] &  &  &  &  &  &  \\ 
+educationsome university & -0.497 &  &  &  &  &  &  \\ 
+ & [-1.268, 0.275] &  &  &  &  &  &  \\ 
+educationuniversity graduate (4 year) & -0.423 &  &  &  &  &  &  \\ 
+ & [-1.162, 0.316] &  &  &  &  &  &  \\ 
+educationvocational/technical school (2 year) & -0.374 &  &  &  &  &  &  \\ 
+ & [-1.226, 0.479] &  &  &  &  &  &  \\ 
+income100 000 or more & 0.098 &  &  &  &  &  &  \\ 
+ & [-0.809, 1.004] &  &  &  &  &  &  \\ 
+income20 000 to 34 999 & 0.155 &  &  &  &  &  &  \\ 
+ & [-0.318, 0.629] &  &  &  &  &  &  \\ 
+income35 000 to 69 999 & 0.160 &  &  &  &  &  &  \\ 
+ & [-0.318, 0.638] &  &  &  &  &  &  \\ 
+income70 000 to 99 999 & 0.154 &  &  &  &  &  &  \\ 
+ & [-0.571, 0.879] &  &  &  &  &  &  \\ 
+ethnicityAsian & -0.154 &  &  &  &  &  &  \\ 
+ & [-2.390, 2.082] &  &  &  &  &  &  \\ 
+ethnicityBlack or African American & -0.329 &  &  &  &  &  &  \\ 
+ & [-2.338, 1.680] &  &  &  &  &  &  \\ 
+ethnicityMore than One Race & -0.682 &  &  &  &  &  &  \\ 
+ & [-2.695, 1.331] &  &  &  &  &  &  \\ 
+ethnicityUnknown or Not Reported & -0.622 &  &  &  &  &  &  \\ 
+ & [-2.856, 1.612] &  &  &  &  &  &  \\ 
+ethnicityWhite & -0.779 &  &  &  &  &  &  \\ 
+ & [-2.718, 1.160] &  &  &  &  &  &  \\ 
+hispanicYes & -0.146 &  &  &  &  &  &  \\ 
+ & [-0.745, 0.453] &  &  &  &  &  &  \\ 
+diagnosis\_subtypeCyclothymia & -0.683 & -0.423 & -0.423 &  &  &  & -0.442 \\ 
+ & [-2.040, 0.674] & [-1.869, 1.023] & [-1.869, 1.023] &  &  &  & [-1.876, 0.993] \\ 
+diagnosis\_subtypeI do not know & -0.025 & -0.094 & -0.094 &  &  &  & -0.090 \\ 
+ & [-0.749, 0.699] & [-0.858, 0.670] & [-0.858, 0.670] &  &  &  & [-0.849, 0.668] \\ 
+diagnosis\_subtypeType I & -0.021 & 0.059 & 0.059 &  &  &  & 0.088 \\ 
+ & [-0.550, 0.508] & [-0.488, 0.606] & [-0.488, 0.606] &  &  &  & [-0.455, 0.631] \\ 
+diagnosis\_subtypeType II & 0.195 & 0.169 & 0.169 &  &  &  & 0.182 \\ 
+ & [-0.264, 0.653] & [-0.308, 0.647] & [-0.308, 0.647] &  &  &  & [-0.291, 0.656] \\ 
+hospitalizationNot sure & 0.160 &  &  &  &  &  &  \\ 
+ & [-0.954, 1.275] &  &  &  &  &  &  \\ 
+hospitalizationYes & 0.314 &  &  &  &  &  &  \\ 
+ & [-0.048, 0.675] &  &  &  &  &  &  \\ 
+bankedNo & -1.690 &  &  &  &  &  &  \\ 
+ & [-6.504, 3.124] &  &  &  &  &  &  \\ 
+bankedYes & -1.696 &  &  &  &  &  &  \\ 
+ & [-6.444, 3.051] &  &  &  &  &  &  \\ 
+savingsNo & -0.401 &  &  &  &  &  &  \\ 
+ & [-3.338, 2.536] &  &  &  &  &  &  \\ 
+savingsYes & -0.585 &  &  &  &  &  &  \\ 
+ & [-3.523, 2.354] &  &  &  &  &  &  \\ 
+trust\_clinicianExtremely easy & 1.365 &  &  &  &  &  &  \\ 
+ & [0.450, 2.281] &  &  &  &  &  &  \\ 
+trust\_clinicianNeither easy nor difficult & 0.072 &  &  &  &  &  &  \\ 
+ & [-0.878, 1.022] &  &  &  &  &  &  \\ 
+trust\_clinicianSomewhat difficult & 0.073 &  &  &  &  &  &  \\ 
+ & [-0.826, 0.972] &  &  &  &  &  &  \\ 
+trust\_clinicianSomewhat easy & 0.890 &  &  &  &  &  &  \\ 
+ & [0.001, 1.778] &  &  &  &  &  &  \\ 
+trust\_carepartnerExtremely easy & 0.551 &  &  &  &  &  &  \\ 
+ & [-0.572, 1.674] &  &  &  &  &  &  \\ 
+trust\_carepartnerNeither easy nor difficult & 0.321 &  &  &  &  &  &  \\ 
+ & [-0.829, 1.471] &  &  &  &  &  &  \\ 
+trust\_carepartnerSomewhat difficult & 0.424 &  &  &  &  &  &  \\ 
+ & [-0.739, 1.587] &  &  &  &  &  &  \\ 
+trust\_carepartnerSomewhat easy & 0.231 &  &  &  &  &  &  \\ 
+ & [-0.865, 1.327] &  &  &  &  &  &  \\ 
+trust\_bankExtremely easy & 1.836 &  &  &  &  &  &  \\ 
+ & [0.824, 2.848] &  &  &  &  &  &  \\ 
+trust\_bankNeither easy nor difficult & 0.948 &  &  &  &  &  &  \\ 
+ & [0.435, 1.461] &  &  &  &  &  &  \\ 
+trust\_bankSomewhat difficult & 1.028 &  &  &  &  &  &  \\ 
+ & [0.563, 1.494] &  &  &  &  &  &  \\ 
+trust\_bankSomewhat easy & 1.867 &  &  &  &  &  &  \\ 
+ & [1.192, 2.542] &  &  &  &  &  &  \\ 
+cfpb\_score & 0.011 &  &  &  &  &  &  \\ 
+ & [-0.015, 0.037] &  &  &  &  &  &  \\ 
+care\_partner\_helpNot sure & 0.760 &  &  &  &  & 0.186 &  \\ 
+ & [-0.591, 2.110] &  &  &  &  & [-1.262, 1.634] &  \\ 
+care\_partner\_helpYes & 1.024 &  &  &  &  & 0.566 &  \\ 
+ & [0.632, 1.415] &  &  &  &  & [0.158, 0.975] &  \\ 
+bfi\_agreeableness & 0.003 &  &  &  &  &  & 0.172 \\ 
+ & [-0.113, 0.119] &  &  &  &  &  & [0.058, 0.286] \\ 
+contextHelp with Planning \& Budgeting × moodstateSymptomatic &  &  & -1.343 &  &  &  &  \\ 
+ &  &  & [-1.993, -0.693] &  &  &  &  \\ 
+contextShare Spending Details × moodstateSymptomatic &  &  & -1.073 &  &  &  &  \\ 
+ &  &  & [-1.723, -0.423] &  &  &  &  \\ 
+PADNot sure &  &  &  & 0.225 &  &  &  \\ 
+ &  &  &  & [-0.528, 0.978] &  &  &  \\ 
+PADYes &  &  &  & 0.897 &  &  &  \\ 
+ &  &  &  & [0.170, 1.624] &  &  &  \\ 
+contextHelp with Planning \& Budgeting × PADNot sure &  &  &  & -0.451 &  &  &  \\ 
+ &  &  &  & [-0.879, -0.023] &  &  &  \\ 
+contextShare Spending Details × PADNot sure &  &  &  & -0.399 &  &  &  \\ 
+ &  &  &  & [-0.827, 0.029] &  &  &  \\ 
+contextHelp with Planning \& Budgeting × PADYes &  &  &  & -0.094 &  &  &  \\ 
+ &  &  &  & [-0.507, 0.319] &  &  &  \\ 
+contextShare Spending Details × PADYes &  &  &  & 0.187 &  &  &  \\ 
+ &  &  &  & [-0.226, 0.600] &  &  &  \\ 
+bankruptcy\_declaredNot sure &  &  &  &  & -0.759 &  &  \\ 
+ &  &  &  &  & [-2.049, 0.530] &  &  \\ 
+bankruptcy\_declaredYes &  &  &  &  & 0.820 &  &  \\ 
+ &  &  &  &  & [0.199, 1.441] &  &  \\ 
+contextHelp with Planning \& Budgeting × bankruptcy\_declaredNot sure &  &  &  &  & -0.332 &  &  \\ 
+ &  &  &  &  & [-1.062, 0.399] &  &  \\ 
+contextShare Spending Details × bankruptcy\_declaredNot sure &  &  &  &  & -0.085 &  &  \\ 
+ &  &  &  &  & [-0.815, 0.645] &  &  \\ 
+contextHelp with Planning \& Budgeting × bankruptcy\_declaredYes &  &  &  &  & -0.693 &  &  \\ 
+ &  &  &  &  & [-1.045, -0.342] &  &  \\ 
+contextShare Spending Details × bankruptcy\_declaredYes &  &  &  &  & -0.620 &  &  \\ 
+ &  &  &  &  & [-0.972, -0.268] &  &  \\ 
+actorsCare Partner × care\_partner\_helpNot sure &  &  &  &  &  & -0.185 &  \\ 
+ &  &  &  &  &  & [-1.024, 0.654] &  \\ 
+actorsClinicians × care\_partner\_helpNot sure &  &  &  &  &  & 0.764 &  \\ 
+ &  &  &  &  &  & [-0.075, 1.603] &  \\ 
+actorsCare Partner × care\_partner\_helpYes &  &  &  &  &  & 1.256 &  \\ 
+ &  &  &  &  &  & [1.019, 1.493] &  \\ 
+actorsClinicians × care\_partner\_helpYes &  &  &  &  &  & 0.473 &  \\ 
+ &  &  &  &  &  & [0.236, 0.710] &  \\ 
+SD (Intercept participant) & 1.834 & 2.069 & 2.069 & 2.052 & 2.059 & 1.994 & 2.052 \\ 
+SD (Intercept item) & 0.431 & 0.430 & 0.270 & 0.430 & 0.430 & 0.433 & 0.430 \\ 
+{SD (Observations)} & {2.202} & {2.207} & {2.207} & {2.206} & {2.205} & {2.194} & {2.207} \\ 
+Num.Obs. & 8874 & 8982 & 8982 & 8982 & 8982 & 8946 & 8982 \\ 
+R2 Marg. & 0.240 & 0.129 & 0.138 & 0.135 & 0.133 & 0.162 & 0.137 \\ 
+R2 Cond. & 0.561 & 0.546 & 0.545 & 0.545 & 0.546 & 0.551 & 0.546 \\ 
+AIC & 40618.2 & 41192.7 & 41185.4 & 41188.7 & 41178.0 & 40900.3 & 41189.9 \\ 
+BIC & 41057.8 & 41285.0 & 41291.9 & 41295.2 & 41284.6 & 41006.8 & 41289.3 \\ 
+ICC & 0.4 & 0.5 & 0.5 & 0.5 & 0.5 & 0.5 & 0.5 \\ 
+RMSE & 2.14 & 2.15 & 2.15 & 2.15 & 2.14 & 2.13 & 2.15 \\ 
+\bottomrule
+\insertTableNotes %
+\end{xltabular}
+\end{tiny}

@@ -1,0 +1,2200 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{allencognitive2025}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=3f84cff2afaf5e3d0efec91589cc8716}{%
+           family={Allen},
+           familyi={A\bibinitperiod},
+           given={K.\bibnamedelimi J.\bibnamedelimi D.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6cf2d9c965850389f7291eb7860b7c86}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={Matthew\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=b496671ab84afc1969223848eda710e7}{%
+           family={Ronold},
+           familyi={R\bibinitperiod},
+           given={Eivind\bibnamedelima Haga},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=848ab30c77c7f213bcc45b1e5e346405}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={Liam},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c48324e5edca06fe475eaf6dd9f4818d}{%
+           family={Rajgopal},
+           familyi={R\bibinitperiod},
+           given={Nandini},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f54594a6c6ee3de7c12e261c2662fa36}{%
+           family={Hammar},
+           familyi={H\bibinitperiod},
+           given={Åsa},
+           giveni={Å\bibinitperiod}}}%
+        {{hash=afcd0f9e434f8dffc9716bbb556a7324}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Sheri\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {EN}%
+      }
+      \strng{namehash}{be377c4343fe277358f7707e448443a7}
+      \strng{fullhash}{c482f306fb91c7db4d19987e2f47d9b5}
+      \strng{fullhashraw}{c482f306fb91c7db4d19987e2f47d9b5}
+      \strng{bibnamehash}{be377c4343fe277358f7707e448443a7}
+      \strng{authorbibnamehash}{be377c4343fe277358f7707e448443a7}
+      \strng{authornamehash}{be377c4343fe277358f7707e448443a7}
+      \strng{authorfullhash}{c482f306fb91c7db4d19987e2f47d9b5}
+      \strng{authorfullhashraw}{c482f306fb91c7db4d19987e2f47d9b5}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Background: Inhibitory deficits are common in psychopathology. Emotion-related impulsivity (ERI) and rumination are general risk factors for psychiatric distress that are similarly associated with dysfunctional inhibition—particularly in affective contexts. A number of cognitive remediation procedures have been developed to improve inhibitory control; however, most remediation programs focus on “cold” cognition independent of affective processing. This pilot trial will gather preliminary evidence for a new cognitive training intervention targeting “hot” affective control (ie, inhibitory functions during elevated emotional arousal) in a transdiagnostic sample of adults who report heightened emotion dysregulation. Objective: This manuscript describes a protocol for a pilot randomized waitlist-controlled trial to assess changes in ERI and rumination after neurobehavioral affective control training (N-ACT), an 8-week cognitive training intervention designed to improve emotional response inhibition and emotional working memory. Our primary aim is to evaluate the efficacy, feasibility, and acceptability of N-ACT in reducing rumination and ERI, which we respectively conceptualize as complementary cognitive and behavioral consequences of emotion dysregulation. Secondarily, we will examine whether N-ACT leads to improvements in inhibitory control and, more distally, psychopathology symptoms. Methods: The final sample will comprise 80 adults who report high ERI or rumination. Participants will be randomized to (1) begin the N-ACT program without delay or (2) join a waitlist condition and then complete N-ACT. Exclusion criteria include active alcohol or substance use disorders, psychosis, and suicide risk. At the baseline and postintervention time points, participants will complete measures of emotion dysregulation and psychiatric symptoms, as well as a neuropsychological assessment of inhibitory control. Individuals assigned to the control group will undergo an identical assessment before joining the waitlist, followed by parallel assessments before and after N-ACT. Results: This trial is funded by support from the University of California Board of Regents and the Peder Sather Foundation (funding period: October 2022-September 2025). Recruitment is scheduled to begin in spring 2025. We will begin data analysis once data collection is complete, which is planned to occur in fall 2025. Conclusions: This pilot randomized waitlist-controlled trial is designed to assess the initial efficacy, feasibility, and acceptability of N-ACT, a novel cognitive remediation approach developed to address 2 key contributors to psychopathology: ERI and rumination. The N-ACT program uses computerized adaptive behavioral tasks to strengthen the affective control processes theoretically and empirically linked to ERI and rumination. We hope this work will help inform future studies with sufficient statistical power to ascertain whether enhancing affective control through cognitive training (N-ACT) produces downstream reductions in psychiatric symptoms via improved emotion regulation. Clinical Trial: ClinicalTrials.gov NCT06226467; https://www.clinicaltrials.gov/study/NCT06226467; Open Science Framework Registry rak5z; https://osf.io/rak5z}
+      \field{journaltitle}{JMIR Research Protocols}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shorttitle}{Cognitive {Training} for {Emotion}-{Related} {Impulsivity} and {Rumination}}
+      \field{title}{Cognitive {Training} for {Emotion}-{Related} {Impulsivity} and {Rumination}: {Protocol} for a {Pilot} {Randomized} {Waitlist}-{Controlled} {Trial}}
+      \field{urlday}{14}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{14}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{e54221}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2196/54221
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchprotocols.org/2025/1/e54221
+      \endverb
+      \verb{url}
+      \verb https://www.researchprotocols.org/2025/1/e54221
+      \endverb
+    \endentry
+    \entry{arel-bundockhow2024}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=aae32d8b6485b0e4b4646f14206a319b}{%
+           family={Arel-Bundock},
+           familyi={A\bibinithyphendelim B\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=1c8a93102cfffacc2ccaffaaa2070715}{%
+           family={Greifer},
+           familyi={G\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6987855d3f745cd556dce857d4640889}{%
+           family={Heiss},
+           familyi={H\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{fullhash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{fullhashraw}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{bibnamehash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{authorbibnamehash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{authornamehash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{authorfullhash}{03565c214c594d0597b1a2057bbc1af1}
+      \strng{authorfullhashraw}{03565c214c594d0597b1a2057bbc1af1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The parameters of a statistical model can sometimes be difficult to interpret substantively, especially when that model includes nonlinear components, interactions, or transformations. Analysts who fit such complex models often seek to transform raw parameter estimates into quantities that are easier for domain experts and stakeholders to understand. This article presents a simple conceptual framework to describe a vast array of such quantities of interest, which are reported under imprecise and inconsistent terminology across disciplines: predictions, marginal predictions, marginal means, marginal effects, conditional effects, slopes, contrasts, risk ratios, etc. We introduce marginaleffects, a package for R and Python which offers a simple and powerful interface to compute all of those quantities, and to conduct (non-)linear hypothesis and equivalence tests on them. marginaleffects is lightweight; extensible; it works well in combination with other R and Python packages; and it supports over 100 classes of models, including linear, generalized linear, generalized additive, mixed effects, Bayesian, and several machine learning models.}
+      \field{issn}{1548-7660}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{month}{11}
+      \field{title}{How to {Interpret} {Statistical} {Models} {Using} marginaleffects for {R} and {Python}}
+      \field{urlday}{3}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{111}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 32}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.18637/jss.v111.i09
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.18637/jss.v111.i09
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.18637/jss.v111.i09
+      \endverb
+      \keyw{factorial-vignette-methods}
+    \endentry
+    \entry{auspurgfactorial2015}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=1620e78950d213862c32cc8ecdadaf19}{%
+           family={Auspurg},
+           familyi={A\bibinitperiod},
+           given={Katrin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f86897113bbee3094a3939cfc7efd986}{%
+           family={Hinz},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications, Inc.}%
+      }
+      \strng{namehash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{fullhash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{fullhashraw}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{bibnamehash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{authorbibnamehash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{authornamehash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{authorfullhash}{0936521c31c09eaed35cf00df52d93fc}
+      \strng{authorfullhashraw}{0936521c31c09eaed35cf00df52d93fc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{<}p{>}Filling a gap in the literature of the field, this first-of-its-kind book provides researchers with a practical guide to using the factorial survey method to}
+      \field{isbn}{978-1-4833-9807-5}
+      \field{title}{Factorial {Survey} {Experiments}}
+      \field{urlday}{24}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.4135/9781483398075
+      \endverb
+      \verb{urlraw}
+      \verb https://methods.sagepub.com/book/mono/factorial-survey-experiments/toc
+      \endverb
+      \verb{url}
+      \verb https://methods.sagepub.com/book/mono/factorial-survey-experiments/toc
+      \endverb
+      \keyw{factorial-vignette-methods}
+    \endentry
+    \entry{barrospenafinancial2021}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=3faa16822047403bcb2e42784442841b}{%
+           family={Barros\bibnamedelima Pena},
+           familyi={B\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Belén},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a635d15ae953809ecfb2bf7f7a25f47f}{%
+           family={Kursar},
+           familyi={K\bibinitperiod},
+           given={Bailey},
+           giveni={B\bibinitperiod}}}%
+        {{hash=4ced5bf80a942579c3a8c42d78e32453}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Rachel\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b371d605c5ab7082464c77070139f283}{%
+           family={Alpin},
+           familyi={A\bibinitperiod},
+           given={Katie},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ddb5f06eec282fe2c5edcd29edb9d694}{%
+           family={Holkar},
+           familyi={H\bibinitperiod},
+           given={Merlyn},
+           giveni={M\bibinitperiod}}}%
+        {{hash=db8478d104698b5451e77a8a49a4c132}{%
+           family={Vines},
+           familyi={V\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{5c3a4e7e909ba5f6e9031f95fc6d3f21}
+      \strng{fullhash}{97f16c768a2412352c83e99fe3582ffa}
+      \strng{fullhashraw}{97f16c768a2412352c83e99fe3582ffa}
+      \strng{bibnamehash}{5c3a4e7e909ba5f6e9031f95fc6d3f21}
+      \strng{authorbibnamehash}{5c3a4e7e909ba5f6e9031f95fc6d3f21}
+      \strng{authornamehash}{5c3a4e7e909ba5f6e9031f95fc6d3f21}
+      \strng{authorfullhash}{97f16c768a2412352c83e99fe3582ffa}
+      \strng{authorfullhashraw}{97f16c768a2412352c83e99fe3582ffa}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{It is well documented that people living with mental health conditions are more likely to experience financial difficulties. When explaining this association, emphasis has often been placed on financial capability, i.e. the capacity of those living with poor mental health to manage their money. This paper challenges such capability-based explanations by reporting on a diary study and interviews with 14 people who self-identify as living with a mental health condition. We focused on their experiences of financial technology use, and explored the role technology played in their strategies to minimise the impact of mental health on their economic circumstances. Rather than lacking capability, participants’ practices revealed shortcomings of existing financial technologies and how they sought to work around these. We conclude by providing a set of design directions for technologies that engage those living with poor mental health not as vulnerable targets for financial inclusion, but as full financial citizens.}
+      \field{booktitle}{Proceedings of the 2021 {CHI} {Conference} on {Human} {Factors} in {Computing} {Systems}}
+      \field{isbn}{978-1-4503-8096-6}
+      \field{month}{5}
+      \field{shorttitle}{Financial {Technologies} in the {Cycle} of {Poor} {Mental} {Health} and {Financial} {Hardship}}
+      \field{title}{Financial {Technologies} in the {Cycle} of {Poor} {Mental} {Health} and {Financial} {Hardship}: {Towards} {Financial} {Citizenship}}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 16}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3411764.3445251
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3411764.3445251
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{bateslme42025}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=291c4bc67cf41a2019405a2328a9b75e}{%
+           family={Bates},
+           familyi={B\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9cd1e56848b277b4f48a6e0b817ba5ab}{%
+           family={Mächler},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d6b13be971f13ee03cc83cded41b6d7e}{%
+           family={Bolker},
+           familyi={B\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3face7d9e1128ebfefc56b5f54f28451}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d09b320744f09c093eb8b0d7f6bbdda0}
+      \strng{fullhash}{e1419b3c7f22b8a469bd183c172e98b4}
+      \strng{fullhashraw}{e1419b3c7f22b8a469bd183c172e98b4}
+      \strng{bibnamehash}{d09b320744f09c093eb8b0d7f6bbdda0}
+      \strng{authorbibnamehash}{d09b320744f09c093eb8b0d7f6bbdda0}
+      \strng{authornamehash}{d09b320744f09c093eb8b0d7f6bbdda0}
+      \strng{authorfullhash}{e1419b3c7f22b8a469bd183c172e98b4}
+      \strng{authorfullhashraw}{e1419b3c7f22b8a469bd183c172e98b4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{number}{1}
+      \field{title}{Fitting Linear Mixed-Effects Models Using {lme4}}
+      \field{volume}{67}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 48}
+      \range{pages}{48}
+      \verb{doi}
+      \verb 10.18637/jss.v067.i01
+      \endverb
+    \endentry
+    \entry{beentjescaregiver2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d7ce076bd5d501115211802fb5119307}{%
+           family={Beentjes},
+           familyi={B\bibinitperiod},
+           given={Titus\bibnamedelimb A.\bibnamedelimi A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=437bf12d583b5a0c2cc7c992e0d2f82c}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Peter\bibnamedelimb J.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=78d49b6215ca2d93765944fb7f04d287}{%
+           family={Poslawsky},
+           familyi={P\bibinitperiod},
+           given={Irina\bibnamedelima E.},
+           giveni={I\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{fullhash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{fullhashraw}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{bibnamehash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{authorbibnamehash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{authornamehash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{authorfullhash}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \strng{authorfullhashraw}{8f34c40d940edd51dd5f32e084a6e7f1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{PURPOSE: Bipolar mania is characterized by marked impairment in social, occupational, or other important areas of functioning. One should expect to see an equally severe burden in informal caregivers. The literature was reviewed in order to provide a foundation upon which to build nursing interventions. CONCLUSIONS: Several characteristics of bipolar mania—patient aggressiveness, lack of insight, and financial problems—were identified as severe burdens to caregivers. Professionals might not have a total view of the extent of the burden in caregivers. This review could not link the patients' mania or hypomania to factors that were described in other literature on caregiver burden related to bipolar disorder, regardless of the type of episode. PRACTICE IMPLICATIONS: There is a need for further research in this area to make more explicit the burden on caregivers during times of mania or hypomania.}
+      \field{issn}{1744-6163}
+      \field{journaltitle}{Perspectives in Psychiatric Care}
+      \field{number}{4}
+      \field{shorttitle}{Caregiver {Burden} in {Bipolar} {Hypomania} and {Mania}}
+      \field{title}{Caregiver {Burden} in {Bipolar} {Hypomania} and {Mania}: {A} {Systematic} {Review}}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2022}
+      \field{volume}{48}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \field{pages}{187\bibrangedash 197}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/j.1744-6163.2012.00328.x
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-6163.2012.00328.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-6163.2012.00328.x
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{blairfinancial2022}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=18970e478288e8000381b6b32f571d64}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Johnna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fce69dc72f66451b9e9fd591348766c6}{%
+           family={Brozena},
+           familyi={B\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f022c30cd5a8d3471c664bd37208e1e0}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c0e5270b30b6f4e037559d4f80e278dd}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8c10c1849ba5b9e2a04e8987d4e00fd5}{%
+           family={Abdullah},
+           familyi={A\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{fullhash}{ebe5a02f6ee4d4f9647269aa33b87153}
+      \strng{fullhashraw}{ebe5a02f6ee4d4f9647269aa33b87153}
+      \strng{bibnamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authorbibnamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authornamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authorfullhash}{ebe5a02f6ee4d4f9647269aa33b87153}
+      \strng{authorfullhashraw}{ebe5a02f6ee4d4f9647269aa33b87153}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Financial stability is a key challenge for individuals with mental illnesses. Symptomatic periods often manifest in poor financial decision-making including compulsive spending and risky behaviors. This article explores research opportunities and challenges in developing financial technologies (FinTech) to support individuals with mental health. Specifically, we focus on how objective financial data might lead to novel mental health assessment and intervention methods. We have used data from one individual with bipolar disorder (BD) (i.e., an N = 1 case study) to illustrate feasibility of collecting and analyzing objective financial data alongside mental health factors. While we have not found statistically significant trends nor our findings are generalizable beyond this case, our approach provides an insight into the potential of using objective financial data to identify early warning signs and thereby, enable preemptive care for individuals with serious mental illnesses. We have also identified challenges of accessing objective financial data. The paper outlines what data is currently available, what can be done with it, and what factors to consider when working with financial data. We have also explored future directions for developing interventions to support financial well-being and stability. Furthermore, we have described the technical, ethical, and equity challenges for financial data-driven assessments and intervention methods, as well as provided a broad research agenda to address these challenges.}
+      \field{issn}{1664-0640}
+      \field{journaltitle}{Frontiers in Psychiatry}
+      \field{shorttitle}{Financial technologies ({FinTech}) for mental health}
+      \field{title}{Financial technologies ({FinTech}) for mental health: {The} potential of objective financial data to better understand the relationships between financial behavior and mental health}
+      \field{urlday}{6}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyt.2022.810057
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyt.2022.810057
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{blairknowing2023}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=18970e478288e8000381b6b32f571d64}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Johnna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cd9fec2c3baa3dd0ac17f72355b8bb09}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Dahlia},
+           giveni={D\bibinitperiod}}}%
+        {{hash=48c4a45d51d7d8ea3ff0866d07194c15}{%
+           family={Saunders},
+           familyi={S\bibinitperiod},
+           given={Erika\bibnamedelima FH},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=8c10c1849ba5b9e2a04e8987d4e00fd5}{%
+           family={Abdullah},
+           familyi={A\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{fullhash}{25508df3b4dcb660e1ccb7e07f02adeb}
+      \strng{fullhashraw}{25508df3b4dcb660e1ccb7e07f02adeb}
+      \strng{bibnamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authorbibnamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authornamehash}{3110d6e7db0282686d55d9423dcf26b6}
+      \strng{authorfullhash}{25508df3b4dcb660e1ccb7e07f02adeb}
+      \strng{authorfullhashraw}{25508df3b4dcb660e1ccb7e07f02adeb}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2023 {CHI} conference on human factors in computing systems}
+      \field{title}{Knowing how long a storm might last makes it easier to weather: {Exploring} needs and attitudes toward a data-driven and preemptive intervention system for bipolar disorder}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{brozenaidentifying2023}{misc}{}{}
+      \name{author}{7}{}{%
+        {{hash=fce69dc72f66451b9e9fd591348766c6}{%
+           family={Brozena},
+           familyi={B\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8c10c1849ba5b9e2a04e8987d4e00fd5}{%
+           family={Abdullah},
+           familyi={A\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+        {{hash=18970e478288e8000381b6b32f571d64}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Johnna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c0e5270b30b6f4e037559d4f80e278dd}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f022c30cd5a8d3471c664bd37208e1e0}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=48c4a45d51d7d8ea3ff0866d07194c15}{%
+           family={Saunders},
+           familyi={S\bibinitperiod},
+           given={Erika\bibnamedelimb F\bibnamedelima H},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cd9fec2c3baa3dd0ac17f72355b8bb09}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Dahlia},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OSF}%
+      }
+      \strng{namehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{fullhash}{c93cf5e466d960c2038d19dda9fc5cf3}
+      \strng{fullhashraw}{c93cf5e466d960c2038d19dda9fc5cf3}
+      \strng{bibnamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authorbibnamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authornamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authorfullhash}{c93cf5e466d960c2038d19dda9fc5cf3}
+      \strng{authorfullhashraw}{c93cf5e466d960c2038d19dda9fc5cf3}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Identifying and addressing privacy concerns regarding the use of financial data from individuals with BD}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.17605/OSF.IO/5AKEB
+      \endverb
+      \verb{urlraw}
+      \verb osf.io/5akeb
+      \endverb
+      \verb{url}
+      \verb osf.io/5akeb
+      \endverb
+    \endentry
+    \entry{brozenasupportive2024}{inproceedings}{}{}
+      \name{author}{7}{}{%
+        {{hash=fce69dc72f66451b9e9fd591348766c6}{%
+           family={Brozena},
+           familyi={B\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=18970e478288e8000381b6b32f571d64}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Johnna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c0e5270b30b6f4e037559d4f80e278dd}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f022c30cd5a8d3471c664bd37208e1e0}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd9fec2c3baa3dd0ac17f72355b8bb09}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Dahlia},
+           giveni={D\bibinitperiod}}}%
+        {{hash=48c4a45d51d7d8ea3ff0866d07194c15}{%
+           family={Saunders},
+           familyi={S\bibinitperiod},
+           given={Erika\bibnamedelimb F.\bibnamedelimi H.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8c10c1849ba5b9e2a04e8987d4e00fd5}{%
+           family={Abdullah},
+           familyi={A\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{fullhash}{7f5ceab4cbde6ab7cbae4420b86eefc4}
+      \strng{fullhashraw}{7f5ceab4cbde6ab7cbae4420b86eefc4}
+      \strng{bibnamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authorbibnamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authornamehash}{c13da7bc8d91a21be175f53eb3030a54}
+      \strng{authorfullhash}{7f5ceab4cbde6ab7cbae4420b86eefc4}
+      \strng{authorfullhashraw}{7f5ceab4cbde6ab7cbae4420b86eefc4}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Financial stability is a key challenge for individuals living with bipolar disorder (BD). Symptomatic periods in BD are associated with poor financial decision-making, contributing to a negative cycle of worsening symptoms and an increased risk of bankruptcy. There has been an increased focus on designing supportive financial technologies (fintech) to address varying and intermittent needs across different stages of BD. However, little is known about this population’s expectations and privacy preferences related to financial data sharing for longitudinal care management. To address this knowledge gap, we have deployed a factorial vignette survey using the Contextual Integrity framework. Our data from individuals with BD (N=480) shows that they are open to sharing financial data for long term care management. We have also identified significant differences in sharing preferences across age, gender, and diagnostic subtype. We discuss the implications of these findings in designing equitable fintech to support this marginalized community.}
+      \field{booktitle}{Proceedings of the 2024 {CHI} {Conference} on {Human} {Factors} in {Computing} {Systems}}
+      \field{isbn}{979-8-4007-0330-0}
+      \field{month}{5}
+      \field{series}{{CHI} '24}
+      \field{shorttitle}{Supportive {Fintech} for {Individuals} with {Bipolar} {Disorder}}
+      \field{title}{Supportive {Fintech} for {Individuals} with {Bipolar} {Disorder}: {Financial} {Data} {Sharing} {Preferences} for {Longitudinal} {Care} {Management}}
+      \field{urlday}{5}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/3613904.3642645
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3613904.3642645
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3613904.3642645
+      \endverb
+    \endentry
+    \entry{vandeneijnde-damencollaborative2024}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=0ba5286645fc12be281d93933f3f5bfd}{%
+           family={Eijnde-Damen},
+           familyi={E\bibinithyphendelim D\bibinitperiod},
+           given={Ilona\bibnamedelimb M.\bibnamedelimi C.},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           prefix={van\bibnamedelima den},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=16012e4322041af525d4b4d77d54f5ce}{%
+           family={Maas},
+           familyi={M\bibinitperiod},
+           given={Joyce},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c6b60f84d455fba76238b9dbe9182919}{%
+           family={Burger},
+           familyi={B\bibinitperiod},
+           given={Pia},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd35dc3f570e0d62a3f0c0fed0285725}{%
+           family={Bodde},
+           familyi={B\bibinitperiod},
+           given={Nynke\bibnamedelimb M.\bibnamedelimi G.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d11d91395cbce050117f47ea86749d4c}{%
+           family={Simeunovic-Ostojic},
+           familyi={S\bibinithyphendelim O\bibinitperiod},
+           given={Mladena},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{b690dc3eb48d9b037216fff5b35f4d33}
+      \strng{fullhash}{40cfdca2b262cad574834c5f8f0d6310}
+      \strng{fullhashraw}{40cfdca2b262cad574834c5f8f0d6310}
+      \strng{bibnamehash}{b690dc3eb48d9b037216fff5b35f4d33}
+      \strng{authorbibnamehash}{b690dc3eb48d9b037216fff5b35f4d33}
+      \strng{authornamehash}{b690dc3eb48d9b037216fff5b35f4d33}
+      \strng{authorfullhash}{40cfdca2b262cad574834c5f8f0d6310}
+      \strng{authorfullhashraw}{40cfdca2b262cad574834c5f8f0d6310}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Severe and Enduring Eating Disorders (SEED), in particular SEED-Anorexia Nervosa (SE-AN), may represent the most difficult disorder to treat in psychiatry. Furthermore, the lack of empirical research in this patient group, and, consequently the lack of guidelines, call for an urgent increase in research and discussion within this field. Meanwhile experts concur that effective care should be structured in a collaborative manner. To identify the challenges in providing care to patients with SE-AN in the Dutch healthcare context, and propose a collaborative care treatment model to address these issues. A pragmatic mixed-method approach was used, structured as follows: (1) Identifying perceived barriers and treatment needs from the viewpoint of both patients and eating disorder healthcare professionals through an evaluation questionnaire; (2) Investigating current treatment practices for SEED/SE-AN via benchmarking; (3) Gaining insight into the optimal structure and content of care by interviewing network partners and experts-by-experience. Based on these findings, and drawing from literature on severe and enduring disorders, a treatment model for SE-AN was proposed and implemented. The key challenges identified included a lack of knowledge about eating disorders among network partners, treatment ambivalence among patients and poor collaboration between professionals. The proposed model enhances self-management and collaborative relationships with healthcare providers, offers user-friendly and practical guidance, and aims at stabilization, reducing relapses, deterioration, and readmissions, thereby being cost-effective. Importantly, the model operates across levels of care (primary, secondary, tertiary). This study, describing a collaborative care program for SE-AN, developed and implemented in a highly specialized treatment center for eating disorders, sets the stage for further explanatory/efficacy research to build on the findings in this study, with the following aims: addressing the critical gap in care for SEED/SE-AN, improving better healthcare organization, reducing relapse rates, and lowering costs for this often overlooked patient group. Severe and Enduring Eating Disorders (SEED), and particularly Severe and Enduring Anorexia Nervosa (SE-AN), present significant challenges in psychiatric treatment. This study aimed to understand the obstacles in caring for patients with SEED/SE-AN in the Dutch healthcare system and proposed a collaborative care model to address the issues. Through surveys, interviews, and benchmarking, key challenges were identified, including limited knowledge about eating disorders, patient ambivalence, and poor professional collaboration. The collaborative care model for SE-AN that was proposed in this study emphasizes structured care coordination, education for network partners, and support for eating disorder professionals, combining clinical management and psychotherapy. The study aims to bridge the gap in care for SE-AN and improve healthcare organization for this overlooked patient group.}
+      \field{issn}{2050-2974}
+      \field{journaltitle}{Journal of Eating Disorders}
+      \field{month}{12}
+      \field{number}{1}
+      \field{title}{Towards collaborative care for severe and enduring {Anorexia} {Nervosa} – a mixed-method approach}
+      \field{urlday}{4}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{volume}{12}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1186/s40337-024-01091-z
+      \endverb
+      \verb{urlraw}
+      \verb https://jeatdisord.biomedcentral.com/articles/10.1186/s40337-024-01091-z
+      \endverb
+      \verb{url}
+      \verb https://jeatdisord.biomedcentral.com/articles/10.1186/s40337-024-01091-z
+      \endverb
+      \keyw{intervention-design,shared-decision-making}
+    \endentry
+    \entry{elliottemotionrelated2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=6cf2d9c965850389f7291eb7860b7c86}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={Matthew\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=afcd0f9e434f8dffc9716bbb556a7324}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Sheri\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=eb4a9332438a30ca93dd453ec8508898}{%
+           family={Pearlstein},
+           familyi={P\bibinitperiod},
+           given={Jennifer\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=685a995cfef456fbec8ddf9359f9da09}{%
+           family={Muñoz\bibnamedelima Lopez},
+           familyi={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Daniela\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=951452f672aca1c7dab596ecacc7fc9a}{%
+           family={Keren},
+           familyi={K\bibinitperiod},
+           given={Hanna},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffcc491f961aef57f039a32e32d997c3}
+      \strng{fullhash}{df66da25cf94080af849eb277475ccc3}
+      \strng{fullhashraw}{df66da25cf94080af849eb277475ccc3}
+      \strng{bibnamehash}{ffcc491f961aef57f039a32e32d997c3}
+      \strng{authorbibnamehash}{ffcc491f961aef57f039a32e32d997c3}
+      \strng{authornamehash}{ffcc491f961aef57f039a32e32d997c3}
+      \strng{authorfullhash}{df66da25cf94080af849eb277475ccc3}
+      \strng{authorfullhashraw}{df66da25cf94080af849eb277475ccc3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Emotion-related impulsivity, the trait-like tendency toward regrettable behavior during states of high emotion, is a robust predictor of internalizing and externalizing psychopathology. Despite substantial evidence that emotion-related impulsivity is important transdiagnostically, relatively little is known about its cognitive correlates. This systematic review and meta-regression investigates one such candidate, risky decision-making. We analyzed 195 effect sizes from 51 studies of 14,957 total participants, including 105 newly calculated effect sizes that were not reported in the original publications. The meta-regression demonstrated evidence for a small, positive relationship of emotion-related impulsivity with behavioral indices of risky decision-making (ß = 0.086). Effects generalized across sample age, gender, Positive versus Negative Urgency, and clinical versus nonclinical samples. The average effect size varied by task type, with stronger effects for the Iowa Gambling Task and Delay Discounting Task. Experimental arousal manipulation was nearly a significant moderator, with stress and pharmacological manipulations yielding significant effect sizes. Analyses indicated that publication bias did not skew the current findings. Notwithstanding limitations, the data suggest that risky decision-making is a cognitive domain that relates to emotion-related impulsivity. We conclude with recommendations regarding the specific types of tasks and arousal inductions that will best capture emotion-related impulsivity in future experimental research.}
+      \field{issn}{0272-7358}
+      \field{journaltitle}{Clinical Psychology Review}
+      \field{month}{3}
+      \field{shorttitle}{Emotion-related impulsivity and risky decision-making}
+      \field{title}{Emotion-related impulsivity and risky decision-making: {A} systematic review and meta-regression}
+      \field{urlday}{14}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{100}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{102232}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cpr.2022.102232
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0272735822001179
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0272735822001179
+      \endverb
+      \keyw{impulsivity,intervention-design,finhealth}
+    \endentry
+    \entry{elwynthreetalk2017}{article}{}{}
+      \name{author}{21}{}{%
+        {{hash=4b524e5cf33f2724235b6055681303ba}{%
+           family={Elwyn},
+           familyi={E\bibinitperiod},
+           given={Glyn},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ca8c00359c010ee8a4c3378b4350ae3b}{%
+           family={Durand},
+           familyi={D\bibinitperiod},
+           given={Marie\bibnamedelima Anne},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a900735570fb340644cf7421e1f7dd5f}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Julia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=30bb2b483f1ca7d78f9d710c447b2aa3}{%
+           family={Aarts},
+           familyi={A\bibinitperiod},
+           given={Johanna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=55931bf85dcaa6678bb7ad9a7f66c7e4}{%
+           family={Barr},
+           familyi={B\bibinitperiod},
+           given={Paul\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=ad597974f0bef0b078e3e8ef6d617d17}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={Zackary},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=441be769cf9fc3821b092c647490e1c8}{%
+           family={Cochran},
+           familyi={C\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7d238f06282ba9cb6e0318a090007c90}{%
+           family={Frosch},
+           familyi={F\bibinitperiod},
+           given={Dominick},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0c4024a78ca5620618ac8f92623626dc}{%
+           family={Galasiński},
+           familyi={G\bibinitperiod},
+           given={Dariusz},
+           giveni={D\bibinitperiod}}}%
+        {{hash=16b5056199d5afd09888e958e630dd2f}{%
+           family={Gulbrandsen},
+           familyi={G\bibinitperiod},
+           given={Pål},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e9e59951a82d8dbfa539afc237944e3e}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Paul\bibnamedelimb K\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=610d6071f71dc648b1a54e41bb9149fb}{%
+           family={Härter},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0ddd14d25d811515b8f5edf4ca61dc5d}{%
+           family={Kinnersley},
+           familyi={K\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9b37d0cf0e4ba9119329bdf636879b00}{%
+           family={Lloyd},
+           familyi={L\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a7fcd93e181c87050de05b3ae67c20a8}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={Manish},
+           giveni={M\bibinitperiod}}}%
+        {{hash=786eac93902560c18813e3e83d684f86}{%
+           family={Perestelo-Perez},
+           familyi={P\bibinithyphendelim P\bibinitperiod},
+           given={Lilisbeth},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5b1ac4af49285e8f871b0c216cf61a37}{%
+           family={Scholl},
+           familyi={S\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+        {{hash=61eee0db384b0a63ea5ffe88cb8f5ca4}{%
+           family={Tomori},
+           familyi={T\bibinitperiod},
+           given={Kounosuke},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f09c62ead3b1fcf2470de2d06c0d5dd0}{%
+           family={Trevena},
+           familyi={T\bibinitperiod},
+           given={Lyndal},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a0fbffd255065b69562298cab1dcee8c}{%
+           family={Witteman},
+           familyi={W\bibinitperiod},
+           given={Holly\bibnamedelima O},
+           giveni={H\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=72caa3b219f9e1418261433237fe5e4f}{%
+           family={Van\bibnamedelimb der\bibnamedelima Weijden},
+           familyi={V\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim W\bibinitperiod},
+           given={Trudy},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{76943c5403ab125b68c30e6020e2332a}
+      \strng{fullhash}{5cb8b52d91e49fb3ada3126dd6213831}
+      \strng{fullhashraw}{5cb8b52d91e49fb3ada3126dd6213831}
+      \strng{bibnamehash}{76943c5403ab125b68c30e6020e2332a}
+      \strng{authorbibnamehash}{76943c5403ab125b68c30e6020e2332a}
+      \strng{authornamehash}{76943c5403ab125b68c30e6020e2332a}
+      \strng{authorfullhash}{5cb8b52d91e49fb3ada3126dd6213831}
+      \strng{authorfullhashraw}{5cb8b52d91e49fb3ada3126dd6213831}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objectives To revise an existing three-talk model for learning how to achieve shared decision making, and to consult with relevant stakeholders to update and obtain wider engagement., Design Multistage consultation process., Setting Key informant group, communities of interest, and survey of clinical specialties., Participants 19 key informants, 153 member responses from multiple communities of interest, and 316 responses to an online survey from medically qualified clinicians from six specialties., Results After extended consultation over three iterations, we revised the three-talk model by making changes to one talk category, adding the need to elicit patient goals, providing a clear set of tasks for each talk category, and adding suggested scripts to illustrate each step. A new three-talk model of shared decision making is proposed, based on “team talk,” “option talk,” and “decision talk,” to depict a process of collaboration and deliberation. Team talk places emphasis on the need to provide support to patients when they are made aware of choices, and to elicit their goals as a means of guiding decision making processes. Option talk refers to the task of comparing alternatives, using risk communication principles. Decision talk refers to the task of arriving at decisions that reflect the informed preferences of patients, guided by the experience and expertise of health professionals., Conclusions The revised three-talk model of shared decision making depicts conversational steps, initiated by providing support when introducing options, followed by strategies to compare and discuss trade-offs, before deliberation based on informed preferences.}
+      \field{issn}{0959-8138}
+      \field{journaltitle}{The BMJ}
+      \field{month}{11}
+      \field{shorttitle}{A three-talk model for shared decision making}
+      \field{title}{A three-talk model for shared decision making: multistage consultation process}
+      \field{urlday}{4}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{volume}{359}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \field{pages}{j4891}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1136/bmj.j4891
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5683042/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5683042/
+      \endverb
+      \keyw{shared-decision-making}
+    \endentry
+    \entry{farrwhy2019}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=09bb644cb7afb7eaa67d2673e5816332}{%
+           family={Farr},
+           familyi={F\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c0e638b5d5f77273b92d95a737d50ab4}{%
+           family={Cash},
+           familyi={C\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+        {{hash=930124abd88798e668a891af3aca0128}{%
+           family={Harper},
+           familyi={H\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{2}{%
+        {The Ludwig Center for Community}%
+        {Economic Development at Yale Law School}%
+      }
+      \strng{namehash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{fullhash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{fullhashraw}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{bibnamehash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{authorbibnamehash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{authornamehash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{authorfullhash}{8e16a9fd23ca8a935361643c07962d50}
+      \strng{authorfullhashraw}{8e16a9fd23ca8a935361643c07962d50}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Over forty-three million people experience a mental health issue annually. Mental health issues can make financial situations more complicated and financial stability more difficult to achieve. Furthermore, financial institutions are missing out on an opportunity to effectively serve the millions of Americans who live with a mental health disability. Building on the research of Dr. Annie Harper—which itself is grounded in the perspectives and life experiences of individuals with mental health disabilities—this report proposes that financial institutions offer supportive banking features in order to make their products and services more accessible. In particular, there are three features that responsible financial institutions could easily implement: 1) customizable mobile banking notifications, 2) self-imposed spending limits on debit cards, and 3) view-only account access. These features would both respond to the expressed needs of individuals with mental health disabilities, as well as comply with existing federal banking laws and regulations. In addition, these features will also appeal to a wide range of current and potential customers, such as young adults, individuals with disabilities, and older populations. Banking for All explains both why financial institutions should better serve individuals with mental health disabilities, and how these institutions might go about implementing these different features. Financial institutions have an opportunity to increase accessibility, and in so doing, help strengthen the financial health of individuals, families, and communities.}
+      \field{month}{4}
+      \field{title}{Why {Financial} {Institutions} {Need} to {Offer} {Supportive} {Banking} {Features}}
+      \field{type}{techreport}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2021}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://bit.ly/3EKcyGM
+      \endverb
+      \verb{url}
+      \verb https://bit.ly/3EKcyGM
+      \endverb
+    \endentry
+    \entry{fletcherhighrisk2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=325b779ea4439e0e944a0731462f46ce}{%
+           family={Fletcher},
+           familyi={F\bibinitperiod},
+           given={Kathryn},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c7f261d8ff1d541e8e0a32866616e661}{%
+           family={Parker},
+           familyi={P\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c1e338bec311e7f1794a65eb4868ed61}{%
+           family={Paterson},
+           familyi={P\bibinitperiod},
+           given={Amelia},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3ab44ade9b8a8b037c7543f6cad86c81}{%
+           family={Synnott},
+           familyi={S\bibinitperiod},
+           given={Howe},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{9b76069f06dc35df95d8536b1058010c}
+      \strng{fullhash}{59f3f427ba6a2831e5a67bffcada0cf6}
+      \strng{fullhashraw}{59f3f427ba6a2831e5a67bffcada0cf6}
+      \strng{bibnamehash}{9b76069f06dc35df95d8536b1058010c}
+      \strng{authorbibnamehash}{9b76069f06dc35df95d8536b1058010c}
+      \strng{authornamehash}{9b76069f06dc35df95d8536b1058010c}
+      \strng{authorfullhash}{59f3f427ba6a2831e5a67bffcada0cf6}
+      \strng{authorfullhashraw}{59f3f427ba6a2831e5a67bffcada0cf6}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background: Risk-taking behaviours during hypomanic states are recognised, however the high-risk nature of some behaviours—including the potential for harm to both the individual and others—has not been detailed in the research literature. The current study examines risk-taking behaviours and their consequences (including their potential for impairment) in those with a bipolar II condition. Method: Participants were recruited from the Sydney-based Black Dog Institute Depression Clinic. Diagnostic assignment of bipolar II disorder was based on clinician judgement and formal DSM-IV criteria. Participants completed a series of detailed questions assessing previous risk-taking behaviours during hypomanic states. Results: The sample comprised a total of 93 participants. Risk-taking behaviours during hypomania included spending signiﬁcant amounts of money, excessive alcohol or drug use, dangerous driving and endangering sexual activities. Key consequences included interpersonal conﬂict, substantial ﬁnancial burden and feelings of guilt, shame and remorse. Despite recognition of the risks and consequences associated with hypomanic behaviours, less than one-ﬁfth of participants agreed that hypomania should be treated because of the associated risks. Limitations: Study limitations included a cross-sectional design, reliance on self-report information, lack of controlling for current mood state, and comprised a tertiary referral sample that may be weighted to more severe cases. Findings may therefore not be generalisable and require replication. Conclusions: Risk-taking behaviours during hypomania are common, and often linked with serious consequences. Whilst hypomania is often enjoyed and romanticised by patients—leading to ambivalence around treatment of such states—careful consideration of the impact of risk-taking behaviour is necessary, while the study raises the question as to what is ‘impairment’ in hypomania. Findings should advance clinical management by identifying those high-risk behaviours that would beneﬁt from pre-emptive weighting in developing individual’s wellbeing plans for managing the condition.}
+      \field{issn}{01650327}
+      \field{journaltitle}{Journal of Affective Disorders}
+      \field{month}{8}
+      \field{number}{1}
+      \field{title}{High-risk behaviour in hypomanic states}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{volume}{150}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{50\bibrangedash 56}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.jad.2013.02.018
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0165032713001778
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0165032713001778
+      \endverb
+    \endentry
+    \entry{foster2017open}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5fba6445df43e4072bb7fd20327e11b0}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={Erin\bibnamedelima D},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7d0f33765976cae70658dba1d6911f0c}{%
+           family={Deardorff},
+           familyi={D\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{fullhash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{fullhashraw}{9a94a5359445e2cf5526b452938c0911}
+      \strng{bibnamehash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{authorbibnamehash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{authornamehash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{authorfullhash}{9a94a5359445e2cf5526b452938c0911}
+      \strng{authorfullhashraw}{9a94a5359445e2cf5526b452938c0911}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Medical Library Association: JMLA}
+      \field{number}{2}
+      \field{title}{Open science framework (OSF)}
+      \field{volume}{105}
+      \field{year}{2017}
+      \field{pages}{203}
+      \range{pages}{1}
+    \endentry
+    \entry{gelmanData2007}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=1e1eb60e3b6e222217bf8e9b24070b28}{%
+           family={Gelman},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1fd6540b91678ae8d3f51574305d2455}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{fullhash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{fullhashraw}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{bibnamehash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{authorbibnamehash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{authornamehash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{authorfullhash}{602df721bcd10fe1eca95cb5554d134b}
+      \strng{authorfullhashraw}{602df721bcd10fe1eca95cb5554d134b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Analytical Methods for Social Research}
+      \field{title}{Data Analysis Using Regression and Multilevel/Hierarchical Models}
+      \field{year}{2006}
+    \endentry
+    \entry{hoefermultiplicative2021}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=cb7bbd53a6dded35857f74e2948d844b}{%
+           family={Hoefer},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelimb Jeffrey\bibnamedelima Daniel},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=e1f28147463d24f1e4aac6d35ef5a0c4}{%
+           family={Van\bibnamedelima Kleunen},
+           familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Lucy},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a50346206b024ede6d5434c20ec008ae}{%
+           family={Goodby},
+           familyi={G\bibinitperiod},
+           given={Cassandra},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b9b8dd2e2674016f58e4bfd67b9efd79}{%
+           family={Blackburn},
+           familyi={B\bibinitperiod},
+           given={Lanea\bibnamedelima Blyss},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=a77dd0e568302cb1c12f5b4d719014a7}{%
+           family={Panati},
+           familyi={P\bibinitperiod},
+           given={Priyanka},
+           giveni={P\bibinitperiod}}}%
+        {{hash=144ed06a202ee886506343fc4fb5ec66}{%
+           family={Voida},
+           familyi={V\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{cc7c412f9e00775e92be5b3a1f10c191}
+      \strng{fullhash}{a808d2e631313c790b8284ff24efc745}
+      \strng{fullhashraw}{a808d2e631313c790b8284ff24efc745}
+      \strng{bibnamehash}{cc7c412f9e00775e92be5b3a1f10c191}
+      \strng{authorbibnamehash}{cc7c412f9e00775e92be5b3a1f10c191}
+      \strng{authornamehash}{cc7c412f9e00775e92be5b3a1f10c191}
+      \strng{authorfullhash}{a808d2e631313c790b8284ff24efc745}
+      \strng{authorfullhashraw}{a808d2e631313c790b8284ff24efc745}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Personal health informatics are increasingly used in the long-term management of bipolar disorder and other serious mental illnesses. These systems help individuals and members of their support networks track and stabilize important social rhythms. In this study, we presented mental health professionals with nine design concepts for personal informatics systems to support interpersonal and social rhythm therapy. These designs, derived from prior empirical findings about patients’ data practices, utilize social interfaces to support the social ecologies critical to relational recovery in bipolar disorder. Designs included features for sharing data in dynamic social support systems, custom variables, commenting, co-tracking, and data-driven action plans. Qualitative analysis of clinicians’ feedback yielded design recommendations for mental health informatics, such as supporting all cognitive states of the multiplicative patient and the interactions between these states and patient–clinician interfaces. Diversity in clinical practice also necessitates application flexibility and careful integration with existing workflows.}
+      \field{booktitle}{Designing {Interactive} {Systems} {Conference} 2021}
+      \field{isbn}{978-1-4503-8476-6}
+      \field{month}{6}
+      \field{shorttitle}{The {Multiplicative} {Patient} and the {Clinical} {Workflow}}
+      \field{title}{The {Multiplicative} {Patient} and the {Clinical} {Workflow}: {Clinician} {Perspectives} on {Social} {Interfaces} for {Self}-{Tracking} and {Managing} {Bipolar} {Disorder}}
+      \field{urlday}{13}
+      \field{urlmonth}{1}
+      \field{urlyear}{2022}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{907\bibrangedash 925}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3461778.3461995
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3461778.3461995
+      \endverb
+      \keyw{bipolar,finhealth,self-management,insightful}
+    \endentry
+    \entry{johnsondevelopment2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=afcd0f9e434f8dffc9716bbb556a7324}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Sheri\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=2dd8c58371850d3427879b4a3134996c}{%
+           family={Zisser},
+           familyi={Z\bibinitperiod},
+           given={Mackenzie\bibnamedelima Rae},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=fed644162f2cfa43694c0913784e37e4}{%
+           family={Sandel},
+           familyi={S\bibinitperiod},
+           given={Devon\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=f74230269a4fca30caf1aae225a1a64e}{%
+           family={Swerdlow},
+           familyi={S\bibinitperiod},
+           given={Benjamin\bibnamedelima A.},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=762e36e47ea1e4aafb89fc86bb0a319d}{%
+           family={Carver},
+           familyi={C\bibinitperiod},
+           given={Charles\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=cc5b991fa94e9f5603da8ebd70cc2f37}{%
+           family={Sanchez},
+           familyi={S\bibinitperiod},
+           given={Amy\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=1e73cdced95738ce5d2e505542eabce2}{%
+           family={Fernandez},
+           familyi={F\bibinitperiod},
+           given={Ephrem},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{fullhash}{0a3aeaadcc5d49381de11bf713a1e380}
+      \strng{fullhashraw}{0a3aeaadcc5d49381de11bf713a1e380}
+      \strng{bibnamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authorbibnamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authornamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authorfullhash}{0a3aeaadcc5d49381de11bf713a1e380}
+      \strng{authorfullhashraw}{0a3aeaadcc5d49381de11bf713a1e380}
+      \field{extraname}{1}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Trait-like tendencies to respond impulsively to emotion, labelled emotion-related impulsivity, are robustly related to aggression. We developed and tested an online intervention to address emotion-related impulsivity and aggression. The 6-session intervention focused on behavioral techniques shown to decrease arousal and aggression, supplemented with implementation intentions and smartphone prompts to facilitate skills transfer into daily life. First, we piloted the intervention in-person with 4 people. Then, 235 participants were randomly assigned to take the online intervention immediately or after a wait-list period; those in the waitlist were then invited to take part in the intervention. Participants completed the self-rated Feelings Trigger Action Scale to assess emotion-related impulsivity, the interview-based Modified Overt Aggression Scale and the self-rated Buss Perry Aggression Questionnaire. Participants who took part in the treatment completed daily anger logs. Attrition, as with other online programs, was high; however, treatment completers reported high satisfaction, and outcomes changed more rapidly during treatment than waitlist across all key outcome indices. In analyses including all participants who took part in the treatment (immediate or delayed), we observed moderate-to-large treatment gains, which were maintained as of the 3-month follow-up assessment. This work supports the usefulness of an intervention for addressing emotion-related impulsivity and aggression.}
+      \field{issn}{0005-7967}
+      \field{journaltitle}{Behaviour Research and Therapy}
+      \field{month}{11}
+      \field{shorttitle}{Development of a brief online intervention to address aggression in the context of emotion-related impulsivity}
+      \field{title}{Development of a brief online intervention to address aggression in the context of emotion-related impulsivity: {Evidence} from a wait-list controlled trial}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{134}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{103708}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.brat.2020.103708
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005796720301625
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005796720301625
+      \endverb
+      \keyw{bipolar,impulsivity,intervention-design}
+    \endentry
+    \entry{johnsonEmotionRelated2018}{incollection}{}{}
+      \name{author}{4}{}{%
+        {{hash=afcd0f9e434f8dffc9716bbb556a7324}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Sheri\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=d793fb8cc73d55c369d7489ad8e417f2}{%
+           family={Pearlstein},
+           familyi={P\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c8cf025e88f325615be6f99a64cd130d}{%
+           family={Swerdlow},
+           familyi={S\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=762e36e47ea1e4aafb89fc86bb0a319d}{%
+           family={Carver},
+           familyi={C\bibinitperiod},
+           given={Charles\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{fullhash}{b2acbc495651f7b854ea0978dd3a4260}
+      \strng{fullhashraw}{b2acbc495651f7b854ea0978dd3a4260}
+      \strng{bibnamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authorbibnamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authornamehash}{9d8bcdb5f7af340bb83aa87d1caa293c}
+      \strng{authorfullhash}{b2acbc495651f7b854ea0978dd3a4260}
+      \strng{authorfullhashraw}{b2acbc495651f7b854ea0978dd3a4260}
+      \field{extraname}{2}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Neurobiology of {{Abnormal Emotion}} and {{Motivated Behaviors}}}
+      \field{isbn}{978-0-12-813693-5}
+      \field{langid}{english}
+      \field{title}{Emotion-{{Related Impulsivity}} and the {{Mood Disorders}}}
+      \field{urlday}{14}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{22\bibrangedash 40}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-813693-5.00002-2
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780128136935000022
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780128136935000022
+      \endverb
+    \endentry
+    \entry{junglaspersonality2008}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a28d994d638c11aa7062d3a075957841}{%
+           family={Junglas},
+           familyi={J\bibinitperiod},
+           given={Iris\bibnamedelima A},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4d091899e6e47eb77423dffa900e4862}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Norman\bibnamedelima A},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3bbb13b61969d507f9db83ef2b7c620d}{%
+           family={Spitzmüller},
+           familyi={S\bibinitperiod},
+           given={Christiane},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{fullhash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{fullhashraw}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{bibnamehash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{authorbibnamehash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{authornamehash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{authorfullhash}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \strng{authorfullhashraw}{4d0bb9c81fa6fb581982eb85878e0d37}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{For more than a century, concern for privacy (CFP) has co-evolved with advances in information technology. The CFP refers to the anxious sense of interest that a person has because of various types of threats to the person's state of being free from intrusion. Research studies have validated this concept and identified its consequences. For example, research has shown that the CFP can have a negative influence on the adoption of information technology; but little is known about factors likely to influence such concern. This paper attempts to fill that gap. Because privacy is said to be a part of a more general ‘right to one's personality’, we consider the so-called ‘Big Five’ personality traits (agreeableness, extraversion, emotional stability, openness to experience, and conscientiousness) as factors that can influence privacy concerns. Protection motivation theory helps us to explain this influence in the context of an emerging pervasive technology: location-based services. Using a survey-based approach, we find that agreeableness, conscientiousness, and openness to experience each affect the CFP. These results have implications for the adoption, the design, and the marketing of highly personalized new technologies.}
+      \field{issn}{1476-9344}
+      \field{journaltitle}{European Journal of Information Systems}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shorttitle}{Personality traits and concern for privacy}
+      \field{title}{Personality traits and concern for privacy: an empirical study in the context of location-based services}
+      \field{urlday}{22}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{volume}{17}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \field{pages}{387\bibrangedash 402}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1057/ejis.2008.29
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1057/ejis.2008.29
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1057/ejis.2008.29
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{klontzfinancial2015}{book}{}{}
+      \name{editor}{3}{}{%
+        {{hash=f073411518970fc334468632064a914b}{%
+           family={Klontz},
+           familyi={K\bibinitperiod},
+           given={Bradley\bibnamedelima T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=5d5fb4e52c22c5572cc470c12931368e}{%
+           family={Britt},
+           familyi={B\bibinitperiod},
+           given={Sonya\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=12f2357918bbcc23ab09233ea9d75575}{%
+           family={Archuleta},
+           familyi={A\bibinitperiod},
+           given={Kristy\bibnamedelima L.},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{fullhash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{fullhashraw}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{bibnamehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editorbibnamehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editornamehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editorfullhash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editorfullhashraw}{dda05fcc8a4376ae8e622309688f916b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-08268-4 978-3-319-08269-1}
+      \field{title}{Financial {Therapy}}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-319-08269-1
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-3-319-08269-1
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-3-319-08269-1
+      \endverb
+    \endentry
+    \entry{kroskaoptimizing2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=78968010399d3a00d85068c6d9ae4009}{%
+           family={Kroska},
+           familyi={K\bibinitperiod},
+           given={Emily\bibnamedelima B},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=34e33e24f4d7e18c0a9678beae562d78}{%
+           family={Hoel},
+           familyi={H\bibinitperiod},
+           given={Sydney},
+           giveni={S\bibinitperiod}}}%
+        {{hash=09466e9904afbdebd1344c41f64057f2}{%
+           family={Victory},
+           familyi={V\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod}}}%
+        {{hash=28d786f56b011749e9a7f148bbbd319d}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Susan\bibnamedelima A},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=03c9beb0769e589fdf8f511227404057}{%
+           family={McInnis},
+           familyi={M\bibinitperiod},
+           given={Melvin\bibnamedelima G},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=595835d0e6a2658ef8903fd886a53b50}{%
+           family={Stowe},
+           familyi={S\bibinitperiod},
+           given={Zachary\bibnamedelima N},
+           giveni={Z\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=050bf7f62f8a2ae1d2c35bdaa4b6c9ea}{%
+           family={Cochran},
+           familyi={C\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{b3c1f6e1127354ce90bb67807ab4b577}
+      \strng{fullhash}{fd54ddefd3f8dea349857a6d5ba37eec}
+      \strng{fullhashraw}{fd54ddefd3f8dea349857a6d5ba37eec}
+      \strng{bibnamehash}{b3c1f6e1127354ce90bb67807ab4b577}
+      \strng{authorbibnamehash}{b3c1f6e1127354ce90bb67807ab4b577}
+      \strng{authornamehash}{b3c1f6e1127354ce90bb67807ab4b577}
+      \strng{authorfullhash}{fd54ddefd3f8dea349857a6d5ba37eec}
+      \strng{authorfullhashraw}{fd54ddefd3f8dea349857a6d5ba37eec}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Background: Given gaps in the treatment of mental health, brief adaptive interventions have become a public health imperative. Transdiagnostic interventions may be particularly appropriate given high rates of medical comorbidity and the broader reach of transdiagnostic therapies. One such approach utilized herein is acceptance and commitment therapy (ACT), which is focused on increasing engagement with values, awareness, and openness to internal experiences. ACT theory posits that experiential avoidance is at the center of human suffering, regardless of diagnosis, and, as such, seeks to reduce unworkable experiential avoidance. Objective: Our objective is to provide the rationale and protocol for examining the safety, feasibility, and effectiveness of optimizing an ACT-based intervention via a mobile app among two disparate samples, which differ in sociodemographic characteristics and symptom profiles. Methods: Twice each day, participants are prompted via a mobile app to complete assessments of mood and activity and are then randomly assigned to an ACT-based intervention or not. These interventions are questions regarding engagement with values, awareness, and openness to internal experiences. Participant responses are recorded. Analyses will examine completion of assessments, change in symptoms from baseline assessment, and proximal change in mood and activity. A primary outcome of interest is proximal change in activity (eg, form and function of behavior and energy consumed by avoidance and values-based behavior) following interventions as a function of time, symptoms, and behavior, where we hypothesize that participants will focus more energy on values-based behaviors. Analyses will be conducted using a weighted and centered least squares approach. Two samples will run concurrently to assess the capacity of optimizing mobile ACT in populations that differ widely in their clinical presentation and sociodemographic characteristics: individuals with bipolar disorder (n=30) and distressed first-generation college students (n=50). Results: Recruitment began on September 10, 2019, for the bipolar sample and on October 5, 2019, for the college sample. Participation in the study began on October 18, 2019. Conclusions: This study examines an ACT-based intervention among two disparate samples. Should ACT demonstrate feasibility and preliminary effectiveness in each sample, a large randomized controlled trial applying ACT across diagnoses and demographics would be indicated. The public health implications of such an approach may be far-reaching.}
+      \field{issn}{1929-0748}
+      \field{journaltitle}{JMIR Research Protocols}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shorttitle}{Optimizing an {Acceptance} and {Commitment} {Therapy} {Microintervention} {Via} a {Mobile} {App} {With} {Two} {Cohorts}}
+      \field{title}{Optimizing an {Acceptance} and {Commitment} {Therapy} {Microintervention} {Via} a {Mobile} {App} {With} {Two} {Cohorts}: {Protocol} for {Micro}-{Randomized} {Trials}}
+      \field{urlday}{17}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{9}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{e17086}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2196/17086
+      \endverb
+      \verb{urlraw}
+      \verb http://www.researchprotocols.org/2020/9/e17086/
+      \endverb
+      \verb{url}
+      \verb http://www.researchprotocols.org/2020/9/e17086/
+      \endverb
+      \keyw{mindfulness,bipolar,impulsivity,finhealth}
+    \endentry
+    \entry{najafianfactors2021}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=29feef72809891ee029b01ba52f16b52}{%
+           family={Najafian},
+           familyi={N\bibinitperiod},
+           given={Shabnam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=675389383ed363fdd481cbd250a437de}{%
+           family={Delic},
+           familyi={D\bibinitperiod},
+           given={Amra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=95a0912b8b67d56774069e5199f727e2}{%
+           family={Tkalcic},
+           familyi={T\bibinitperiod},
+           given={Marko},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fd1da5f4948a65253c4bcc65b2f6af82}{%
+           family={Tintarev},
+           familyi={T\bibinitperiod},
+           given={Nava},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Utrecht Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{0b771f3244adf70cd7f5fbb6d0fe1604}
+      \strng{fullhash}{8725a41689a23b84752b8032c9f9bcbe}
+      \strng{fullhashraw}{8725a41689a23b84752b8032c9f9bcbe}
+      \strng{bibnamehash}{0b771f3244adf70cd7f5fbb6d0fe1604}
+      \strng{authorbibnamehash}{0b771f3244adf70cd7f5fbb6d0fe1604}
+      \strng{authornamehash}{0b771f3244adf70cd7f5fbb6d0fe1604}
+      \strng{authorfullhash}{8725a41689a23b84752b8032c9f9bcbe}
+      \strng{authorfullhashraw}{8725a41689a23b84752b8032c9f9bcbe}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 29th {ACM} {Conference} on {User} {Modeling}, {Adaptation} and {Personalization}}
+      \field{isbn}{978-1-4503-8366-0}
+      \field{month}{6}
+      \field{title}{Factors {Influencing} {Privacy} {Concern} for {Explanations} of {Group} {Recommendation}}
+      \field{urlday}{1}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{14\bibrangedash 23}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3450613.3456845
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3450613.3456845
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3450613.3456845
+      \endverb
+    \endentry
+    \entry{nauassessment2023}{article}{}{}
+      \name{author}{11}{}{%
+        {{hash=f4ccc012a880a1dbf28cc8256c9d93fe}{%
+           family={Nau},
+           familyi={N\bibinitperiod},
+           given={Claudia\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=cc97eafefdd80f200806f051d2d945fc}{%
+           family={Braciszewski},
+           familyi={B\bibinitperiod},
+           given={Jordan\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ed163698551b829d490c6bf1f730e437}{%
+           family={Rossom},
+           familyi={R\bibinitperiod},
+           given={Rebecca\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=2ea43c31c00255839f7d33514465463a}{%
+           family={Penfold},
+           familyi={P\bibinitperiod},
+           given={Robert\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=213f729f35da4fe5e642a5cf73a9f90e}{%
+           family={Coleman},
+           familyi={C\bibinitperiod},
+           given={Karen\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=de5b29cf53f029c7d6dd8d482cb6a005}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={Gregory\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=f7efa17c587c762fbf9e93a648033688}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=28bdedf83a8b9622d0e8e2f593fdc8d4}{%
+           family={Padilla},
+           familyi={P\bibinitperiod},
+           given={Ariadna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7fe0d8a5036b11d7aca991f70014b2cb}{%
+           family={Butler},
+           familyi={B\bibinitperiod},
+           given={Rebecca\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=898e376f641f50de582103620307c30c}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Aiyu},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0e7ed6fc16c07366318e46b7196e2d3b}{%
+           family={Waters},
+           familyi={W\bibinitperiod},
+           given={Heidi\bibnamedelima C.},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{92a1cc9d32a3d3793f9f08a4c98418d7}
+      \strng{fullhash}{9d1b87fc37e6880ed70b0fb50d8de741}
+      \strng{fullhashraw}{9d1b87fc37e6880ed70b0fb50d8de741}
+      \strng{bibnamehash}{92a1cc9d32a3d3793f9f08a4c98418d7}
+      \strng{authorbibnamehash}{92a1cc9d32a3d3793f9f08a4c98418d7}
+      \strng{authornamehash}{92a1cc9d32a3d3793f9f08a4c98418d7}
+      \strng{authorfullhash}{9d1b87fc37e6880ed70b0fb50d8de741}
+      \strng{authorfullhashraw}{9d1b87fc37e6880ed70b0fb50d8de741}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{There is a dearth of population-level data on major disruptive life events (defined here as arrests by a legal authority, address changes, bankruptcy, lien, and judgment filings) for patients with bipolar I disorder (BPI) or schizophrenia, which has limited studies on mental health and treatment outcomes.To conduct a population-level study on disruptive life events by using publicly available data on disruptive life events, aggregated by a consumer credit reporting agency in conjunction with electronic health record (EHR) data.This study used EHR data from 2 large, integrated health care systems, Kaiser Permanente Southern California and Henry Ford Health. Cohorts of patients diagnosed from 2007 to 2019 with BPI or schizophrenia were matched 1:1 by age at analysis, age at diagnosis (if applicable), sex, race and ethnicity, and Medicaid status to (1) an active comparison group with diagnoses of major depressive disorder (MDD) and (2) a general health (GH) cohort without diagnoses of BPI, schizophrenia, or MDD. Patients with diagnoses of BPI or schizophrenia and their respective comparison cohorts were matched to public records data aggregated by a consumer credit reporting agency (98\% match rate). Analysis took place between November 2020 and December 2022.The differences in the occurrence of disruptive life events among patients with BPI or schizophrenia and their comparison groups.Of 46 167 patients, 30 008 (65\%) had BPI (mean [SD] age, 42.6 [14.2] years) and 16 159 (35\%) had schizophrenia (mean [SD], 41.4 [15.1] years). The majoriy of patients were White (30 167 [65\%]). In addition, 18 500 patients with BPI (62\%) and 6552 patients with schizophrenia (41\%) were female. Patients with BPI were more likely to change addresses than patients in either comparison cohort (with the incidence ratio being as high as 1.25 [95\% CI, 1.23-1.28]) when compared with GH cohort. Patients with BPI were also more likely to experience any of the financial disruptive life events with odds ratio ranging from 1.15 [95\% CI, 1.07-1.24] to 1.50 [95\% CI, 1.42-1.58]). The largest differences in disruptive life events were seen in arrests of patients with either BPI or schizophrenia compared with GH peers (3.27 [95\% CI, 2.84-3.78] and 3.04 [95\% CI, 2.57-3.59], respectively). Patients with schizophrenia had fewer address changes and were less likely to experience a financial event than their matched comparison cohorts.This study demonstrated that data aggregated by a consumer credit reporting agency can support population-level studies on disruptive life events among patients with BPI or schizophrenia.}
+      \field{issn}{2168-622X}
+      \field{journaltitle}{JAMA Psychiatry}
+      \field{month}{5}
+      \field{title}{Assessment of {Disruptive} {Life} {Events} for {Individuals} {Diagnosed} {With} {Schizophrenia} or {Bipolar} {I} {Disorder} {Using} {Data} {From} a {Consumer} {Credit} {Reporting} {Agency}}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1001/jamapsychiatry.2023.1179
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1001/jamapsychiatry.2023.1179
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1001/jamapsychiatry.2023.1179
+      \endverb
+    \endentry
+    \entry{perssonepisodic2023}{incollection}{}{}
+      \name{author}{5}{}{%
+        {{hash=e7831ded9937558199f114bc39e1d708}{%
+           family={Persson},
+           familyi={P\bibinitperiod},
+           given={Dan\bibnamedelima Roland},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=af76034c8b2d77f7230f376d098bfbc4}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={Soojeong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0a8a93e42e4d8868e07cca64a2975ac3}{%
+           family={Bardram},
+           familyi={B\bibinitperiod},
+           given={Jakob\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=cc397f823e9b3ba1fa0b87079a88e0ac}{%
+           family={Skinner},
+           familyi={S\bibinitperiod},
+           given={Timothy\bibnamedelima C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=3a03f5eaf67dc561bb03dcab20cc5c01}{%
+           family={Bækgaard},
+           familyi={B\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{10}{}{%
+        {{hash=b0725de4e772bb9584c48141c1cd1fe8}{%
+           family={Kurosu},
+           familyi={K\bibinitperiod},
+           given={Masaaki},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dc22493b5575c5ecfb383828f2469ec7}{%
+           family={Hashizume},
+           familyi={H\bibinitperiod},
+           given={Ayako},
+           giveni={A\bibinitperiod}}}%
+        {{hash=28e4f412995cd32168f059866616faf0}{%
+           family={Marcus},
+           familyi={M\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2e44e3517d7c279fb135a104cefeb0d2}{%
+           family={Rosenzweig},
+           familyi={R\bibinitperiod},
+           given={Elizabeth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=01a73a441b7ee66c61f291cfe4d34cb1}{%
+           family={Soares},
+           familyi={S\bibinitperiod},
+           given={Marcelo\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ca19d0e14555900f54ec08d47855a9e5}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+        {{hash=65c007439a314f12bd44d9ab5fedd0cc}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wen-Chin},
+           giveni={W\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=009f8f38fa73b776c4c59ce57d1df739}{%
+           family={Schmorrow},
+           familyi={S\bibinitperiod},
+           given={Dylan\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=b142be5bf9ed9563361762f765549e24}{%
+           family={Fidopiastis},
+           familyi={F\bibinitperiod},
+           given={Cali\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7dfb17365d8279ab1aceaf4ac7af359f}{%
+           family={Rau},
+           familyi={R\bibinitperiod},
+           given={Pei-Luen\bibnamedelima Patrick},
+           giveni={P\bibinithyphendelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Switzerland}%
+      }
+      \strng{namehash}{5dca7723883b630cc068b63a29d43ed8}
+      \strng{fullhash}{c962f2a4641016910f4d5013c4c92419}
+      \strng{fullhashraw}{c962f2a4641016910f4d5013c4c92419}
+      \strng{bibnamehash}{5dca7723883b630cc068b63a29d43ed8}
+      \strng{authorbibnamehash}{5dca7723883b630cc068b63a29d43ed8}
+      \strng{authornamehash}{5dca7723883b630cc068b63a29d43ed8}
+      \strng{authorfullhash}{c962f2a4641016910f4d5013c4c92419}
+      \strng{authorfullhashraw}{c962f2a4641016910f4d5013c4c92419}
+      \strng{editorbibnamehash}{aeed5e6cd7cd17dc3a09b090bfb6e242}
+      \strng{editornamehash}{aeed5e6cd7cd17dc3a09b090bfb6e242}
+      \strng{editorfullhash}{8af8f0df9b33a57456dc4c8848132f85}
+      \strng{editorfullhashraw}{8af8f0df9b33a57456dc4c8848132f85}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Micro-interventions are quick focused behavioural interventions aimed at matching users’ current capacity for engagement. Mobile devices are powerful, interactive, and sensor-rich platforms for delivering micro-interventions and for determining when and where to do so. This paper presents a novel smart-phone based approach to microinterventions based on established ‘Episodic Future Thinking (EFT)’ research. The paper both presents the background for EFT-based microinterventions and the design of an ‘EFT’ smartphone application implementing this. The approach and technology were evaluated in a feasibility study including 14 participants using the system for 14 days. Results demonstrate the feasibility of implementing EFT as micro-interventions, with participants willing to use the application, providing positive feedback and constructive suggestions. The paper concludes with a thorough discussion of the implications for smartphone-based EFT delivered as micro-interventions and how these can be used as part of a larger behaviour change and health improvement initiatives.}
+      \field{booktitle}{{HCI} {International} 2023 – {Late} {Breaking} {Papers}}
+      \field{isbn}{978-3-031-48037-9 978-3-031-48038-6}
+      \field{title}{Episodic {Future} {Thinking} as {Digital} {Micro}-interventions}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{14054}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{213\bibrangedash 237}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1007/978-3-031-48038-6_14
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-3-031-48038-6_14
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-3-031-48038-6_14
+      \endverb
+    \endentry
+    \entry{rammstedtmeasuring2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a1e8a469fc27006fc47a33f888f2d335}{%
+           family={Rammstedt},
+           familyi={R\bibinitperiod},
+           given={Beatrice},
+           giveni={B\bibinitperiod}}}%
+        {{hash=122e749ee9606b5a5456f163a96bd5d6}{%
+           family={John},
+           familyi={J\bibinitperiod},
+           given={Oliver\bibnamedelima P.},
+           giveni={O\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{fullhash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{fullhashraw}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{bibnamehash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{authorbibnamehash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{authornamehash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{authorfullhash}{fe108f3267de1988de3d0674eb92aaf7}
+      \strng{authorfullhashraw}{fe108f3267de1988de3d0674eb92aaf7}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{To provide a measure of the Big Five for contexts in which participant time is severely limited, we abbreviated the Big Five Inventory (BFI-44) to a 10-item version, the BFI-10. To permit its use in cross-cultural research, the BFI-10 was developed simultaneously in several samples in both English and German. Results focus on the psychometric characteristics of the 2-item scales on the BFI-10, including their part-whole correlations with the BFI-44 scales, retest reliability, structural validity, convergent validity with the NEO-PI-R and its facets, and external validity using peer ratings. Overall, results indicate that the BFI-10 scales retain significant levels of reliability and validity. Thus, reducing the items of the BFI-44 to less than a fourth yielded effect sizes that were lower than those for the full BFI-44 but still sufficient for research settings with truly limited time constraints.}
+      \field{issn}{0092-6566}
+      \field{journaltitle}{Journal of Research in Personality}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shorttitle}{Measuring personality in one minute or less}
+      \field{title}{Measuring personality in one minute or less: {A} 10-item short version of the {Big} {Five} {Inventory} in {English} and {German}}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2025}
+      \field{volume}{41}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{203\bibrangedash 212}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.jrp.2006.02.001
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0092656606000195
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0092656606000195
+      \endverb
+    \endentry
+    \entry{reinharthEffects}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=4a0caf1413da4fff47067d5f56aeaf95}{%
+           family={Reinharth},
+           familyi={R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Hofstra University}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {United States -- New York}%
+      }
+      \strng{namehash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{fullhash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{fullhashraw}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{bibnamehash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{authorbibnamehash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{authornamehash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{authorfullhash}{4a0caf1413da4fff47067d5f56aeaf95}
+      \strng{authorfullhashraw}{4a0caf1413da4fff47067d5f56aeaf95}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bipolar disorder creates many potential adaptive problems in daily living, including poor social functioning, impulsive behavior, substance abuse, and chronic unemployment. Additionally, individuals with bipolar disorder experience higher morbidity and mortality rates relative to the general population due to increased commission of dangerous behaviors, including increased substance abuse and driving while under the influence of drugs and alcohol, unprotected sex, and elevated risk of suicidality. While commission of such risky behaviors contributes to functional impairment and increased risk of mortality, there has been little targeted attention to their treatment in patients with bipolar illness. The aim of this study was to facilitate patients' recognition and reduction of risk-taking behavior. One-hundred one outpatients with a DSM-IV-TR diagnosed bipolar disorder were screened. Using a multiple-baseline single-subject design, seven of these individuals with bipolar disorder who engaged in frequent risk-taking behaviors received treatment using a mindfulness-based imaginal exposure from the Mindfulness Based Relapse Prevention program. Visual inspection revealed declines in self-reported risk-taking for each participant, beginning during the intervention or follow-up. Current measurement tools are limited, and better methods are needed to assess risk-taking adequately. It was concluded that the mindfulness-based imaginal exposure can be a useful tool to reduce risk-taking behaviors in individuals with bipolar disorder.}
+      \field{title}{Effects of {Urge}-{Surfing} {Training} on {Risk}-{Taking} {Behaviors} in {Adults} with {Bipolar} {Disorder}}
+      \field{type}{Ph.{D}.}
+      \field{urlday}{2}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.proquest.com/docview/1660541109/abstract/294788214597429APQ/1
+      \endverb
+      \verb{url}
+      \verb https://www.proquest.com/docview/1660541109/abstract/294788214597429APQ/1
+      \endverb
+    \endentry
+    \entry{richardsonfinancial2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=c0e5270b30b6f4e037559d4f80e278dd}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f505cc660d823edb8c0372d25e648c05}{%
+           family={Jansen},
+           familyi={J\bibinitperiod},
+           given={Megan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=db49110145a1ec4c0600410c1ab8caaa}{%
+           family={Fitch},
+           familyi={F\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{fullhash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{fullhashraw}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{bibnamehash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{authorbibnamehash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{authornamehash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{authorfullhash}{7e932a28b44c8d43cdb86152a79ffe56}
+      \strng{authorfullhashraw}{7e932a28b44c8d43cdb86152a79ffe56}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Background: There has been little research on whether finances affect mental health in bipolar disorder. Aims: This study aimed to examine the relationship between finances and mental health in bipolar disorder across two time points. Methods: Fifty-four participants with bipolar disorder in a National Health Service community mental health service completed questionnaires examining financial difficulties, compulsive buying and perceived financial well-being. Questionnaires also measured alcohol dependence, stress, depression, anxiety, past and current manic symptoms. Results: Partial correlations showed correlations over time: depression, anxiety and stress predicted later compulsive buying. Compulsive buying also predicted later anxiety. Lower perceived financial wellness increased anxiety and stress over time. Being on benefits was associated with higher depression and going without items such as clothes was linked to higher depression, stress, anxiety and past hypomanic symptoms. Conclusions: Financial difficulties are related to mental health in bipolar disorder. Poor mental health leads to compulsive buying, whereas worry about finances increases anxiety and stress, with a vicious cycle for anxiety.}
+      \field{issn}{09638237}
+      \field{journaltitle}{Journal of Mental Health}
+      \field{month}{12}
+      \field{number}{6}
+      \field{shorttitle}{Financial difficulties in bipolar disorder part 1}
+      \field{title}{Financial difficulties in bipolar disorder part 1: longitudinal relationships with mental health}
+      \field{urlday}{18}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{volume}{27}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{595\bibrangedash 601}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1080/09638237.2018.1521920
+      \endverb
+      \verb{urlraw}
+      \verb http://ezaccess.libraries.psu.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=a9h&AN=134414373&site=ehost-live&scope=site
+      \endverb
+      \verb{url}
+      \verb http://ezaccess.libraries.psu.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=a9h&AN=134414373&site=ehost-live&scope=site
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{rungexperimental2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=51d0181c1ba27cdd57cc403223c06be4}{%
+           family={Rung},
+           familyi={R\bibinitperiod},
+           given={Jillian\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=436e3bf4c2ff67b2428c2a42e594a514}{%
+           family={Madden},
+           familyi={M\bibinitperiod},
+           given={Gregory\bibnamedelima J},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \strng{namehash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{fullhash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{fullhashraw}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{bibnamehash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{authorbibnamehash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{authornamehash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{authorfullhash}{8ab85c1465ac3d0877449dd6bc95663a}
+      \strng{authorfullhashraw}{8ab85c1465ac3d0877449dd6bc95663a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Many behaviors posing significant risks to public health are characterized by repeated decisions to forego better long-term outcomes in the face of immediate temptations. Steeply discounting the value of delayed outcomes often underlies a pattern of impulsive choice. Steep delay discounting is correlated with addictions (e.g., substance abuse, obesity) and behaviors such as seatbelt use and risky sexual activity. As evidence accumulates suggesting steep delay discounting plays a causal role in these maladaptive behaviors, researchers have begun testing methods for reducing discounting. In this first systematic and comprehensive review of this literature, the findings of 92 articles employing different methodologies to reduce discounting are evaluated narratively and meta-analytically. Although most of the methods reviewed produced significant reductions in discounting, they varied in effect sizes. Most methods were ideal for influencing one-off choices (e.g., framing and priming manipulations), although other successful manipulations, such as episodic future thinking, could be incorporated into existing therapies designed to produce longer-lasting changes in decision-making. The largest and longest-lasting effects were produced by learning-based manipulations, although translational research is needed to determine the generality and clinical utility of these methods. Methodological shortcomings in the existing literature and suggestions for ameliorating these issues are discussed. This review reveals a variety of methods with translational potential, which, through continued refinement, may prove effective in reducing impulsive choice and its associated maladaptive decisions that negatively impact quality of life. (PsycINFO Database Record}
+      \field{issn}{1939-2222}
+      \field{journaltitle}{Journal of experimental psychology General}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shorttitle}{Experimental reductions of delay discounting and impulsive choice}
+      \field{title}{Experimental reductions of delay discounting and impulsive choice: {A} systematic review and meta-analysis}
+      \field{urlday}{20}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{147}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{1349\bibrangedash 1381}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1037/xge0000462
+      \endverb
+      \verb{urlraw}
+      \verb https://europepmc.org/articles/PMC6112163
+      \endverb
+      \verb{url}
+      \verb https://europepmc.org/articles/PMC6112163
+      \endverb
+      \keyw{impulsivity,intervention-design,delay-discounting,episodic-future-thinking}
+    \endentry
+    \entry{el-sayedefficacy2023}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=d8caec2bd52719e7328d7d2f1f5377d1}{%
+           family={El-Sayed},
+           familyi={E\bibinithyphendelim S\bibinitperiod},
+           given={Mona\bibnamedelima Metwally},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b4ed20817f95d6312845877e0b7fd878}{%
+           family={Elhay},
+           familyi={E\bibinitperiod},
+           given={Eman\bibnamedelimb Sameh\bibnamedelima Abd},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=cd1b984ba6309808126b4009497ef057}{%
+           family={Taha},
+           familyi={T\bibinitperiod},
+           given={Samah\bibnamedelima Mohamed},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=6e5131b13766e49ce332621d032a0e3d}{%
+           family={Khedr},
+           familyi={K\bibinitperiod},
+           given={Mahmoud\bibnamedelima Abdelwahab},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=14cd60a914f481e5173b7e9061d6142a}{%
+           family={Mansour},
+           familyi={M\bibinitperiod},
+           given={Feby\bibnamedelimb Saad\bibnamedelima Attalla},
+           giveni={F\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a136ae21bee418cfc75bc7f3417626be}{%
+           family={El-Ashry},
+           familyi={E\bibinithyphendelim A\bibinitperiod},
+           given={Ayman\bibnamedelima Mohamed},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{f4c14dca311333e64e379990db5c1300}
+      \strng{fullhash}{4c28e394580e7de542e274e61dbee094}
+      \strng{fullhashraw}{4c28e394580e7de542e274e61dbee094}
+      \strng{bibnamehash}{f4c14dca311333e64e379990db5c1300}
+      \strng{authorbibnamehash}{f4c14dca311333e64e379990db5c1300}
+      \strng{authornamehash}{f4c14dca311333e64e379990db5c1300}
+      \strng{authorfullhash}{4c28e394580e7de542e274e61dbee094}
+      \strng{authorfullhashraw}{4c28e394580e7de542e274e61dbee094}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Among people with bipolar disorders, there are high rates of impulsivity and suicide attempts. Efforts to reduce suicide are hindered by the lack of conclusive evidence on interventional programs for those at risk. Thus, this work evaluated the efficacy of acceptance and commitment therapy on impulsivity and suicidality among bipolar clients.}
+      \field{issn}{1472-6955}
+      \field{journaltitle}{BMC Nursing}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shorttitle}{Efficacy of acceptance and commitment therapy on impulsivity and suicidality among clients with bipolar disorders}
+      \field{title}{Efficacy of acceptance and commitment therapy on impulsivity and suicidality among clients with bipolar disorders: a randomized control trial}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{volume}{22}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{271}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s12912-023-01443-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/s12912-023-01443-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/s12912-023-01443-1
+      \endverb
+      \keyw{mindfulness,bipolar,impulsivity,finhealth}
+    \endentry
+    \entry{scholtenBehavioral2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=bfe3c52c31c494a0f1767e8ba9f687de}{%
+           family={Scholten},
+           familyi={S\bibinitperiod},
+           given={Hanneke},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8c3d37c36db17306e67e7d5204d820ee}{%
+           family={Scheres},
+           familyi={S\bibinitperiod},
+           given={Anouk},
+           giveni={A\bibinitperiod}}}%
+        {{hash=df28957bff84c93a6bb827dedb73f604}{%
+           family={{de Water}},
+           familyi={d\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=7df4489c6ba966be1a717f610977c8e0}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Uta},
+           giveni={U\bibinitperiod}}}%
+        {{hash=7cbfb607a3dbde2289d0d34cc73b734d}{%
+           family={Granic},
+           familyi={G\bibinitperiod},
+           given={Isabela},
+           giveni={I\bibinitperiod}}}%
+        {{hash=90048b8c30469ae80eeb1f731d9ba607}{%
+           family={Luijten},
+           familyi={L\bibinitperiod},
+           given={Maartje},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{772184d25db0e49420e4264c9f5bab97}
+      \strng{fullhash}{bd6ec2396bd35bb7347a0cf6e210b4df}
+      \strng{fullhashraw}{bd6ec2396bd35bb7347a0cf6e210b4df}
+      \strng{bibnamehash}{772184d25db0e49420e4264c9f5bab97}
+      \strng{authorbibnamehash}{772184d25db0e49420e4264c9f5bab97}
+      \strng{authornamehash}{772184d25db0e49420e4264c9f5bab97}
+      \strng{authorfullhash}{bd6ec2396bd35bb7347a0cf6e210b4df}
+      \strng{authorfullhashraw}{bd6ec2396bd35bb7347a0cf6e210b4df}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In everyday decision-making, individuals make trade-offs between short-term and long-term benefits or costs. Depending on many factors, individuals may choose to wait for larger delayed reward, yet in other situations they may prefer the smaller, immediate reward. In addition to within-subject variation in the short-term versus long-term reward trade-off, there are also interindividual differences in delay discounting (DD), which have been shown to be quite stable. The extent to which individuals discount the value of delayed rewards turns out to be associated with important health and disorder-related outcomes: the more discounting, the more unhealthy or problematic choices. This has led to the hypothesis that DD can be conceptualized as trans-disease process. The current systematic review presents an overview of behavioral trainings and manipulations that have been developed to reduce DD in human participants aged 12 years or older. Manipulation studies mostly contain one session and measure DD directly after the manipulation. Training studies add a multiple session training component that is not per se related to DD, in between two DD task measurements. Ninety-eight studies (151 experiments) were identified that tested behavioral trainings and manipulations to decrease DD. Overall, results indicated that DD can be decreased, showing that DD is profoundly context dependent and changeable. Most promising avenues to pursue in future research seem to be acceptance-based/mindfulness-based trainings, and even more so manipulations involving a future orientation. Limitations and recommendations are discussed to identify the mechanistic processes that allow for changes in discount rate and behavior accordingly.}
+      \field{issn}{1531-5320}
+      \field{journaltitle}{Psychonomic Bulletin \& Review}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{6}
+      \field{shorttitle}{Behavioral Trainings and Manipulations to Reduce Delay Discounting}
+      \field{title}{Behavioral Trainings and Manipulations to Reduce Delay Discounting: {{A}} Systematic Review}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
+      \field{urlyear}{2022}
+      \field{volume}{26}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{1803\bibrangedash 1849}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.3758/s13423-019-01629-2
+      \endverb
+      \verb{file}
+      \verb /Users/jab/Zotero/storage/BZFBJFH9/Scholten et al. - 2019 - Behavioral trainings and manipulations to reduce d.pdf
+      \endverb
+      \keyw{finhealth}
+    \endentry
+    \entry{wadaacceptance2015}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=91bcfc074a04c1130766111128d07d77}{%
+           family={Wada},
+           familyi={W\bibinitperiod},
+           given={Joni\bibnamedelima Klontz},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=f073411518970fc334468632064a914b}{%
+           family={Klontz},
+           familyi={K\bibinitperiod},
+           given={Bradley\bibnamedelima T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=f073411518970fc334468632064a914b}{%
+           family={Klontz},
+           familyi={K\bibinitperiod},
+           given={Bradley\bibnamedelima T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=5d5fb4e52c22c5572cc470c12931368e}{%
+           family={Britt},
+           familyi={B\bibinitperiod},
+           given={Sonya\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=12f2357918bbcc23ab09233ea9d75575}{%
+           family={Archuleta},
+           familyi={A\bibinitperiod},
+           given={Kristy\bibnamedelima L.},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{fullhash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{fullhashraw}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{bibnamehash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{authorbibnamehash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{authornamehash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{authorfullhash}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{authorfullhashraw}{be1077613cbfbc2cca5a79aea83c37aa}
+      \strng{editorbibnamehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editornamehash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editorfullhash}{dda05fcc8a4376ae8e622309688f916b}
+      \strng{editorfullhashraw}{dda05fcc8a4376ae8e622309688f916b}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Despite the growing number of women in the workforce, research suggests that poverty is still primarily a woman’s issue and that single women continue to be more vulnerable financially than single men. This chapter examines women’s relationship with money and how their limiting financial beliefs may result in problematic financial behaviors. Financial therapy exercises based on acceptance and commitment therapy (ACT)Acceptance and commitment therapyare presented to help financial therapists inform women about their current financial reality, educate them about their limiting beliefsLimiting beliefs, and teach them how to move toward their valued goals by changing their relationship with money and making mindful choices about their future.}
+      \field{booktitle}{Financial {Therapy}: {Theory}, {Research}, and {Practice}}
+      \field{isbn}{978-3-319-08269-1}
+      \field{title}{Acceptance and {Commitment} {Financial} {Therapy} for {Women}}
+      \field{urlday}{6}
+      \field{urlmonth}{1}
+      \field{urlyear}{2023}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{267\bibrangedash 284}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1007/978-3-319-08269-1_16
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-08269-1_16
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-08269-1_16
+      \endverb
+      \keyw{mindfulness,impulsivity,finhealth}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
